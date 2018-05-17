@@ -27,7 +27,7 @@ One map, two layers with the ability to toggle on/off. Layer one would show a he
 
 
 
-Steps:
+<h2>Steps:</h2>
 1. Gather the Resources
 - USZip Code Python Data
 - 2015 Income by Zip 
