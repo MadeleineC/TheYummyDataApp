@@ -1,0 +1,494 @@
+[
+    {
+        "formatted_address": "427 W Kingsbury St, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.5805014,
+                "lng": -97.9694207
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.58196742989272,
+                    "lng": -97.96807412010727
+                },
+                "southwest": {
+                    "lat": 29.57926777010728,
+                    "lng": -97.97077377989272
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "9d6795b53e0f7a0d8c81a855298e16fb3e1d1eed",
+        "name": "Rosie's Pizza To Go",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 1080,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112686701578014117684/photos\">ERICK MORALES</a>"
+                ],
+                "photo_reference": "CmRaAAAAHImzIsL597yD2B8bJ6mdaKbilUs_ruAlu47JNe9Vij7GD8sC4tUh7l1fQ49A8CVjkB23rKWlsYU_TV-aGRDl3TG8n0mMtE_oMqflAGcXUMsbxZ4dly2gMatyyMvbH8VwEhBvod25sExfaWbPt5aeSzgxGhQuyEDUre53T3jyY1MfpQC7Xc4RKg",
+                "width": 1920
+            }
+        ],
+        "place_id": "ChIJE7MVxSS4XIYRV6KRarIdGq4",
+        "rating": 4.1,
+        "reference": "CmRbAAAAAMy9Gd66qaVx0eE4wJNGumYdjlA8xKAtSXJy62ZDcKASNn-3myyUjCaf2PGHigGzBdW2W98u7_neD3gsG2vmUwlo0qOD-LsjlZiLDVBuP3Jz1XAvgk17yWWR9ojrc73VEhAl60kRHGXS4agQLXIQhDsbGhQoEEZLxPesyWyEj45YVhRM36w8Xw",
+        "types": [
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "594 N Hwy 123 Bypass, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.564327,
+                "lng": -97.9423351
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.56557192989272,
+                    "lng": -97.94070232010728
+                },
+                "southwest": {
+                    "lat": 29.56287227010728,
+                    "lng": -97.94340197989271
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "bd0c6f5d743f68f38a27c96b9b4f2a9d78df6fbf",
+        "name": "Pizza Hut",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 1440,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110368420489671355590/photos\">Lauren deVries</a>"
+                ],
+                "photo_reference": "CmRaAAAAO9sNA8fstMKJGyZvX30RNif1DtcMaaBO0TTlv4AuvbdVqRmqoY88n3m0FAevV95u-tP7vlzkxoD7CezbCYKB3mwqPFA9lKuOi-8xAKKSnWo4KM4sKt87PeMgp-aqjSg1EhAoaUlRgmwmBik4bPeGWQWFGhRJ7eWtxwuVJ3fxZ8mxqrA3HCHcPg",
+                "width": 2560
+            }
+        ],
+        "place_id": "ChIJE38oGum3XIYRU7M6Dn7weDc",
+        "price_level": 1,
+        "rating": 3.3,
+        "reference": "CmRbAAAAtcQIp8qN6YytZjufmybI5FPBHIWXbz_y69WjjYlsBrDUVsDHENpi8OUyKNTSt1bI5ZIPtZGGg_p4zAN2IT_n4GM5XpNvUpA07JFymd3T1QSp45fjEQs0Pygt5TVtUppKEhDyvscDDCrzTikMpbQ67peJGhQA0z9lyPqYtxuD3LPzW0Go-Bpd7g",
+        "types": [
+            "meal_delivery",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "1500 E Court St #126, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.571681,
+                "lng": -97.9397142
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.57303082989272,
+                    "lng": -97.93836437010728
+                },
+                "southwest": {
+                    "lat": 29.57033117010728,
+                    "lng": -97.94106402989271
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "dd2277d0168efc78c833cb75ae0285b0844e0b38",
+        "name": "Little Caesars Pizza",
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111829372858203167063/photos\">Kenneth Resendez</a>"
+                ],
+                "photo_reference": "CmRaAAAAOuYyWlXyS1wrgjdjCWeSr2eEHGcK2gohunxVg9zfEKc_3M9Y0vmKzz6P2qVMkg4KGDRaqvrHrqIXX3vwXIFia2w7tLMwBYXcQASxhpqfkB8DG-GuueCSHlfg0gtu9y5yEhAhtueGNVkTQgVy-X4VV1-HGhSgEzPkeAi3TZJ4cMukim3G6QRDfg",
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJS7iELuq3XIYRq2814r-OBIc",
+        "price_level": 1,
+        "rating": 3.4,
+        "reference": "CmRbAAAASzHoXFUjv0fa03D0yF10OSnIxJakE27ydp4pUdrO8HYTLgcBbCwBUVuehR-yfj5L1SD2MXnATgg1LuDbwHuz4uK2aaChWJQ6bg43ysGLg6g7QnudCY9XdLrv3vIsykLQEhBd6g2QR0SMYlFZzZCHrQ57GhT1dIzC5JE_aJMqvl6b731UcRK0LQ",
+        "types": [
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "1007 S Guadalupe St, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.5583594,
+                "lng": -97.9690294
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.55970922989271,
+                    "lng": -97.96767957010728
+                },
+                "southwest": {
+                    "lat": 29.55700957010727,
+                    "lng": -97.97037922989271
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+        "id": "58b8749cc2e7340e52f15ba0ce07d21b6270c517",
+        "name": "Domino's Pizza",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 682,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109745865935462401491/photos\">Domino&#39;s Pizza</a>"
+                ],
+                "photo_reference": "CmRaAAAAzXMMVbsO0j7-_T3wvzkUj-q1Jm3_W6VWkJBr5pN32PkAfQABRLSuOmxILHqb6XGqVKTBX8rdJ34b4lnkkoyh028RvCYBUXJS3LTQVCy6KjuG5XMIs55KxrBxwOY1io9bEhD_KEEolLBfgDsoBSgI5bV3GhTzcxM-L9v3-oRJxdiS20Cg1l0miQ",
+                "width": 1024
+            }
+        ],
+        "place_id": "ChIJLye0dwW4XIYRHFTGiMqYm1s",
+        "price_level": 1,
+        "rating": 3.4,
+        "reference": "CmRbAAAAr9sSKLk-z9rxW9UfHamMJZhKuMa7-3ybWaEoGOvoC3h8B9vlnHCxLb6zptKzESB8NxvDLBY9MgJEAV-YVT7jhbGxDpDS_En2wu5DYlc1i55f1d6BiDVnytkRpG8W9hamEhDSJjCkcv06r5C2pspkT14hGhQ4xFs-37ANByHyFFAhv2Mt_h8DRQ",
+        "types": [
+            "meal_delivery",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "1425 E Court St, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.56807969999999,
+                "lng": -97.9440079
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.56942952989272,
+                    "lng": -97.94265807010727
+                },
+                "southwest": {
+                    "lat": 29.56672987010727,
+                    "lng": -97.94535772989272
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+        "id": "bb1a85839e1812b5f5b65071b6b44d6b61d086bb",
+        "name": "Papa John's Pizza",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 608,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109811654535991440192/photos\">Papa John&#39;s Pizza</a>"
+                ],
+                "photo_reference": "CmRaAAAAF0XolqdeLXZxZp5u6DNMwlO_ooliysnETMXtBmwFuey8EOz7OhjGpah-zCJN3LTsR2R8E7aoeaYqIT1f1V2GFTNCGD3MiK94KerzB_oawPOQWMBalYLIR75XxmNQa4QOEhCBQmzpDKGfu57L8rsk5_6cGhTEu09BGcqlecyiSTtQxEsCSVCEhw",
+                "width": 1080
+            }
+        ],
+        "place_id": "ChIJE1juo-63XIYRPE-GQpJk3dY",
+        "rating": 3.5,
+        "reference": "CmRbAAAAJy-pueweSw7d1Fpp7QKtYnPX5JHmumTDgiq2dGbh0owEe-kQFWYS4VI0uqN63JbHJA2hqPaYa1BuUas4bkWqcdnWpp0ScuxQoHH7lzJ02K0-EaysdstE6TQ4JQo_l3JvEhA-n0_Rj35GGa96V_oep6tfGhSz_-vc1XSzeXYbxQwtV1J1aO7x9Q",
+        "types": [
+            "meal_delivery",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "3003 TX-123, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.6024902,
+                "lng": -97.95176939999999
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.60362177989272,
+                    "lng": -97.95075542010727
+                },
+                "southwest": {
+                    "lat": 29.60092212010728,
+                    "lng": -97.95345507989272
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "d5378a9b7a3c246806c6ac135a007e755cd2da73",
+        "name": "Giuseppe's Italian Grill",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103579162125491023834/photos\">whiskey jiro</a>"
+                ],
+                "photo_reference": "CmRaAAAA1C5ntDIrM08CZ7Wc2wYVEkMAha7hWbvdiClL_2lJziLsUdu7A5q6tc3OWm-LJRVzTnHfu7cn9iSOw8I87amAbBLugpvtZHaBnS_sqKNf4E8RnW4oJ5cibb8Bu9_Rpvd2EhCom3MwcklpzXP4K_NtofcGGhS9b0ZCelN9FuocrP1BIRZa4RwypA",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJ8eEpfXm3XIYRaRkUYuIfRU0",
+        "rating": 4.3,
+        "reference": "CmRbAAAAvU3lp4DhEfCxKQ5WJaMuG4M4roL4Yj-QL74ACYWa7o2ZboNfjd4h9ArsNtLXiHYrWIR2vrMGObkD0AqfLMteRRtrMPWM1qracVUUG9Qq6bwecwyiU1V14uKpBoN7XVdrEhCNhvyb3G3AKxcIW4kZDuEJGhRNyjQsLy7VujOTa42NsFtoFUV-NQ",
+        "types": [
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "330 N Hwy 123 Bypass, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.5713987,
+                "lng": -97.94147050000001
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.57275477989272,
+                    "lng": -97.93996197010728
+                },
+                "southwest": {
+                    "lat": 29.57005512010728,
+                    "lng": -97.94266162989273
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "d14bc46fffe0e6b1f19c5ced46eebafcb6c5e848",
+        "name": "Schlotzsky's",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 600,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100392348869347747828/photos\">Schlotzsky&#39;s</a>"
+                ],
+                "photo_reference": "CmRaAAAAKC08dyiFK92Ke1BOfe5CNOWj0GRTPe2nBIFI90EO-yRblR06Of11Bc29MjrxMLXmczBw3V7SoxAjVNQPcfeWwZkQj0O-2q7eUam5saGHhXizLbojQRW5NBBXyT5wIic-EhB40-2yOEluF1c_LvoKBvbWGhTFTjo_GwtC7RN122d-1gsal7o7hQ",
+                "width": 600
+            }
+        ],
+        "place_id": "ChIJ760yf3m3XIYRNZWtejGly-M",
+        "price_level": 2,
+        "rating": 3.9,
+        "reference": "CmRbAAAAqbvy5n0w23DuPG2GSjH_tyEUfKIfJr19TE4fZt8VF_elgHErAPr6_yq2PNcvRD4EtCwQi8grCbZi6QX0qJy_hiP7x7GvQk1ncTQKvQKwma83NTwrC-zwGIVwj0lNkyClEhB3xt4yIDYRfWu79E1FoBEmGhS3Ac1XO8qdyYBbUlPmVoPNn4MaNw",
+        "types": [
+            "bakery",
+            "store",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "594 N Hwy 123 Bypass, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.564327,
+                "lng": -97.9423351
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.56557192989272,
+                    "lng": -97.94070232010728
+                },
+                "southwest": {
+                    "lat": 29.56287227010728,
+                    "lng": -97.94340197989271
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "bd0c6f5d743f68f38a27c96b9b4f2a9d78df6fbf",
+        "name": "Pizza Hut",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 1440,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110368420489671355590/photos\">Lauren deVries</a>"
+                ],
+                "photo_reference": "CmRaAAAA6T3JpI3FPsxEPD_1IpXpQil2cRFATtBWRecy28AoRc85Hm17633cepDKBk8pZyP3_Z6DEa4u19MMUzfJ13z-8ZFyiOd8ZKq41raqJ239ae6Qbw678-_Ny61Sw5kRUlSyEhCy512IsscP2Jxft9M-Ys4uGhTIhS4oSueTz-3upGyFpZIxTnOLOA",
+                "width": 2560
+            }
+        ],
+        "place_id": "ChIJE38oGum3XIYRU7M6Dn7weDc",
+        "price_level": 1,
+        "rating": 3.3,
+        "reference": "CmRbAAAA8-1YwXm22F-vx5KMyqR3mPRaQkMPDfsiD8aIcPQb4TmwtT-9cshXRM0fQHnIGLq_gkRNpEQYmrwUZklc-93QkqqyQqT1JecNkqFZhr7wEns9Gy3eA66QRfYJmfhixkWqEhChvnKFPSL2g3liJp5E1hAeGhR6JkiB9HbNT-QEV6iKzMh9IoYnGA",
+        "types": [
+            "meal_delivery",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "890 Interstate 35 Frontage Rd, New Braunfels, TX 78130, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.697636,
+                "lng": -98.09828499999999
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.69882312989272,
+                    "lng": -98.09679742010728
+                },
+                "southwest": {
+                    "lat": 29.69612347010728,
+                    "lng": -98.09949707989273
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "f588a9ebec2774d0992f6fd3a254c6250640ea2b",
+        "name": "Pizza Hut",
+        "opening_hours": {
+            "open_now": true,
+            "weekday_text": []
+        },
+        "photos": [
+            {
+                "height": 2432,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112244133622269603577/photos\">Mark Dandridge</a>"
+                ],
+                "photo_reference": "CmRaAAAAIL0hH7x1Q4yneN0OgWMwIahApXOUomSH8r0j0clI3WFX4D6jfC7yxxRp_0Q-LtcfQOWG2UzVSmGj05iocWbIl64wgpUdEnPXWBWi_1loQID7aIMqofCcWNfZi5i7ELRYEhD44xvMUDwUHRmMCHQQgfTxGhRxKNP54DoGmQvflIl4wSDeBS3ITg",
+                "width": 4320
+            }
+        ],
+        "place_id": "ChIJVStffxm9XIYRdR_m2D9wKF4",
+        "price_level": 1,
+        "rating": 2.3,
+        "reference": "CmRbAAAAmJTFmdD0tEJPXrY9qw-2jP1AXnIW3O7IweI_mrdBpfssfZHaxRtWYcVFE2__ukbInnbGm8O6afz2B6on9jPTH5ogTxy-DsmzcrxsUVPtnOjITHHwRSEMvNRpygqGruG8EhAFvGAvJ9ChMzXb2UZvkdIEGhQrZbbcgKEQSn6X3RQ0VDY3l2fGAQ",
+        "types": [
+            "meal_delivery",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "135 Creekside Way, New Braunfels, TX 78130, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.731598,
+                "lng": -98.073363
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.73239797989272,
+                    "lng": -98.07267595000002
+                },
+                "southwest": {
+                    "lat": 29.72969832010727,
+                    "lng": -98.07542414999999
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "095fadbf4ee73347025c74e77ed43b9318f1511c",
+        "name": "Pizza Hut Express",
+        "photos": [
+            {
+                "height": 900,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116837380640714863843/photos\">Pizza Hut Express</a>"
+                ],
+                "photo_reference": "CmRaAAAASi8uJGbXfA3w9yOwxyTSBkBVtSkZn71C8sw5EQEe8R-9EVJwI_ONxYMKHSquPqAUEjhZQXVAKT5lVCYhkA8o9ZJz0BVEHsJTBobo0z4e4FXbeoYYHVrzLr6yPOi8Ird-EhBto4Maj_ao8fuYK2R0LWyoGhQjeFXit-BjlVs5DZAB95ZLU1QHPg",
+                "width": 1600
+            }
+        ],
+        "place_id": "ChIJTy1mcTSjXIYRwDahy6R0Odg",
+        "price_level": 1,
+        "reference": "CmRbAAAAA3nSeQ7_iODHR7rfXI1yrw9SNOyR_e09h6gLWqRxjkXIXLbo413aoOtMtr6d4iOmwVqjeGGoND7fQ2FI0u-L1UZesT8wapL38qOhkm8gSehpPogNngsJ2TdLDaJXgEgREhCGzaCI1sjV-9M4Mh1QCL9UGhQ2SHS2HbJ9Y_OBgiGfS7fUJpRxjw",
+        "types": [
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "1006 E Kingsbury St, Seguin, TX 78155, USA",
+        "geometry": {
+            "location": {
+                "lat": 29.5810121,
+                "lng": -97.9522238
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 29.58237607989272,
+                    "lng": -97.95087422010727
+                },
+                "southwest": {
+                    "lat": 29.57967642010728,
+                    "lng": -97.95357387989272
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "d2c42f884823d054749e4a1805aa6f886f8556de",
+        "name": "Pizza Hut",
+        "permanently_closed": true,
+        "place_id": "ChIJHzPIlI63XIYRk8qMQjHacPA",
+        "reference": "CmRbAAAAZWjwPUQ-e7y-7mYmdX9ZKINzXrdb-OYdGZe7OVAllcSl10yd8a33m1VPqQ29ykcL6J8oQNZh_sYJGFb7dP4V-CqnEjESQ3J2i255Z8lHDXmneCcjB5Z_geTjD4W9ZLjSEhDypRjd2LMiBesNVoYHJko8GhRRwK-5zuXIbERo_Uz3gjgq9m7-8g",
+        "types": [
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    }
+]

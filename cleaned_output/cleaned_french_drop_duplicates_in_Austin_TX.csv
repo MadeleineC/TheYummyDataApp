@@ -1,0 +1,159 @@
+,Address,Google_ID,Latitude,Longitude,Name,Price_Level,Rating,Zip,City_State_Cuisine
+0,"1501 S 1st St, Austin, TX 78704, USA",e6f8fc91656eeded19fd8c052ea5b527a7737b30,30.249786699999998,-97.7546566,Elizabeth Street Cafe,3.0,4.3,78704,austin-tx-french
+1,"1207 S 1st St, Austin, TX 78704, USA",7ec20c2b0b06aefc84c4918baff9699273280dc2,30.25184699999999,-97.753896,Saperlipopette! (French Crepes),0.0,5.0,78704,austin-tx-french
+2,"88 1/2 Rainey St, Austin, TX 78701, USA",b6b67516fe35e735ba67bd8537b9dbab51b10cfd,30.2599125,-97.7385167,L'estelle House,0.0,4.5,78701,austin-tx-french
+3,"200 San Jacinto Blvd A, Austin, TX 78701, USA",9a48a73ea45302d15fff6e039dabc100867517d7,30.263978100000003,-97.7419046,Le Café Crêpe,1.0,4.3,78701,austin-tx-french
+4,"110 San Antonio St, Austin, TX 78701, USA",6a9c702ac129afd0c82fd0bc8a3eccd4b57f0e9a,30.2655157,-97.74925960000002,Le Politique,3.0,4.3,78701,austin-tx-french
+5,"510 Neches St, Austin, TX 78701, USA",23b06c5ec5929d98a06616c7dba96705f21f9c2c,30.26646599999999,-97.738595,Chez Nous,2.0,4.4,78701,austin-tx-french
+6,"208 W 4th St, Austin, TX 78701, USA",6297659079f769760dbe55ad676c44fd2c4f5a4c,30.266927000000003,-97.745172,Péché,0.0,4.5,78701,austin-tx-french
+7,"1115 E 11th St, Austin, TX 78702, USA",01779708fb644f5d4bbd8b43bbd47bd16cbaff18,30.268849300000003,-97.7287307,Blue Dahlia Bistro,2.0,4.6,78702,austin-tx-french
+8,"4710 E 5th St, Austin, TX 78702, USA",553fd31c1eaeda0a770d0f910279c7d7b3620d28,30.253234499999998,-97.7005786,Justine's,2.0,4.5,78702,austin-tx-french
+9,"3663 Bee Caves Rd, West Lake Hills, TX 78746, USA",a29ca6c5d703133dc5345541efbb7fc4192eac65,30.27851279999999,-97.8077332,Blue Dahlia Bistro,0.0,4.5,78746,austin-tx-french
+10,"3110 Guadalupe St, Austin, TX 78705, USA",f25416306688afad6e25088e4cd70e90fc67463a,30.298444,-97.74124700000002,Hopfields,1.0,4.5,78705,austin-tx-french
+11,"5350 Burnet Rd, Austin, TX 78756, USA",0d6fb7db6d7f7b3a51e2537495292cef5ec38b0e,30.32785849999999,-97.7400318,Bonhomie,2.0,4.4,78756,austin-tx-french
+12,"9828 Great Hills Trail #650, Austin, TX 78759, USA",4ce50257ef032506d4e9c109f8ade04e99239e36,30.395688,-97.747197,la Madeleine French Bakery & Café,2.0,4.1,78759,austin-tx-french
+13,"3120 Palm Way #150, Austin, TX 78758, USA",33d7b19918200c6e3cda86073c8daaa5ff19f510,30.402966600000003,-97.7214036,Toulouse Domain,2.0,4.5,78758,austin-tx-french
+14,"13000 I-35 #600, Austin, TX 78753, USA",70c35a7f16bc464ff76854875104d3d54f2c7579,30.4120248,-97.675874,French Quarter Grille,2.0,4.6,78753,austin-tx-french
+15,"509 Hearn St, Austin, TX 78703, USA",543c7c7714b982c9933ba52bdaf265077870f3e8,30.2789376,-97.7726218,Fabi + Rosi,2.0,4.7,78703,austin-tx-french
+16,"2323 S Lamar Blvd, Austin, TX 78704, USA",eb14e56ee854f8b28f6e9cde4ca7ebe1d1d43a65,30.246815299999998,-97.7767178,French Tex Cuisine,0.0,3.8,78704,austin-tx-french
+17,"10515 N. Mopac Expy. NB, Austin, TX 78758, United States",7d05a62619daa7ddd8b26167fa262db5d5d0d7b1,30.3858728,-97.73429,Mimi's Cafe,2.0,3.9,78758,austin-tx-french
+18,"12613 Galleria Pkwy, Bee Cave, TX 78738, USA",d3a09429e9ef88ebbb677de409cbe0cb3e4553fe,30.306859000000003,-97.9382097,Mimi's Cafe,2.0,3.6,78738,austin-tx-french
+19,"2900 Rio Grande St, Austin, TX 78705, USA",a6ceb0c9f5ab9295b1effc98431c98e5dc54b529,30.2961344,-97.74406970000001,Texas French Bread,2.0,4.3,78705,austin-tx-french
+20,"504 Trinity St, Austin, TX 78701, USA",55559b322cab8a2eec450c2c31d69c83a053d211,30.2666002,-97.7396714,Old Pecan Street Cafe,0.0,4.2,78701,austin-tx-french
+21,"101-153 W 3rd St, Austin, TX 78701, USA",f3d572f8f1e31169a9b725c13a6ef9a5f73709ab,30.265214299999997,-97.7439698,French Food trailer,0.0,0.0,78701,austin-tx-french
+22,"1204 W Lynn St, Austin, TX 78703, USA",c788965846671011efb94c299626b90e2b1ba256,30.280423,-97.7591146,Jeffrey's,3.0,4.3,78703,austin-tx-french
+23,"1014 N Lamar Blvd, Austin, TX 78703, USA",7f1ae4798e54595a4dd1cc20e9c5baa1a544b1eb,30.2757662,-97.7524833,Wink,3.0,4.3,78703,austin-tx-french
+24,"2304 Lake Austin Blvd, Austin, TX 78703, USA",e20cd08b659050cfe07943b4792422483730c3e3,30.278007399999996,-97.7716588,Magnolia Cafe,2.0,4.3,78703,austin-tx-french
+25,"2608 W 7th St, Austin, TX 78703, USA",5cbbcd9851f7021c65f23e10800f07d4e91e6d1a,30.2828118,-97.77566790000002,Maudie's Cafe,2.0,4.0,78703,austin-tx-french
+26,"107 E Hopkins St, San Marcos, TX 78666, USA",fdebd0d7c904ee7d685473aa4049887db446e9a4,29.8833403,-97.9412051,Blue Dahlia Bistro,0.0,4.6,78666,austin-tx-french
+27,"1000 W Lynn St, Austin, TX 78703, USA",62b83987eb0f7dd7b728188a2998d7b11db72cbd,30.2793876,-97.7600875,Galaxy Cafe,1.0,4.3,78703,austin-tx-french
+28,"1213 W Lynn St, Austin, TX 78703, USA",9127aa83a1083fa33cb3bffc8301ad0e5fb5466a,30.2805885,-97.7585196,Cipollina,2.0,4.2,78703,austin-tx-french
+29,"1200 W 6th St, Austin, TX 78703, USA",d3fa84be5e4f1aac69ff4da1019f759731492549,30.27321,-97.7572679,Café Josie,3.0,4.4,78703,austin-tx-french
+30,"1503 W 35th St, Austin, TX 78703, USA",f7792ad624498e68ff649fd5c1d21d48c72b5c5a,30.30606449999999,-97.7497685,Tiny Boxwoods Austin,2.0,4.4,78703,austin-tx-french
+31,"600 N Lamar Blvd, Austin, TX 78703, USA",f437bc994aebf94277cab3ca0c57c50dec90c632,30.271964,-97.75426,24 Diner,2.0,4.3,78703,austin-tx-french
+32,"1611 W 5th St #175, Austin, TX 78703, USA",010590c588869cddaf189d8b943e4965ff94b2b3,30.2736923,-97.763685,Lucky's Puccias,1.0,4.7,78703,austin-tx-french
+33,"3411 Glenview Ave, Austin, TX 78703, USA",b52b01a26371565dd3c1b6471bd75e9d0018fda0,30.307260999999997,-97.75111700000001,Olive & June,0.0,4.3,78703,austin-tx-french
+34,"1110 W 6th St, Austin, TX 78703, USA",34ff2538385f0def97a86cf4f1d8643dc5b9fac2,30.2726058,-97.7560511,Z'Tejas,0.0,4.0,78703,austin-tx-french
+35,"626 N Lamar Blvd, Austin, TX 78703, USA",b493e30ecf74b8e2e27cfbed0893f9c5fd776b80,30.272582300000003,-97.7536696,Counter Cafe,2.0,4.4,78703,austin-tx-french
+36,"1624 W 5th St, Austin, TX 78703, USA",5463e62622f8625946cd4bc1ce01ad75ada409c8,30.2749658,-97.764602,El Arroyo,2.0,3.8,78703,austin-tx-french
+37,"1401 W 6th St, Austin, TX 78703, USA",a9c294ff31699c1a78526692bad8ee8fe5d8b579,30.2738148,-97.760419,Nightcap,3.0,4.4,78703,austin-tx-french
+38,"1115 W Lynn St, Austin, TX 78703, USA",bd8b5b332c0870eac7fd1d77571d233d7ad276e8,30.279978000000003,-97.759069,Nau's Enfield Drug,1.0,4.2,78703,austin-tx-french
+39,"507 Pressler St, Austin, TX 78703, USA",a522576d0abce0195adecb5413b16fd246f8c4c1,30.272807899999997,-97.7606053,TNT Tacos and Tequila,0.0,4.1,78703,austin-tx-french
+40,"909 N Lamar Blvd, Austin, TX 78703, USA",57be21a7b9a9f1592c25af614d7367e7723f479b,30.2742337,-97.7523151,Shoal Creek Saloon,2.0,4.2,78703,austin-tx-french
+41,"3110 Windsor Rd, Austin, TX 78703, USA",ebbed199c917a2799ab49d9d448bc0bc575c6596,30.296735499999997,-97.767646,The Beer Plant,2.0,4.6,78703,austin-tx-french
+42,"807 W 6th St, Austin, TX 78703, USA",3ece3985268975052c6ce7ba4261f4271ef795b5,30.270290000000003,-97.7511795,Hut's Hamburgers,1.0,4.2,78703,austin-tx-french
+43,"3825 Lake Austin Blvd, Austin, TX 78703, USA",089c479b0873d939fccceb07479af54e6816e7b6,30.2946928,-97.7844186,Hula Hut,2.0,4.1,78703,austin-tx-french
+44,"817 W 5th St, Austin, TX 78703, USA",b02c02026510255d803e425da0ecbac27bfdf5df,30.26950149999999,-97.7529228,Austin's Habibi,1.0,4.0,78703,austin-tx-french
+45,"2401 Lake Austin Blvd, Austin, TX 78703, USA",6205787f842849458894efdfb03c2fa408de4d33,30.27788439999999,-97.7729907,68 Degrees Kitchen,2.0,4.2,78703,austin-tx-french
+46,"817 W 5th St, Austin, TX 78703, USA",222a78830f60a1fa777808f309ea11a127cfbfce,30.269527500000002,-97.75271640000001,Super Burrito,1.0,3.8,78703,austin-tx-french
+47,"1600 S Congress Ave, Austin, TX 78704, USA",016072d455aa671066ace4bc6c5e393de65db5dc,30.2479233,-97.7506357,South Congress Cafe,0.0,4.4,78704,austin-tx-french
+48,"1100 S Lamar Blvd #2140, Austin, TX 78704, USA",73ff6bf18351136abad9fb902adebd4d5fbf1804,30.256063,-97.76295490000001,VOX Table,3.0,4.5,78704,austin-tx-french
+49,"5493 Brodie Ln, Austin, TX 78745, USA",71218a103aa3e465cc6cdc8ff04eeaf53bcfd235,30.2295596,-97.81946500000001,la Madeleine French Bakery & Café,0.0,4.2,78745,austin-tx-french
+50,"1201 Barbara Jordan Blvd., Building 11, Austin, TX 78723, United States",df5bd024db491645f4f55874cdda08398ab07290,30.306327000000003,-97.709097,la Madeleine French Bakery & Café,0.0,4.2,78723,austin-tx-french
+51,"2307 Hancock Dr, Austin, TX 78756, USA",da676b2216c6e1d0cbe7477520bec371c94d9137,30.324515100000003,-97.7436756,epicerie,2.0,4.4,78756,austin-tx-french
+52,"7913 Finch Trail, Austin, TX 78745, USA",18b52159f7f8ddb78a0b399c1168d4de77713fb9,30.198,-97.8239288,French Tex Cuisine,0.0,0.0,78745,austin-tx-french
+53,"3003 S Lamar Blvd, Austin, TX 78704, USA",e09c8023e82ff64dea088ae4c41a3939afb218b2,30.242292,-97.783233,Kerbey Lane Cafe,1.0,4.3,78704,austin-tx-french
+54,"404 S Lamar Blvd, Austin, TX 78704, USA",ed2a4dd43f29c741bfdc2a1e32dedd15495bdf44,30.261603000000004,-97.758576,P. Terry's Burger Stand,1.0,4.3,78704,austin-tx-french
+55,"14028 US-183 #230, Austin, TX 78717, USA",0601908a5405abb9a295494c87befba8a516caf6,30.4760647,-97.80371240000001,la Madeleine French Bakery & Café,0.0,4.1,78717,austin-tx-french
+56,"4206 Duval St, Austin, TX 78751, USA",3cc4658d8ffe74b4a0a248b093638a76562af64f,30.304203499999996,-97.7266663,Hyde Park Bar & Grill,0.0,4.2,78751,austin-tx-french
+57,"1500 Barton Springs Rd, Austin, TX 78704, USA",03f0c8d509e440f1240bf813702967d6eeebcaf0,30.261848800000003,-97.76006770000001,Juliet Italian Kitchen,3.0,4.3,78704,austin-tx-french
+58,"1807 S 1st St, Austin, TX 78704, USA",2d9378243bcd8f72266c787a24c1a6c14a78c4a0,30.2468497,-97.7558562,LENOIR,4.0,4.5,78704,austin-tx-french
+59,"515 Congress Ave #130, Austin, TX 78701, USA",a4a2966c7298bb435826a644accacf99d7bce563,30.267832399999996,-97.74248259999999,P. Terry's Burger Stand,0.0,4.4,78701,austin-tx-french
+60,"1800 E Oltorf St, Austin, TX 78741, USA",3e3b156e3046c249369b668216a0b2155d7f5eeb,30.23228569999999,-97.73630740000002,P. Terry's Burger Stand,0.0,4.4,78741,austin-tx-french
+61,"5406 Balcones Dr, Austin, TX 78731, USA",54b382863647e1b30d4857d0bfef6f75c2e492a1,30.336684,-97.75796290000001,Chez Zee American Bistro,3.0,4.2,78731,austin-tx-french
+62,"2043 S Lamar Blvd, Austin, TX 78704, USA",6bcd0b61da13b41421b011c0bd0c098ac8c6ba1e,30.248293699999998,-97.7693648,Lucy's on the Fly,1.0,4.1,78704,austin-tx-french
+63,"2218 College Ave, Austin, TX 78704, USA",1de0d3e2f104f68ebd129f7681080988a708e8d8,30.24051799999999,-97.75344399999999,Lucy's Fried Chicken,2.0,4.3,78704,austin-tx-french
+64,"4308 Manchaca Rd, Austin, TX 78704, USA",959f33c3019a16d4225ebfa166d6bae400cf55fd,30.230770399999997,-97.7882677,Dan's Hamburgers,1.0,4.6,78704,austin-tx-french
+65,"1920 S Congress Ave, Austin, TX 78704, USA",576903b6cd5a750bc5d5547b91783798758924fd,30.244473,-97.75194870000001,Magnolia Cafe,1.0,4.3,78704,austin-tx-french
+66,"1716 S Congress Ave, Austin, TX 78704, USA",ef7161b203bf45531aad4c3ba3cf6c0ad1aa0f32,30.2464881,-97.7511725,Auguste & Marcel Wine Bar,1.0,4.3,78704,austin-tx-french
+67,"3303 N Lamar Blvd, Austin, TX 78705, USA",bd3ab02e1985232fae1d969ca43f463acd3215fe,30.3017534,-97.74499420000001,P. Terry's Burger Stand,1.0,4.4,78705,austin-tx-french
+68,"1603 S Congress Ave, Austin, TX 78704, USA",17111c784f3abbab871744b8f34d13361520a351,30.247730999999998,-97.750156,Central Standard,3.0,4.3,78704,austin-tx-french
+69,"801 South Lamar￼ ￼Boulevard, Austin, TX 78704, USA",d406336bcb87fa68ff9203fcda2821759b1ead61,30.257513800000005,-97.7597713,Uchi,3.0,4.6,78704,austin-tx-french
+70,"1722 S Congress Ave, Austin, TX 78704, USA",27fe3bd2db86c84228e2f78e4b59d6b83d31fde3,30.2462863,-97.751199,June's,2.0,4.4,78704,austin-tx-french
+71,"4228 W William Cannon Dr, Austin, TX 78749, USA",4435f1fdc9788e31ae7c1b765c9d45194052fabb,30.222425,-97.838261,P. Terry's Burger Stand,1.0,4.4,78749,austin-tx-french
+72,"2201 College Ave, Austin, TX 78704, USA",08e9dee5b7af60317928b1dfa3da6c70d72f4a7f,30.241289000000002,-97.7520641,Vinaigrette,2.0,4.4,78704,austin-tx-french
+73,"1603 S Congress Ave, Austin, TX 78704, USA",36d503cfba90a0580b639dce0cb2fb11ed90badc,30.247111,-97.750424,Café No Sé,2.0,4.1,78704,austin-tx-french
+74,"1610 S Congress Ave, Austin, TX 78704, USA",817b8afbef0592346b4bbb72a41f55d9666f1470,30.247388800000003,-97.7507871,Vespaio,3.0,4.5,78704,austin-tx-french
+75,"301 W Riverside Dr, Austin, TX 78704, USA",e026cc49b1e6cec3645fe882eabee97c437f4c96,30.258387899999995,-97.74850759999998,Threadgill's,2.0,3.7,78704,austin-tx-french
+76,"615 S. Lamar, Austin, TX 78704, USA",463527e304c033e9a1bd710473bbe8ee50f8c759,30.258663800000004,-97.75888470000001,Eberly,2.0,4.4,78704,austin-tx-french
+77,"3300 Bee Caves Rd, Austin, TX 78746, USA",283fd5caa79ad69a787d7559a82cfb26de0efc1f,30.275189,-97.80054190000001,Jason's Deli,0.0,4.3,78746,austin-tx-french
+78,"2901 S Lamar Blvd, Austin, TX 78704, USA",733e212ff8525171985950bec52fb33043af144d,30.2430615,-97.7823613,Phil's Icehouse,1.0,4.4,78704,austin-tx-french
+79,"4101 Guadalupe St, Austin, TX 78751, USA",5274f4fbef362721a865aa1c973ba202889f5a08,30.3064538,-97.7356334,New World Deli,0.0,4.4,78751,austin-tx-french
+80,"5201 Airport Blvd, Austin, TX 78751, USA",64c9c95ff0cdce0f77df54a990a1a1baca9663f4,30.313105,-97.7147533,Sala and Betty,2.0,4.5,78751,austin-tx-french
+81,"1608 Barton Springs Rd, Austin, TX 78704, USA",0da2cda252b25990ddf3f07e08a9fae8c56c6967,30.262408,-97.76173100000001,Austin Java,2.0,4.0,78704,austin-tx-french
+82,"1624 Barton Springs Rd, Austin, TX 78704, USA",932f4861c796c7c8b7dce62e82cd3414441507b3,30.262788699999998,-97.76202629999999,Shady Grove,1.0,4.1,78704,austin-tx-french
+83,"3010 S Lamar Blvd, Austin, TX 78704, USA",bba9bb6eb1f48f14e7f57a49ab2b46c83fb3b4db,30.242948100000003,-97.783893,Wholly Cow Burgers,0.0,4.4,78704,austin-tx-french
+84,"7701 Broadway St # 20, San Antonio, TX 78209, USA",e1324b2b4cc3acaa8984a51ed8414f7a2b676957,29.499926300000002,-98.4674106,Frederick's Restaurant,3.0,4.4,78209,austin-tx-french
+85,"3421 W William Cannon Dr #127, Austin, TX 78745, USA",fd7505df944d5ba60e93223988d9672cd0ea4763,30.2126548,-97.8303471,Cafe Malta,2.0,4.3,78745,austin-tx-french
+86,"3600 Presidential Blvd, Austin, TX 78719, USA",f40674f73f6cfda9cca1443c4febb98809298e8f,30.201817,-97.6678979,Salt Lick,2.0,4.0,78719,austin-tx-french
+87,"4140 E 12th St, Austin, TX 78721, USA",8b83f519d865b54f13b24a70b94f0beb5075be7d,30.279217,-97.687117,Country Boyz Fixins LLC,1.0,4.5,78721,austin-tx-french
+88,"3210 E Martin Luther King Jr Blvd, Austin, TX 78721, USA",b891b5326b9aaef3f1ab2202fe3440ab96c9966b,30.28310189999999,-97.7029395,Whataburger,1.0,3.8,78721,austin-tx-french
+89,"2310 Manor Rd, Austin, TX 78722, USA",c8fef636363bfef6f1317eb2e46a7191224119b7,30.284823499999998,-97.7175856,Haymaker,1.0,4.2,78722,austin-tx-french
+90,"1917 Manor Rd, Austin, TX 78722, USA",481d9d4e930ced6b81493046f56b17eb6147adbb,30.2838137,-97.7212401,Salty Sow,3.0,4.6,78722,austin-tx-french
+91,"2201 Manor Rd, Austin, TX 78722, USA",7d10111b984312df90d9d490313855bfbca6c7de,30.284136699999998,-97.718928,Mi Madre's Restaurant,2.0,4.2,78722,austin-tx-french
+92,"2113 Manor Rd, Austin, TX 78722, USA",630cefe4a025c7fc3f2e613e89d5b90a09fcbdb9,30.283914000000003,-97.7194878,Eastside Café,2.0,4.4,78722,austin-tx-french
+93,"2406 Manor Rd, Austin, TX 78722, USA",bb4cc10a94b31dcf0946cc27df63610087e94902,30.284850399999996,-97.7167556,Dai Due,3.0,4.7,78722,austin-tx-french
+94,"4005 W Parmer Ln, Austin, TX 78727, USA",53285606fdc38d2101f027e8d3c6289786565993,30.425089899999996,-97.7161693,Silver Grill Cafe,2.0,3.7,78727,austin-tx-french
+95,"12709 N Mopac Expy, Austin, TX 78727, USA",23dff7b7220116ac9f7d60bf19b727ddcc01e211,30.423577,-97.70212190000001,Opal Divine's Marina,2.0,4.1,78727,austin-tx-french
+96,"12221 Riata Trace Pkwy, Austin, TX 78727, USA",ce613408e88adedae6e885a72bf0b7a5d4eac20c,30.428659000000003,-97.750265,Minh's Cafe,2.0,3.9,78727,austin-tx-french
+97,"6001 W Parmer Ln #440, Austin, TX 78727, USA",5931bb90aea37299b60fb2e7d79f9f79314336a2,30.4415787,-97.7455065,Cajun Pizza Place,2.0,4.3,78727,austin-tx-french
+98,"14735 Bratton Ln, Austin, TX 78728, USA",6436bf88fc44b712be3ef0fd5c38844c1b6ca8c1,30.4464333,-97.68582430000001,Garbo's,1.0,4.3,78728,austin-tx-french
+99,"14310 N Ih 35, Austin, TX 78728, USA",d958ccadd7665b544cb6cabfa3ccff9ec68b3577,30.4338292,-97.67075290000001,IHOP,1.0,3.6,78728,austin-tx-french
+100,"14611 MoPac Expy # 103, Austin, TX 78728, USA",b2b3077014d00f2e2cf6ca7be2ea0ca6ec1a10e9,30.4501272,-97.6947771,Ramos Restaurant III,1.0,4.4,78728,austin-tx-french
+101,"14735 Bratton Ln, Austin, TX 78728, USA",4a6390f25341ab7f6eb7f6304cb131b342956d52,30.446051500000003,-97.685363,Four Seasons Chinese Restaurant,2.0,3.8,78728,austin-tx-french
+102,"1779 Wells Branch Pkwy #102, Austin, TX 78728, USA",098d9ba02db6f68a24d51bb7bb311df1a263536a,30.435234,-97.674585,Godavari,0.0,3.9,78728,austin-tx-french
+103,"399 W Louis Henna Blvd c, Austin, TX 78728, USA",aaf953286b61f8c86e74870015b4374ed9b5173c,30.47901599999999,-97.678159,Pho Hoang Restaurant,2.0,4.4,78728,austin-tx-french
+104,"1779 Wells Branch Pkwy # 108, Austin, TX 78728, USA",dcc677cc3b7fa592e0b970cdda07608e3014e4e5,30.435199199999996,-97.67432480000001,El Faro,1.0,4.6,78728,austin-tx-french
+105,"13609 North I-35 Bldg 5, Austin, TX 78753, United States",0e7b390731a2e1f8a3737a8b5962c0c7af7532c9,30.421101,-97.6712449,Arby's,1.0,4.0,78753,austin-tx-french
+106,"1601 W 38th St Ste. 1, Austin, TX 78731, USA",4c4b70b08ee54e6a51f51eba1bbd6f7b3b652f46,30.308698200000002,-97.75045550000002,Russell's Bistro,0.0,4.4,78731,austin-tx-french
+107,"6203 N Capital of Texas Hwy, Austin, TX 78731, USA",7bb4ef3c571e0f971561ffab5035c2c386ac4976,30.36025,-97.788925,Siena Restaurant,2.0,4.1,78731,austin-tx-french
+108,"8012 Mesa Dr, Austin, TX 78731, USA",23fe6b89c62d082779304161532f883009ace1e9,30.370729200000003,-97.75855390000001,Mangia Pizza,2.0,4.0,78731,austin-tx-french
+109,"3435 Greystone Dr, Austin, TX 78731, USA",bc3d6a1ea1b6673035729f18ee716fe9a64ebd49,30.3573882,-97.74859079999999,Austin Terrier,2.0,4.3,78731,austin-tx-french
+110,"3407 Greystone Dr, Austin, TX 78731, USA",9d64be01b91f73c8eca5c26bea3a3bff79404ffb,30.3565863,-97.7475087,Chinatown,2.0,4.0,78731,austin-tx-french
+111,"3616 Far West Blvd #113, Austin, TX 78731, USA",f15c5258488a4be4cf6fd3bdbc6a1076d712a2c2,30.355009999999996,-97.755505,Saffron,2.0,4.3,78731,austin-tx-french
+112,"3573 Far West Blvd, Austin, TX 78731, USA",3ee3217e5ecc71d2237fe53ddb05f544cae69e39,30.353284000000002,-97.754926,Kneaded Pleasures Pizza Cafe,1.0,3.9,78731,austin-tx-french
+113,"3407 Greystone Dr, Austin, TX 78731, USA",72576d5763e7b1e745bd0760089ebfe3551bed99,30.3565863,-97.7475087,Street Restaurant,2.0,4.5,78731,austin-tx-french
+114,"5770 N Mopac Expy #500, Austin, TX 78731, USA",a7efc8afd52ffa869b07e44508f7ff0e3b7b871c,30.3392153,-97.7555662,ZuZu Handmade Mexican Food,2.0,4.1,78731,austin-tx-french
+115,"205 N Commons Ford Rd #2, Austin, TX 78733, USA",c09ccde3e39b2be3a2c34c9e71e2cd8d90261833,30.332983000000002,-97.885022,Ronnie's Real Food Bistro,0.0,4.7,78733,austin-tx-french
+116,"1803 Cuernavaca Dr N, Austin, TX 78733, USA",54a75b1d2869b6cb90a7c3ad1023baa53539885a,30.340658500000004,-97.8632898,M&H Music Cafe,0.0,5.0,78733,austin-tx-french
+117,"suite C108, 900 RR 620 S, Austin, TX 78738, United States",80b11f42b1ed5019a2bc09894fd7390ab508f4d2,30.355430100000003,-97.9617128,Artisan Bistro,2.0,4.5,78738,austin-tx-french
+118,"Austin, TX 78735, USA",9e9f323cc4ea022f344a4dac644b7683b30a9f71,30.2342837,-97.8764014,Jim's,2.0,4.2,78735,austin-tx-french
+119,"7720 TX-71, Austin, TX 78735, USA",987448870b1321e83c201d092556ab3329af624a,30.2435375,-97.8827662,Jack Allen's Kitchen Oak Hill,2.0,4.6,78735,austin-tx-french
+120,"9521 US-290 #100, Austin, TX 78737, USA",38ee230c09bfcc8149c70f2839e59a4bf2c93879,30.230309000000002,-97.934041,"Lox, Box & Barrel",1.0,4.5,78737,austin-tx-french
+121,"13059 Four Star Blvd, Austin, TX 78737, USA",dfe5f97c74e8fe13adefebfeaea7552caf61227e,30.204444800000005,-97.9842781,Trudy's Four Star,2.0,3.7,78737,austin-tx-french
+122,"12005 US-290, Austin, TX 78737, USA",62d69128ef439b5c4b1db54aa91c21987350d564,30.21068439999999,-97.9682475,Pieous,1.0,4.7,78737,austin-tx-french
+123,"3107, 13614 TX-71, Austin, TX 78738, United States",e629ac785814f961f7aa34a91cf935870f4d363e,30.308702500000003,-97.95311190000001,The Emerald Restaurant,3.0,4.4,78738,austin-tx-french
+124,"12800 Hill Country Blvd. Suite G-115, Bee Cave, TX 78738, United States",fcd18068ed57d0341f64162d14dd095ca23310ff,30.309362800000002,-97.9401394,Cafe Blue at Hill Country Galleria,2.0,4.1,78738,austin-tx-french
+125,"14439 NW Military Hwy #100, San Antonio, TX 78231, USA",24cb3190d188c483fafb3b67a23bda1931783579,29.574158500000003,-98.54448470000001,Frederick's Bistro,3.0,4.2,78231,austin-tx-french
+126,"4415 S IH 35 Frontage Rd, Austin, TX 78744, USA",11f5619d001395ccabd5c53f46b258e87a401b76,30.2109152,-97.753298,The Limestone Kitchen Restaurant & Lounge,0.0,3.2,78744,austin-tx-french
+127,"7709 E Ben White Blvd, Austin, TX 78744, USA",2bfb6e102610f54aead3b89fb344fe69960edcda,30.217777,-97.689705,Javi's Best Of Tex Mex,0.0,4.2,78744,austin-tx-french
+128,"4140 Governors Row, Austin, TX 78744, USA",9751df9330a4122d18d5b499bfbd0feb349c5107,30.214778000000003,-97.750443,Onion Creek Grill,0.0,4.2,78744,austin-tx-french
+129,"6315 S IH 35 Frontage Rd, Austin, TX 78744, USA",58bdc9142d686a4dd4baee079a8a6c3eae23e335,30.192935,-97.7674889,Applebee’s Grill + Bar,2.0,3.4,78744,austin-tx-french
+130,"4612 Burleson Rd, Austin, TX 78744, USA",6753819608ad7b02b69c569944abe4e9878031b8,30.212972999999998,-97.731309,Bella Donna Subs,0.0,4.6,78744,austin-tx-french
+131,"5310 S Pleasant Valley Rd, Austin, TX 78744, USA",04ab93dc8810340d29f05039e461c7d7b620f601,30.194588800000002,-97.7451895,La Placita,0.0,4.2,78744,austin-tx-french
+132,"8801 S IH 35 Frontage Rd, Austin, TX 78744, USA",9be0441992c4ce23a4fe4bea70bcf8f654d2d61c,30.1679107,-97.784059,IHOP,1.0,3.5,78744,austin-tx-french
+133,"2406 S Hwy 183, Austin, TX 78744, USA",87654ea89e11fe689f1aba6d2d13e102fccf0520,30.213302799999997,-97.6838299,AGAZAJO'S,0.0,4.2,78744,austin-tx-french
+134,"1931 E Ben White Blvd #300, Austin, TX 78741, USA",b9eb17dab1edbc2b1a046a224789b1330e44554c,30.2153724,-97.7448034,Asia,2.0,3.8,78741,austin-tx-french
+135,"6422 US-183, Austin, TX 78744, USA",4fbfb8f90c70aca182c63e15881f564c2de8b97c,30.1648154,-97.6935247,SUBWAY®Restaurants,1.0,3.8,78744,austin-tx-french
+136,"3100 US-183, Austin, TX 78744, USA",fc5feac4dd0e67af8f652595551cfe0a85f0b83c,30.204885700000002,-97.6837507,Taqueria Morelos,0.0,4.6,78744,austin-tx-french
+137,"8801 S IH 35 Frontage Rd, Austin, TX 78744, USA",17522651dcf2bcf905d04244da94d5469ae6dfb8,30.1698683,-97.78357240000001,Don Dario's Cantina,0.0,4.1,78744,austin-tx-french
+138,"9811 S IH 35 Frontage Rd, Austin, TX 78744, USA",b5083868e5c26cf81cf0374a08071553f76a343a,30.15813399999999,-97.789194,Chuck E. Cheese's,1.0,3.9,78744,austin-tx-french
+139,"1805 E William Cannon Dr, Austin, TX 78744, USA",e39f4a7eedeaec15aea5b31c892fb71a19d82fc3,30.1884623,-97.76685090000001,Sonic Drive-In,1.0,3.5,78744,austin-tx-french
+140,"5808 Burleson Rd, Austin, TX 78744, USA",6f2801ebf622bfe32cffd3c6d5cd5847291169f2,30.2079126,-97.7209307,El Mesón,1.0,4.0,78744,austin-tx-french
+141,"7809 E Ben White Blvd, Austin, TX 78744, USA",f610733e6b060209be74d1684a627c9ea5536bae,30.21842029999999,-97.688064,Waffle House,1.0,3.9,78744,austin-tx-french
+142,"2043 S Lamar Blvd, Austin, TX 78704, USA",dfd3648b54da195df2e26fc405b33a601fa1b8e9,30.248300800000003,-97.7693639,Olivia,3.0,3.9,78704,austin-tx-french
+143,"701 S Capital of Texas Hwy, West Lake Hills, TX 78746, USA",7f90594d552069e51e3099c86a264f30b27e81d9,30.2910405,-97.8266054,P. Terry's Burger Stand,1.0,4.2,78746,austin-tx-french
+144,"4301 W William Cannon Dr, Austin, TX 78749, USA",3033b648b855e91e4d07489239f15bbb3921fa20,30.2226219,-97.8413968,Kerbey Lane Cafe,1.0,4.3,78749,austin-tx-french
+145,"5701 W Slaughter Ln D, Austin, TX 78749, USA",fb33090c1984bf02e8de1b2276a21bc94050a112,30.2000418,-97.8679467,North by Northwest Restaurant & Brewery - Slaughter,0.0,4.2,78749,austin-tx-french
+146,"4404 W William Cannon Dr, Austin, TX 78749, USA",c148c2ac30d1d3defdf6447ed2860cca66370fb8,30.223836699999996,-97.8388578,Cypress Grill,2.0,4.5,78749,austin-tx-french
+147,"6001 W William Cannon Dr # 301, Austin, TX 78749, USA",5cd3f438aef14347555c0c01037291d2f881d40a,30.2284462,-97.8632991,Hecho En Mexico,2.0,4.4,78749,austin-tx-french
+148,"4301 W William Cannon Dr, Austin, TX 78749, USA",f14e5d754c47399635bfa56310d2eeeee33b5e27,30.2177657,-97.8415066,Chuy's,0.0,4.4,78749,austin-tx-french
+149,"4625 W William Cannon Dr, Austin, TX 78749, USA",bcda2b1e288cc7be84b8f0c1a9a36afbca9b250d,30.223070500000002,-97.84279790000001,Flores Mexican Restaurant,0.0,4.2,78749,austin-tx-french
+150,"6319 N Interstate 35, Austin, TX 78752, USA",22b99ae684340503005957bcbe1fcd94885fe4e6,30.325460999999997,-97.704852,Pappadeaux Seafood Kitchen,3.0,4.4,78752,austin-tx-french
+151,"2408 W Anderson Ln, Austin, TX 78757, USA",4928590da0a20a09b47edf7116d35003d349536a,30.3567169,-97.73124890000001,Bartlett's,2.0,4.3,78757,austin-tx-french
+152,"2900 W Anderson Ln, Austin, TX 78757, USA",f46445912f2a168e895de12d5e9f04880664d36d,30.359565999999997,-97.73560040000001,San Francisco Bakery & Café,2.0,4.4,78757,austin-tx-french
+153,"8515 Burnet Rd, Austin, TX 78757, USA",dada3e3821879ff8badd7846a65ef8b7ed014e5f,30.367065000000004,-97.72770200000001,P. Terry's Burger Stand,0.0,4.4,78757,austin-tx-french
+154,"2525 W Anderson Ln #130, Austin, TX 78757, USA",7146fd5cc7cc902e470f4ccec35bab914bc04bbd,30.354964600000002,-97.732935,McAlister's Deli,2.0,3.7,78757,austin-tx-french
+155,"6801 Burnet Rd, Austin, TX 78757, USA",74d41446b8ee42daedb7269a22c2c0db2df5a9dc,30.343898,-97.7379892,The Frisco Shop,2.0,4.2,78757,austin-tx-french
+156,"7525 Burnet Rd, Austin, TX 78757, USA",1c5762a85e4c5073a0b2796e411daa68481823ac,30.3511512,-97.7336,Top Notch Hamburgers,1.0,4.4,78757,austin-tx-french
+157,"7714 Burnet Rd, Austin, TX 78757, USA",5ed7cbf2d5c1204c0bb6637ecdec7051fdc4946e,30.354444,-97.731836,The Factory - Cafe with a Soul in Wild Chix & Waffles,1.0,4.3,78757,austin-tx-french

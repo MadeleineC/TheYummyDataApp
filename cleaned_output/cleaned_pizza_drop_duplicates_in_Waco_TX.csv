@@ -1,0 +1,78 @@
+,Address,Google_ID,Latitude,Longitude,Name,Price_Level,Rating,Zip,City_State_Cuisine
+0,"202 S University Parks Dr, Waco, TX 76701, USA",02133798c566e191a64a79e43206d1f1d086e61d,31.5590217,-97.12665820000001,Artisan Oven,0.0,5.0,76701,waco-tx-pizza
+1,"416 Franklin Ave, Waco, TX 76701, USA",32898098f0e64e43f4ab895da3df25432b3438bc,31.556098,-97.130387,Clay Pot Restaurant,2.0,4.0,76701,waco-tx-pizza
+2,"725 Austin Ave, Waco, TX 76708, USA",6947b32dd92e6eb2dda7d9dd2e67f93829ae8b04,31.5549064,-97.1343661,Portofino's,0.0,4.1,76708,waco-tx-pizza
+3,"919 S 6th St, Waco, TX 76706, USA",8ecf50f37c1091644c06f613a4f5f013f3c1e44c,31.548913300000002,-97.1249486,Fazoli's,1.0,4.0,76706,waco-tx-pizza
+4,"1201 Speight Ave, Waco, TX 76706, USA",5e868ca75610adf2040560e1f7987ee333f1c2a1,31.5398417,-97.1252252,Domino's Pizza,1.0,3.3,76706,waco-tx-pizza
+5,"1712 S 12th St, Waco, TX 76706, USA",3ef8b962a81f31ae0758c1beef82c1c3f174633f,31.5388475,-97.1229396,Shorty's Pizza Shack,2.0,4.6,76706,waco-tx-pizza
+6,"703 N Valley Mills Dr, Waco, TX 76710, USA",a8fadbffc20f090fead99504fc0c191d3b29ca9a,31.529881,-97.176995,Poppa Rollo's Pizza,2.0,4.4,76710,waco-tx-pizza
+7,"1609 N Valley Mills Dr, Waco, TX 76710, USA",ce727db5b7002dee11a539b3bd91e07ba5890d37,31.5323788,-97.1957056,Cicis,0.0,2.8,76710,waco-tx-pizza
+8,"4700 Bosque Blvd, Waco, TX 76710, USA",86d305ad6a1e15a69f1b4314840cd4be04b9e935,31.53582,-97.18641600000001,MOROSO Wood Fired Pizzeria,0.0,4.5,76710,waco-tx-pizza
+9,"720 S 7th St, Waco, TX 76706, USA",d1ac243db679d3c835a12ffb1500139db8e30032,31.5493124,-97.12617990000001,Papa John's Pizza,0.0,4.0,76706,waco-tx-pizza
+10,"904 N Valley Mills Dr, Waco, TX 76710, USA",a5bbc7aaf3082304bb114b0b768f0058626bff31,31.5297208,-97.1819319,Baris,2.0,4.6,76710,waco-tx-pizza
+11,"113 S University Parks Dr, Waco, TX 76701, USA",6d382e6c8c48b30b98c849b65ad7c0ca1da45dae,31.5596648,-97.129006,Brazos Grille at the Hilton Waco,0.0,5.0,76701,waco-tx-pizza
+12,"1111 S 8th St, Waco, TX 76706, USA",79932b9fc8d90d4f2b344970bb64a8d7a25b812e,31.546077,-97.124846,Pizza Hut,1.0,3.4,76706,waco-tx-pizza
+13,"1201 Hewitt Dr #214, Waco, TX 76712, USA",036e2480f18b00e4246793605407fd47c76232ff,31.4850413,-97.2118091,Poppa Rollo's Pizza - Hewitt Dr.,2.0,4.5,76712,waco-tx-pizza
+14,"1424 Washington Ave, Waco, TX 76701, USA",df4cbb0796ae9f041d268de1983eecae7e35278c,31.549460999999997,-97.141725,1424 Bistro,2.0,4.0,76701,waco-tx-pizza
+15,"1320 S Valley Mills Dr, Waco, TX 76711, USA",f077288b8048e6ac333995c5bf714d1a77e243d0,31.525936199999997,-97.1453635,Little Caesars Pizza,1.0,4.3,76711,waco-tx-pizza
+16,"824 Hewitt Dr, Waco, TX 76712, USA",7813d81556d694b810549839f2aeb5312d391b3e,31.490029999999997,-97.213045,Rosati's Pizza Sports Pub,3.0,4.1,76712,waco-tx-pizza
+17,"220 S 3rd St, Waco, TX 76701, USA",a2dc7043c62457612c13e9627b755cebb8e0ffbc,31.5572604,-97.1283118,Ninfa's Mexican Restaurant,2.0,3.9,76701,waco-tx-pizza
+18,"1412 N Valley Mills Dr #100, Waco, TX 76710, USA",bb59d597154208865d51d8f12d7c2a0227d75399,31.53090619999999,-97.19221359999999,Little Caesars Pizza,1.0,3.4,76710,waco-tx-pizza
+19,"929 Franklin Ave, Waco, TX 76701, USA",e32e683291eaef7025b2ca00d75a7a74dfbd9d8c,31.55205,-97.135692,Alpha Omega Grill & Bakery,0.0,4.6,76701,waco-tx-pizza
+20,"1517 Interstate 35 N, Ste 150, Bellmead, TX 76705, United States",1e2e3c827e102a7df1bcc69aa06a5621cf10c2a2,31.599963,-97.107502,Little Caesars Pizza,1.0,4.1,76705,waco-tx-pizza
+21,"A, 10324 China Spring Rd, Waco, TX 76708, United States",4bd6156cc3beea93aad726c317616b2e8e5b8175,31.6288432,-97.2428129,Marco's Pizza,2.0,4.3,76708,waco-tx-pizza
+22,"1428 Wooded Acres Dr Ste 130, Waco, TX 76710, USA",8bda7cf8496c4334a22c6233f8c5b29d8533c4bc,31.533171000000003,-97.1912384,Domino's Pizza,1.0,3.8,76710,waco-tx-pizza
+23,"5401 Bosque Blvd, Waco, TX 76710, USA",7dae59594b0ca8f37fce235dd9128a70429517dc,31.535040999999996,-97.193086,Pizza Hut Express,1.0,5.0,76710,waco-tx-pizza
+24,"626 N Valley Mills Dr, Waco, TX 76710, USA",0c596eecf37729bf8f2b80a1d981d72abbdc301e,31.52908399999999,-97.176562,Pizza Hut,1.0,3.6,76710,waco-tx-pizza
+25,"700 N Loop 340, Bellmead, TX 76705, United States",c389f07a769a18ba3b4cc4bfebbaed9fb6c13b52,31.603798100000002,-97.1005736,Domino's Pizza,1.0,4.3,76705,waco-tx-pizza
+26,"215 S 2nd St, Waco, TX 76701, USA",a1a1af8dbceb5f015b300ef4c15dd60eb0de29f8,31.557464000000003,-97.127699,Olive Branch Bakery & Cafe,2.0,3.7,76701,waco-tx-pizza
+27,"601 N Loop 340, Bellmead, TX 76705, United States",ff3ae0d99870d1ad9349db50095dc6ed33da7b76,31.602703,-97.099778,Pizza Hut,1.0,3.5,76705,waco-tx-pizza
+28,"1911 Franklin Ave, Waco, TX 76701, USA",4dde3c07ba719bb2be4d4ed041b054e19a5c78fd,31.544493699999997,-97.1442104,Lolita's Restaurante,2.0,4.3,76701,waco-tx-pizza
+29,"613 Austin Ave, Waco, TX 76701, USA",dd87d8a3c990cd8fbfb4aa96a28583e246e0e440,31.555849199999997,-97.13342840000001,Jake's Texas Tea House,0.0,4.4,76701,waco-tx-pizza
+30,"1520 Hewitt Dr, Waco, TX 76712, USA",723a4ef2298a3bec7f727f61bd5d245219082f19,31.4831733,-97.2080103,Domino's Pizza,1.0,3.3,76712,waco-tx-pizza
+31,"2716 W Loop 340, Waco, TX 76711, USA",9341a8cbdd66fd15f30a8e733bbdc25fd1d2e390,31.496297,-97.15538,Newk's Eatery,0.0,4.0,76711,waco-tx-pizza
+32,"203 N Hewitt Dr, Hewitt, TX 76643, USA",7825276d6d5696dff934b2f577d10c4491340870,31.465184000000004,-97.19894000000001,Pizza Hut,1.0,4.3,76643,waco-tx-pizza
+33,"10207 China Spring Rd, Waco, TX 76708, USA",9d947239725006c61b8a36450c1f67df232f8046,31.629754,-97.24045100000001,Pizza Hut,1.0,4.0,76708,waco-tx-pizza
+34,"1518 Evans Dr, Waco, TX 76704, USA",72dac99ee1d18117ca208cbf130e23abcddf241e,31.592982,-97.1265225,Swift P's JKP Pizza & Deli,0.0,0.0,76704,waco-tx-pizza
+35,"120 S New Rd, Waco, TX 76710, USA",220eb2818e1454192f58a37ce4ee690d2355ad95,31.521763,-97.167835,Peter Piper Pizza,0.0,4.1,76710,waco-tx-pizza
+36,"720 S 5th St #100, Waco, TX 76706, USA",47148266ee7e0fbc76a33329c108b3b35dffa608,31.551533000000003,-97.1248671,Pie Five Pizza Co.,0.0,4.3,76706,waco-tx-pizza
+37,"5929 W Waco Dr, Waco, TX 76710, USA",c5e3a7098d7bf1a18112423269e36ab6dae6a786,31.5137107,-97.18880820000001,BJ's Restaurant & Brewhouse,0.0,3.8,76710,waco-tx-pizza
+38,"901 N LOOP 340 Ste 4, Bellmead, TX 76705, USA",9d7d397981f0ca950636877d4fd7ab16c9e24aaf,31.6026749,-97.1032026,Cicis,0.0,3.4,76705,waco-tx-pizza
+39,"301 La Salle Ave B, Waco, TX 76706, USA",b7d681410feed12bcf166944ddba0b65b481a018,31.5421892,-97.11128559999999,pizza express,0.0,5.0,76706,waco-tx-pizza
+40,"160 N New Rd, Waco, TX 76710, USA",b5e9768f5a2b27ced0ad44561cc3965ab26537b5,31.524591100000002,-97.1715496,DoubleDave's Waco,2.0,4.2,76710,waco-tx-pizza
+41,"5201 W Waco Dr, Waco, TX 76710, USA",544191db6a37a8b7b368a840465ec3446730742b,31.5194898,-97.1810957,Fazoli's,1.0,4.1,76710,waco-tx-pizza
+42,"5106 W Waco Dr, Waco, TX 76710, USA",affbfe3e1d7348ae7cb4366f6eeefdf2ed44659d,31.518094,-97.17971700000001,Chuck E. Cheese's,2.0,3.9,76710,waco-tx-pizza
+43,"5201 Bosque Blvd, Waco, TX 76710, USA",ccbf8b86fe07d98b55eb10ab0cef43cd1322b6b7,31.53475,-97.191246,Pizza Patron,0.0,4.0,76710,waco-tx-pizza
+44,"705 New Dallas Hwy, Waco, TX 76705, USA",b5b3633c928e2f458d193bc84d916a9fc8143d90,31.607948999999998,-97.1110819,Mama Lena's Pizzas & Subs,0.0,3.0,76705,waco-tx-pizza
+45,"100 B Midway Center, Woodway, TX 76712, United States",cf7ffa3a8ac534ca6aad09c1087d4f8fd7d56013,31.4987271,-97.2197715,Marco's Pizza,2.0,4.5,76712,waco-tx-pizza
+46,"4641 Jack Kultgen Fwy, Waco, TX 76711, USA",a4ede9e28ac48135b1670634235738ff98477155,31.4978422,-97.1494687,Old Chicago Pizza and Taproom,0.0,3.8,76711,waco-tx-pizza
+47,"408-A N Valley Mills Dr, Waco, TX 76710, United States",ce4efa4e0bedcf35defdd149099f4433f99b2340,31.5269781,-97.16817270000001,Papa John's Pizza,0.0,4.5,76710,waco-tx-pizza
+48,"9901 China Spring Rd Ste A, Waco, TX 76708, USA",1a4cba13d0bb9c9338a4daca3fdbcb9a2332049a,31.6287196,-97.23526690000001,Domino's Pizza,1.0,3.6,76708,waco-tx-pizza
+49,"Interstate 35 N, 2518, 100 N Interstate 35 Frontage Rd, Waco, TX 76704, United States",693500adf6292e6cda258c6818f7473eb1965749,31.55837559999999,-97.11974040000001,Buzzard Billy's,2.0,4.0,76704,waco-tx-pizza
+50,"225 N Hewitt Dr, Hewitt, TX 76643, USA",715a6061622cf9ebcbd0e550eb67d77da71a662d,31.46602919999999,-97.1985205,Little Caesars Pizza,1.0,3.9,76643,waco-tx-pizza
+51,"621 N Valley Mills Dr, Waco, TX 76710, USA",1a6b37262585a7506c4c0265543fe6ba944929f4,31.529802,-97.175814,Schlotzsky's,2.0,4.3,76710,waco-tx-pizza
+52,"504 S Robinson Dr, Robinson, TX 76706, USA",fce62188503b8b4403c32b10435d2381592e6510,31.4663789,-97.11325620000001,Pizza Junction,0.0,4.5,76706,waco-tx-pizza
+53,"911 N Hewitt Dr, Hewitt, TX 76643, USA",3961432f0b56955dc77f34ed9bda2f5ee475f34d,31.479506199999996,-97.206979,Papa John's Pizza,0.0,3.8,76643,waco-tx-pizza
+54,"1000 Elm Ave, Waco, TX 76704, USA",240935aa73f8ca71c41c1d9bd0973da70c281d32,31.5694261,-97.1211786,Tony DeMaria's Bar-B-Que,1.0,4.6,76704,waco-tx-pizza
+55,"121 Garrison St, Waco, TX 76704, USA",d5e22d83203ddff36ddd216f43b9b985812e9348,31.5795875,-97.1206488,Swift P's Jkp Pizza & Deli Sandwiches,0.0,0.0,76704,waco-tx-pizza
+56,"3125 Bellmead Dr, Bellmead, TX 76705, USA",416d197b7e14cb2d2c06608ecbf7f4eddd492882,31.5904523,-97.09964620000001,Baris Express,0.0,4.7,76705,waco-tx-pizza
+57,"903 N Interstate 35 Frontage Rd #113, Bellmead, TX 76705, USA",ba4af84c59ee06a9b7ab932cfc665e0e0e8cd1a7,31.5882085,-97.1085499,Chopsticks,2.0,4.1,76705,waco-tx-pizza
+58,"1508 N Interstate 35 Frontage Rd, Waco, TX 76706, USA",ef6e292517aa96534c099f87873a8b7234ab1208,31.537414000000002,-97.128184,Schlotzsky's,2.0,4.3,76706,waco-tx-pizza
+59,"2601 S. Jack Kultgen Expressway, Waco, TX 76706, USA",f93994808446c096ce58c918fa8a5dcadfcda1b5,31.5263423,-97.1343537,Bubba's 33,0.0,4.4,76706,waco-tx-pizza
+60,"1121 Speight Ave, Waco, TX 76706, USA",4069b70dfade6972fb1ada95f4614a8a67ac967d,31.5402701,-97.124549,Terry & Jo's Food for Thought,2.0,4.1,76706,waco-tx-pizza
+61,"1700 S 5th St c, Waco, TX 76706, USA",987d0fc864f7c44a001ca0180de8ab7c48c86c05,31.5432042,-97.1162012,The Mix Cafe,0.0,4.6,76706,waco-tx-pizza
+62,"3315 Hillcrest Dr, Waco, TX 76708, USA",589a3ae48bac2e128e1f23fb3ecb8c81a9e8d88a,31.556623699999996,-97.1790892,Mama Lena's Pizzas & Subs,0.0,3.0,76708,waco-tx-pizza
+63,"4315 Lake Shore Dr, Waco, TX 76710, USA",ebe37cd5f008c437b3ba32c9528e42616b9f5a21,31.5633239,-97.1947717,"Chuck's Pizza, Pasta & Wings",2.0,4.3,76710,waco-tx-pizza
+64,"1901 N 18th St, Waco, TX 76707, USA",8526b35ff8dbcd4a085c3d61bd1c1076ba631cf0,31.562105199999998,-97.1582072,Olympic,0.0,4.3,76707,waco-tx-pizza
+65,"6001 W Waco Dr #109, Waco, TX 76710, United States",afa971bbc626caf9aed730dce4ca0d97d2fe9018,31.5164614,-97.1870234,Italia Express,0.0,5.0,76710,waco-tx-pizza
+66,"22002 Woodway Dr, Woodway, TX 76712, USA",8e185600664e94a3a5fc0e12278cb5f556f45aa0,31.4847973,-97.25688819999999,Tony's Pizza Services,2.0,0.0,76712,waco-tx-pizza
+67,"9901 China Spring Rd, Waco, TX 76708, USA",79828252d3c6c064f04eeda883c5a5932d2a6d12,31.6286956,-97.23522159999999,Heaven Sent Pizza Corporation LP,0.0,0.0,76708,waco-tx-pizza
+68,"723 N Valley Mills Dr, Waco, TX 76710, USA",0d4c3a263e8228905229e029c367f6630a0c16d5,31.529827,-97.1774725,Arby's,1.0,3.9,76710,waco-tx-pizza
+69,"1321 N 15th St, Waco, TX 76707, USA",b745887b85aaf82e365decc60d02c7f8ed7daabf,31.558984999999996,-97.150605,World Cup Cafe and Fair Trade Market,1.0,4.5,76707,waco-tx-pizza
+70,"1503 Colcord Ave, Waco, TX 76707, USA",f158e8801678242292225de10b31ebacd9f55750,31.559166100000002,-97.1511459,D's Mediterranean Grill,0.0,4.5,76707,waco-tx-pizza
+71,"Waco, TX 76706, USA",cada0cdf51dae3f8fd33ec8dda6358849595d9c0,31.5457048,-97.1244946,Westside Pizza,0.0,0.0,76706,waco-tx-pizza
+72,"5921 W Waco Dr, Waco, TX 76710, USA",75ebb096d8baf133ff675c644222198f6c12229c,31.514652,-97.187333,Olive Garden Italian Restaurant,2.0,4.1,76710,waco-tx-pizza
+73,"1800 S Valley Mills Dr, Waco, TX 76711, USA",0a83d709ff1e549c4c3470c521e4f40864084188,31.52520849999999,-97.1369778,Chili's Grill & Bar,1.0,3.9,76711,waco-tx-pizza
+74,"1810 S Valley Mills Dr, Waco, TX 76711, USA",861cf9bf6ca1ad530298e7c37492c545233899c6,31.525226300000003,-97.1365562,Zoës Kitchen,0.0,4.3,76711,waco-tx-pizza
+75,"5925 W Waco Dr, Waco, TX 76710, USA",244fbb2765516925c967a7b46bfc06a9c490178e,31.514011,-97.18807900000002,Red Lobster,1.0,4.2,76710,waco-tx-pizza
+76,"1727 S Valley Mills Dr, Waco, TX 76711, USA",af676d8125498ef0fb8957190baeb7c30ff3120e,31.524507300000003,-97.1393558,Pizza Patron,0.0,4.1,76711,waco-tx-pizza

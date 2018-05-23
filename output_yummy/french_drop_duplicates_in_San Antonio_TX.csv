@@ -1,0 +1,51 @@
+Address,ID(Google),Latitude,Longitude,Name,Price_Level(Google),Rating(Google),Zip
+"7701 Broadway St # 20, San Antonio, TX 78209, USA",e1324b2b4cc3acaa8984a51ed8414f7a2b676957,29.4999263,-98.4674106,Frederick's Restaurant,3.0,4.4,78209
+"14439 NW Military Hwy #100, San Antonio, TX 78231, USA",24cb3190d188c483fafb3b67a23bda1931783579,29.5741585,-98.5444847,Frederick's Bistro,3.0,4.2,78231
+"1012 S Presa St, San Antonio, TX 78210, USA",734896fd04fbcafba1cba492f057250cbc3db2a6,29.4103163,-98.48679750000001,Bite,2.0,4.6,78210
+"209 Broadway St, San Antonio, TX 78205, USA",80d7278a09e32d9aaeaa44ceb3526efad3eec827,29.4279569,-98.487763,Saveurs 209,3.0,4.3,78205
+"728 S Alamo St, San Antonio, TX 78205, USA",a8924a473d32023f6a2a2e6663e0c8011e9b8dc5,29.4163451,-98.4885394,La Frite Belgian Bistro,2.0,4.2,78205
+"1303 McCullough Ave # 110, San Antonio, TX 78212, USA",a371f33ea6c7af2cf4f5e183011a8b24a640b3ae,29.4409744,-98.4926072,French Corner,0.0,0.0,78212
+"207 Broadway St, San Antonio, TX 78205, USA",56887017309d8efd6beef4f0566f63cc91c97393,29.4279161,-98.48776319999999,La Boulangerie,1.0,4.7,78205
+"4820 Broadway St, San Antonio, TX 78209, USA",7cb9425756b035182821c3b3713492eac5466f7a,29.471027,-98.4629568,la Madeleine French Bakery & Café,2.0,4.4,78209
+"515 Villita St, San Antonio, TX 78205, USA",55edf218a54d8abc996f484bda1f14936ecb40fe,29.421901,-98.488253,Fig Tree Restaurant,3.0,4.2,78205
+"4499 Medical Dr, San Antonio, TX 78229, USA",0b48194fbdda0048795fcccb075508a85af2ee98,29.5106501,-98.5738093,French Corner Grill,0.0,2.5,78229
+"7922 Ewing Halsell Dr # 1100, San Antonio, TX 78229, USA",6d3719777a61943d47bc5e83663abd0b7e110557,29.5129691,-98.5726892,French Corner,0.0,3.5,78229
+"11745 I-10 #101, San Antonio, TX 78230, USA",9357c8bb9246c6c1a0fd3a7c5a685c84f980aeee,29.5481978,-98.5826611,la Madeleine French Bakery & Café,2.0,4.3,78230
+"7950 Floyd Curl Dr, San Antonio, TX 78229, USA",529188f27cebc7332175dc79d607efad73510c33,29.5125438,-98.57573149999999,French Corner,0.0,4.0,78229
+"502 Madison Oak Dr # 170, San Antonio, TX 78258, USA",3336520c2da0fc1b23e9e6c1677fe283e0a41fd3,29.6208391,-98.4907168,French Corner,0.0,5.0,78258
+"14415 Blanco Rd, San Antonio, TX 78216, USA",8c53fe7c097fd54d03e53fd7e80a16e552e5b782,29.574086,-98.515435,Mimosa Restaurant and Lounge,0.0,4.0,78216
+"18030 US Highway 281 N., Suite 201, San Antonio, TX 78232, United States",6f031df7a49831499da44b89a6f6a85988237cf2,29.60457,-98.46898399999999,la Madeleine French Bakery & Café Northwoods,2.0,4.2,78232
+"1777 NE Interstate 410 Loop, San Antonio, TX 78217, USA",fb4bf693375c12e74c423b4f0e597936ccfdd8ea,29.5170058,-98.4365277,French Corner,0.0,0.0,78217
+"8448 Fredericksburg Rd, San Antonio, TX 78229, USA",ec3710d72b4ec78b675ed58e4b43ab16590924fd,29.5193865,-98.5718351,French Sandwiches,1.0,4.7,78229
+"152 E Pecan St #100, San Antonio, TX 78205, USA",1a72540e25f504cc24c9574b7fa655fded561317,29.4284896,-98.4915614,Restaurant Gwendolyn,4.0,4.7,78205
+"17315 Frontage Rd, San Antonio, TX 78257, USA",8fdee585abb6dc60e2e5242616481aaa6c5ada91,29.60534,-98.600005,Mimi's Cafe,2.0,3.7,78257
+"722 NW Loop 410, San Antonio, TX 78216, USA",2dccc1bf6f0b2cbeaea7cc73befae5800364c9fc,29.519763,-98.50452279999999,la Madeleine French Bakery & Café,2.0,4.1,78216
+"555 E Basse Rd #113, San Antonio, TX 78209, USA",44e92011034bae57bcc16249e9ba6cab1cf6ae6c,29.49933,-98.47476759999999,Cafe Dijon,0.0,4.3,78209
+"3920 Harry Wurzbach Rd, San Antonio, TX 78209, USA",ea26da0b208671123ef34eaab84aca271d901a7b,29.5062144,-98.434103,Crumpets Restaurant & Bakery,3.0,3.7,78209
+"218 E Olmos Dr, San Antonio, TX 78212, USA",ff4af3420462449ac16bb0217eb70cada5c1bd47,29.4705767,-98.49109519999999,Chez Vatel Bistro,3.0,4.2,78212
+"4411 Medical Dr # 190, San Antonio, TX 78229, USA",33af943f16af6aadb687144c1ea4dea5e3856793,29.5103478,-98.5724245,French Corner,0.0,4.0,78229
+"8134 Agora Pkwy #100, Live Oak, TX 78154, USA",2a0204990e20603324678ef41c778f90c3979066,29.565123,-98.328689,la Madeleine French Bakery & Cafe The Forum,0.0,4.2,78154
+"110 San Antonio St, Austin, TX 78701, USA",6a9c702ac129afd0c82fd0bc8a3eccd4b57f0e9a,30.2655157,-97.74925960000002,Le Politique,3.0,4.3,78701
+"204 E Houston St, San Antonio, TX 78205, USA",f689aeaa87de9e2bcacfd216c5aeef73f708db9d,29.42634469999999,-98.4910677,Houston St. Bistro,2.0,4.2,78205
+"8806 Bandera Rd #101, San Antonio, TX 78250, USA",2274ca72c7bbee41a9e26bc06019642c926fcb73,29.525565,-98.639507,Spicy Ginger Asian Cafe,2.0,4.3,78250
+"7220 Louis Pasteur Dr # 142, San Antonio, TX 78229, USA",ac8de58bceea139b51c6f1860bc25f4bd08af089,29.500673,-98.57672099999999,Sandwich De Paris,1.0,4.5,78229
+"303 E Grayson St, San Antonio, TX 78215, USA",667e0327200050c91c61224081f5597149fd74ec,29.44412819999999,-98.47821630000001,Down On Grayson,2.0,4.2,78215
+"136 E Grayson St, San Antonio, TX 78215, USA",2de834d63efc3f8d4e38b9190ce14a124c046bc7,29.4428751,-98.4811569,Supper,3.0,4.5,78215
+"400 E Josephine St, San Antonio, TX 78215, USA",663c3cf04c620bab08e1dfd694692f568e29117a,29.4446675,-98.47819299999999,Josephine Street,1.0,4.4,78215
+"1639 Broadway St, San Antonio, TX 78215, USA",60aa2192db93ef1ed01fb8e6fb9c5f640809f224,29.441634,-98.477773,Earl Abel's,2.0,3.5,78215
+"312 Pearl Pkwy, San Antonio, TX 78215, USA",9aa54bb8db158af132921b3e3f5b486728b7ec47,29.443191,-98.480256,Nao,3.0,4.2,78215
+"618 McCullough Ave, San Antonio, TX 78215, USA",f848773f52cad73b482ab17e91affe9f2016b668,29.434122,-98.487546,Guillermo's,2.0,4.4,78215
+"103 E Jones Ave, San Antonio, TX 78215, USA",ef4d3b3afcd1feff63a10939da2920b2fb3c90d0,29.436269,-98.480565,The Luxury,1.0,4.3,78215
+"The Pearl, 303 Pearl Pkwy #111, San Antonio, TX 78215, USA",83f2a53f6196bd020294a1698fa49134ae695dd1,29.4424984,-98.4799602,Botika,2.0,4.1,78215
+"306 Pearl Pkwy #101, San Antonio, TX 78215, USA",74cbfe593d48052bda50772d2c2bcbbdc08f068d,29.4419597,-98.4798869,Cured,2.0,4.5,78215
+"312 Pearl Pkwy, Bldg. 3, San Antonio, TX 78215, United States",7c3bf1540e2b87758be6ded51f1eb0bb0528a6d4,29.44267809999999,-98.4804973,Boiler House Texas Grill & Wine Garden,2.0,4.1,78215
+"136 E Grayson St #120, San Antonio, TX 78215, USA",7cb46f98cff57d2d3bd2ddaa4f14cc3410f5859f,29.4425381,-98.4806333,Southerleigh Fine Food and Brewery,2.0,4.5,78215
+"200 W Jones Ave, San Antonio, TX 78215, USA",ec1b2445f2851196582b161fbbe8f5da51efd8cd,29.4382341,-98.48352589999999,Café des Artistes,3.0,0.0,78215
+"7338 Louis Pasteur Dr #201, San Antonio, TX 78229, USA",3f0d1db072e37bbfdae9d0dcd7017a183c5566ac,29.5031573,-98.5745166,Bakery Lorraine,1.0,4.4,78229
+"8910 Bandera Rd #305, San Antonio, TX 78250, USA",beebffce12d6521e258cfb01eda113704599a186,29.5268184,-98.6396796,Smashin Crab,0.0,4.4,78250
+"2180 Reese, San Antonio, TX 78236, USA",b7b4ec2317b1291c955f35eb1ecff4996724bdfc,29.38223,-98.6156646,Arby's,1.0,4.0,78236
+"1530 Femoyer St, Lackland AFB, TX 78236, USA",b428bd3d094d12a548415473f993a9149157ff04,29.3926674,-98.6298861,Burger King,1.0,3.7,78236
+"1421 Stewart, Jbsa Lackland, TX 78236, USA",113d6528c842eea251a7def059cd6375147600de,29.3815666,-98.62559329999999,Arby's,1.0,0.0,78236
+"Oscar Westover Rd, Building 1286, Lackland Afb, TX 78236, United States",f1f426e69509db138d718ee0afc75625e733197b,29.38291,-98.59446299999999,Burger King,1.0,3.5,78236
+"1818 North Loop 1604 W, San Antonio, TX 78248, USA",cfb17a2c6d5e4be87e02f11ec40cc20384fbc1bb,29.607994,-98.52006899999999,Brasserie Pavil Restaurant & Bar,0.0,3.4,78248
+"16401 La Cantera Pkwy, San Antonio, TX 78256, USA",7f65d3249feed6034ee2e6edb0b921919c9c4da3,29.5991366,-98.61875289999999,Signature,3.0,4.6,78256

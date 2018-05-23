@@ -1,0 +1,384 @@
+,Address,Google_ID,Latitude,Longitude,Name,Price_Level,Rating,Zip,City_State_Cuisine
+0,"3632 S Congress Ave, Austin, TX 78704, USA",ab9bdcd4f5d35546b5544971d764f3fd947921c5,30.226596,-97.7622626,Papalote Taco House,0.0,4.5,78704,austin-tx-taco
+1,"121 Pickle Rd, Austin, TX 78704, USA",603e6b0c9db981bd2480b4807ccb65628d163317,30.2269355,-97.76250970000001,Pueblo Viejo Taco Truck,0.0,4.8,78704,austin-tx-taco
+2,"628 E Oltorf St, Austin, TX 78704, USA",d92f221f754d58eefb290a7b525e59a266594a02,30.237086199999997,-97.7488236,Con Madre Kitchen,0.0,4.6,78704,austin-tx-taco
+3,"4619 S Congress Ave, Austin, TX 78745, USA",e127eafee8ceba580503fdb3bc43744b9e3f0836,30.215295399999995,-97.7679052,San Juanita's Tacos,0.0,4.4,78745,austin-tx-taco
+4,"2316 S 1st St, Austin, TX 78704, USA",acfaa5926a3e8b20c7a5a2b70f39a6228bddb134,30.242419599999998,-97.75959870000001,El Tacorrido,0.0,4.2,78704,austin-tx-taco
+5,"201 E Oltorf St, Austin, TX 78704, USA",e291a676724da9f53b5c8bac6b9d743a160fd90f,30.237755199999995,-97.75252009999998,Taco Bell,1.0,3.5,78704,austin-tx-taco
+6,"2809 S 1st St, Austin, TX 78704, USA",e240059ca7156f2842a541e4e98d9bc9c1047cb7,30.236754100000002,-97.7628011,Torchy's Tacos,1.0,4.5,78704,austin-tx-taco
+7,"1822 S Congress Ave, Austin, TX 78704, USA",276fea78ec169bd56156bf58d92dd18b3b79178f,30.245432,-97.7515197,Torchy's Tacos,0.0,4.5,78704,austin-tx-taco
+8,"2507 E Riverside Dr, Austin, TX 78741, USA",e3525494e36f4ae58a869b63ef2d58ad9c9558a3,30.2337434,-97.72425770000001,Taco Cabana,1.0,3.0,78741,austin-tx-taco
+9,"2308 E Riverside Dr, Austin, TX 78741, USA",b07c2328a7f4fa6f4277f6fb7306de813c8c5ed9,30.2381503,-97.72527690000001,Taco Bell,1.0,3.7,78741,austin-tx-taco
+10,"1412 S Congress Ave, Austin, TX 78704, USA",2ef50c890ebf9d82ba6e15b2c617caf2c6668029,30.2490609,-97.75004759999999,Güero's,2.0,3.9,78704,austin-tx-taco
+11,"1503 S 1st St, Austin, TX 78704, USA",f4adb623edff30d8a5e8358b2a03335c2b68593b,30.2493689,-97.75494350000001,Mellizoz Tacos,1.0,4.2,78704,austin-tx-taco
+12,"1311 S 1st St, Austin, TX 78704, USA",3877209567fb381f47f38b914bfe6aaf5ebbcb49,30.2509257,-97.7542336,Torchy's Tacos,1.0,4.6,78704,austin-tx-taco
+13,"1701 W Ben White Blvd, Austin, TX 78704, USA",cc532867926fa858ef9e0925b1cb82443aa9fa0c,30.22774,-97.7852799,Taco Bell,1.0,2.8,78704,austin-tx-taco
+14,"2529 S Lamar Blvd, Austin, TX 78704, USA",c4c4d61c9ffd7c6a10f3f400a2c92bb385db4465,30.245766200000002,-97.77819759999998,Maria's Taco Xpress,1.0,4.2,78704,austin-tx-taco
+15,"6511 S IH 35 Frontage Rd, Austin, TX 78744, USA",cfb7797f04330629544c0a6eddabda2e23f88e3d,30.190874800000003,-97.7690345,Taco Bell,1.0,3.3,78744,austin-tx-taco
+16,"6430 S IH 35 Frontage Rd, Austin, TX 78745, USA",7c34076ba5a83536cebb91981448c19dab7e84a6,30.191310700000002,-97.770955,Taco Cabana,1.0,3.6,78745,austin-tx-taco
+17,"2803 S Lamar Blvd, Austin, TX 78704, USA",aa54b5be00d522eeb927155b244dc1f4ac340c93,30.2435326,-97.7818979,Papalote Taco House,1.0,4.6,78704,austin-tx-taco
+18,"3005 S Lamar Blvd, Austin, TX 78704, USA",f8c4e24524d9c5ffceb359a5f75dbc49d403ee3c,30.2415377,-97.7842878,Torchy's Tacos,1.0,4.5,78704,austin-tx-taco
+19,"2117 W Ben White Blvd, Austin, TX 78704, USA",1026f1e8f4fdb28a4ed19578a39b1c50487c0c16,30.23059169999999,-97.7914257,Taco Cabana,1.0,3.5,78704,austin-tx-taco
+20,"500 E Ben White Blvd D-100, Austin, TX 78704, USA",71484156dd46b690d12328c0e9aab1ad7ae49e4a,30.2210017,-97.7570194,Cabo Bob's,2.0,4.6,78704,austin-tx-taco
+21,"4327 S 1st St # 102, Austin, TX 78745, USA",53a21e576416b0efdd07b611bcb9dacdda024196,30.2215108,-97.7722822,Casa Maria,2.0,4.1,78745,austin-tx-taco
+22,"502 W William Cannon Dr, Austin, TX 78745, USA",533454dd71e8bc858651267e42f5b32e1ed42207,30.1966833,-97.785864,Taco Bell,1.0,3.1,78745,austin-tx-taco
+23,"500 E 4th St, Austin, TX 78701, USA",ecc22bc448a419d258eb4c9cec84fa8007aea959,30.265164600000002,-97.7380912,Austin Taco Project,2.0,3.9,78701,austin-tx-taco
+24,"402 Brazos St, Austin, TX 78701, USA",b782d0c20d51ddfba0dcbcc30c563a6f7183499d,30.266013800000003,-97.7422624,Taco Shack,1.0,3.7,78701,austin-tx-taco
+25,"Little Woodrow's, 520 W 6th St, Austin, TX 78701, USA",81cd894609830b6584d6b7932ae769d79e489ec9,30.269853,-97.748172,OneTaco,2.0,4.2,78701,austin-tx-taco
+26,"1500 Spyglass Dr, Austin, TX 78746, USA",ba980e571ec98744ea99ee3889a13004bb9e44fd,30.258426,-97.787605,Tacodeli,1.0,4.6,78746,austin-tx-taco
+27,"2000 Guadalupe St, Austin, TX 78705, USA",0dd72d30a9bddbd4229928f7a2002b1c4b0f3261,30.282819899999996,-97.7423328,Taco Bell,1.0,3.8,78705,austin-tx-taco
+28,"2201 Speedway, Austin, TX 78712, USA",5d31993cec674267aea91ea51c2836d374289f62,30.285151199999998,-97.7359387,Taco Cabana,1.0,2.9,78712,austin-tx-taco
+29,"161 W Slaughter Ln, #C, Austin, TX 78748, United States",e847f1bc6cb59677d2badd152a80428f8bff0fc9,30.1660249,-97.7917055,Taco Bell,1.0,2.8,78748,austin-tx-taco
+30,"3201 Bee Caves Rd Ste 180, Austin, TX 78746, USA",a0a9664727a150661d781743ce08148ae18b0f8d,30.273825199999997,-97.800299,Taco Bell,1.0,3.4,78746,austin-tx-taco
+31,"2801 Guadalupe St, St 5-b, Austin, TX 78705, United States",26a94f51b9a606d570a1702904ae1fd9cbd23f21,30.293709999999997,-97.7417281,Torchy's Tacos,1.0,4.4,78705,austin-tx-taco
+32,"3421 W William Cannon Dr, Austin, TX 78745, USA",e0db6923a7a7a0689db06d0887597664b7f9bc40,30.212929600000002,-97.8295152,Taco Bell,1.0,3.1,78745,austin-tx-taco
+33,"1925 Airport Blvd, Austin, TX 78722, USA",26a2bbbdab8c7dce5887a307e1e2e042e23bda74,30.283288300000002,-97.7039166,Taco Bell,1.0,3.5,78722,austin-tx-taco
+34,"9900 S Interstate 35 Frontage Rd. #100, Austin, TX 78748, USA",d42a1e765dcd63817fc0b5009971239b93fc4c6b,30.15406219999999,-97.79371850000001,Amaya's Taco Village,1.0,4.0,78748,austin-tx-taco
+35,"4301 W. William Cannon Dr, G-400, Austin, TX 78749, United States",ab3dde3cc3aa1cbfbfffd57a9b97bde129d629c8,30.222322100000003,-97.8404295,Torchy's Tacos,1.0,4.4,78749,austin-tx-taco
+36,"4002 N Lamar Blvd, Austin, TX 78756, USA",6e3215fd77d45e486af0b0f7d24ad90fa0fdb9c9,30.3082222,-97.74157729999999,Taco Shack,1.0,3.8,78756,austin-tx-taco
+37,"4200 N Lamar Blvd, Austin, TX 78756, USA",fed87216a48761907c02d0d88ac9d78924ea267c,30.310528,-97.740117,Tacodeli,1.0,4.6,78756,austin-tx-taco
+38,"1801 E. 51st St, Bldg D, Austin, TX 78723, United States",bd7893c9aaecb948c8a12bb5fbbed858d6f682eb,30.303292,-97.6988397,Torchy's Tacos,1.0,4.5,78723,austin-tx-taco
+39,"4412 Medical Pkwy, Austin, TX 78756, USA",7e522b4d252ea90c148124cd9134fddbac79c441,30.314524900000002,-97.7420352,Taco Shack,1.0,3.8,78756,austin-tx-taco
+40,"3324 W Slaughter Ln, Austin, TX 78748, USA",592848c2b133d992d12792ab37fe645671397706,30.182530600000003,-97.84664690000001,Taco Bell,1.0,3.3,78748,austin-tx-taco
+41,"701 South Capital of Texas Highway #e590, Austin, TX 78746, United States",d3856d91f2eebd1dbd891205f381b48b3278acbf,30.29042639999999,-97.826159,Tacodeli,1.0,4.5,78746,austin-tx-taco
+42,"5604 Cameron Rd, Austin, TX 78723, USA",df5248b22c0d791a7827bcad21dd8847bad880bc,30.3141238,-97.704066,Taco Bell,1.0,3.2,78723,austin-tx-taco
+43,"5804 N Interstate 35 Frontage Rd, Austin, TX 78751, USA",ff2733af71330ab10f835a023edc0144bd617fa5,30.3193208,-97.7081483,Amaya's Taco Village,1.0,4.2,78751,austin-tx-taco
+44,"5520 Burnet Rd #101, Austin, TX 78756, USA",35ef6c737be6926b44434bf3257a60722fc81497,30.330898600000005,-97.7402558,Taco Flats,1.0,4.5,78756,austin-tx-taco
+45,"7010 Easy Wind Dr #100, Austin, TX 78752, USA",ff61ffe966497f81f0c0d0d8bec04d330e9a5fa9,30.339014000000002,-97.718563,Fuzzy's Taco Shop,0.0,4.0,78752,austin-tx-taco
+46,"7301 Burnet Rd, Austin, TX 78757, USA",8380abf79073bfe827d25853072157a36454d96e,30.3487666,-97.7350354,Tacodeli,1.0,4.6,78757,austin-tx-taco
+47,"3901 Spicewood Springs Rd, Austin, TX 78759, USA",43d9228a4ac9bacd9a7c55e9a71b70a063e2d2fa,30.3654022,-97.7502645,Taco Shack,1.0,4.2,78759,austin-tx-taco
+48,"12001 Burnet Rd, Austin, TX 78758, USA",6186933e90e5b87787833cb5fcf00a70cb63254c,30.4077015,-97.7132858,Tacodeli,1.0,4.6,78758,austin-tx-taco
+49,"1016 E Anderson Ln, Austin, TX 78752, USA",8b4f88df0bd56c027412c57bf8db909930e6dd15,30.3371125,-97.6943202,Taco Bell,1.0,3.6,78752,austin-tx-taco
+50,"12439 Metric Blvd, Austin, TX 78758, USA",2e31254e2ccdf2a84908ff2ba8b9895f6011b815,30.412116499999996,-97.6906594,Taco Shack,1.0,3.7,78758,austin-tx-taco
+51,"5119 Burnet Rd, Austin, TX 78756, USA",5e5d926dcc37172e412ae89df552ea7b46b164ce,30.323369399999997,-97.73920140000001,Torchy's Tacos,1.0,4.6,78756,austin-tx-taco
+52,"96 Rainey St, Austin, TX 78701, USA",861424e9edd87981f09b7f86c9f80b110f699882,30.2608476,-97.7382623,Taco Baby,0.0,4.5,78701,austin-tx-taco
+53,"7793 Burnet Rd, Austin, TX 78757, USA",f0696fcbd0650acf39541ea7f3c832b726cee29d,30.3544777,-97.7313722,Taco Bell,1.0,3.3,78757,austin-tx-taco
+54,"2807 San Jacinto Blvd, Austin, TX 78712, USA",638a3aa9b1a59631dcf58b4d9e10e4a0b3e0d1ce,30.2915386,-97.7349716,Taco Joint,0.0,4.6,78712,austin-tx-taco
+55,"9504 N Lamar Blvd, Austin, TX 78753, USA",2ff03a575b91eec50e12a6af5e2194acdde7506c,30.364794,-97.6966712,Taco Bell,1.0,3.6,78753,austin-tx-taco
+56,"75 Rainey St, Austin, TX 78701, USA",46ac24b89afb07fc1d3357f5b7888131a07de82f,30.2583972,-97.7385941,Art of Tacos,0.0,4.1,78701,austin-tx-taco
+57,"4905 Airport Blvd, Austin, TX 78751, USA",6ef664636711115acd09b7db2e78346b65d02fbd,30.30964,-97.715239,Tyson's Tacos,0.0,4.5,78751,austin-tx-taco
+58,"507 Pressler St, Austin, TX 78703, USA",a522576d0abce0195adecb5413b16fd246f8c4c1,30.272807899999997,-97.7606053,TNT Tacos and Tequila,0.0,4.1,78703,austin-tx-taco
+59,"2219 Manor Rd, Austin, TX 78722, USA",c7993d0301c3fd19c8eda6c116ff157f610bee44,30.284149900000003,-97.7183772,El Chilito,1.0,4.1,78722,austin-tx-taco
+60,"1704 E Cesar Chavez St, Austin, TX 78702, USA",38a35377555768adf392e30e780c19cf3a919d82,30.2579332,-97.7259275,Veracruz All Natural Food Truck,1.0,4.6,78702,austin-tx-taco
+61,"5033 W US Hwy 290 Service Rd, Austin, TX 78746, USA",c5878b9a2fff0f065fd418ea209ec919134cc293,30.2334998,-97.8243575,Taco Ranch,1.0,3.4,78746,austin-tx-taco
+62,"134 E Riverside Dr, Austin, TX 78704, USA",f0e011a1f86600e29a11db2ffb4cfd6c2c1fd5fc,30.256367800000003,-97.7455192,Taco Joint,0.0,4.6,78704,austin-tx-taco
+63,"502 Brushy St, Austin, TX 78702, USA",5f2dbea51f0a57669a16134f515d2db53ff1882c,30.2648575,-97.7339509,Pueblo Viejo,2.0,4.7,78702,austin-tx-taco
+64,"2611 Manor Rd, Austin, TX 78722, USA",0b698b6525c95ac610851d0ffe0c926a09f27ea5,30.2846468,-97.714858,Taco Mex,1.0,4.4,78722,austin-tx-taco
+65,"1207 E 11th St, Austin, TX 78702, USA",9ec260fd320a658c9bd91dda5c631af430bef51a,30.268168300000003,-97.7271546,Juana Taco,0.0,3.8,78702,austin-tx-taco
+66,"600 W Martin Luther King Jr Blvd, Austin, TX 78705, USA",3e881ac5c57adee809000a687b9e7454ab1c0a71,30.282675800000003,-97.7444573,Kesos Taco House,0.0,4.3,78705,austin-tx-taco
+67,"2201 Manor Rd, Austin, TX 78722, USA",7d10111b984312df90d9d490313855bfbca6c7de,30.284136699999998,-97.718928,Mi Madre's Restaurant,2.0,4.2,78722,austin-tx-taco
+68,"2323 S Lamar Blvd, Austin, TX 78704, USA",eb68f544f3e903406d56a6269b1dd6b7dd3641a1,30.2467273,-97.7770359,Capital TACO,0.0,4.3,78704,austin-tx-taco
+69,"1210 E Cesar Chavez St, Austin, TX 78702, USA",35042a8c29122389ed96992904e057d4e83fccf3,30.2597228,-97.73163290000001,Las Trancas Taco Stand,0.0,4.7,78702,austin-tx-taco
+70,"9414 Parkfield Dr, Austin, TX 78758, USA",c4f91903d64384b29f360906b8034e2ce3c5a4d1,30.3679414,-97.7063285,Taco More,1.0,4.1,78758,austin-tx-taco
+71,"1940 W William Cannon Dr, Austin, TX 78745, USA",4b6f241dcd5eb4c2542c6a59e8bb8ed305f9e7ee,30.2032081,-97.8057257,Jalapeños,0.0,4.1,78745,austin-tx-taco
+72,"2015 E Riverside Dr., Austin, TX 78741, USA",f91ae20a45cfb0cac64111e501d9829c601f437f,30.240240600000003,-97.7280992,Taco More,1.0,4.1,78741,austin-tx-taco
+73,"5242 N Lamar Blvd, Austin, TX 78751, USA",443f7b9cff46eaaf489c57e6646bc0e6fb6c5327,30.32105859999999,-97.7298688,Taco Cabana,1.0,3.7,78751,austin-tx-taco
+74,"2300 E Cesar Chavez St, Austin, TX 78702, USA",f5f88a804e4077e1963f7e01c3858b4028556638,30.25535369999999,-97.7190658,Juan in a Million,2.0,4.4,78702,austin-tx-taco
+75,"500 Comal St, Austin, TX 78702, USA",7953007e9fc39f997bfeba2e761eeae8e755a001,30.2625646,-97.72701040000001,Bomb Tacos,0.0,3.2,78702,austin-tx-taco
+76,"901 Tillery St, Austin, TX 78702, USA",90c5577649eaddbcdc56175211ce8834514c5411,30.262573100000004,-97.7035926,Marcelino Pan y Vino,0.0,4.7,78702,austin-tx-taco
+77,"1411 E 7th St, Austin, TX 78702, USA",d7f2901695579285a0193d399eb1785db6b9b137,30.264114000000003,-97.72738100000001,Takoba,2.0,4.1,78702,austin-tx-taco
+78,"1511 E 6th St, Austin, TX 78702, USA",17db488ab724a353b367575e512f549bc0632775,30.262967,-97.726744,Cisco's Restaurant,1.0,4.3,78702,austin-tx-taco
+79,"1707 E 6th St, Austin, TX 78702, USA",5f66f6db203efb04dcdebb047ad64ee35df5b2d8,30.2615165,-97.7243676,Tamale House East,2.0,4.3,78702,austin-tx-taco
+80,"1623 E 7th St, Austin, TX 78702, USA",2fc12de8a97ddaf5f815d811cb693a006245b1ba,30.2630528,-97.7244189,El Chilito,1.0,4.0,78702,austin-tx-taco
+81,"96 N Pleasant Valley Rd, Austin, TX 78702, USA",8ce386287d2e952b7a416987149051d8615d9b30,30.252696500000003,-97.7131211,Tacos Guerrero,0.0,4.9,78702,austin-tx-taco
+82,"3518 E 7th St, Austin, TX 78702, USA",343b4bf08e0841aafabaa034b5ddc1c2025c6abe,30.256849,-97.702341,Beto's Restaurants,0.0,4.4,78702,austin-tx-taco
+83,"917 Springdale Rd, Austin, TX 78702, USA",2c1981280b74a3d10187c28d67f08ceda7542c00,30.26097,-97.698172,Papa Joe's Tex-Mex,0.0,4.7,78702,austin-tx-taco
+84,"1401 E 7th St, Austin, TX 78702, USA",b9e4f611a38a8bcc58d771df4409c2a3030680dd,30.2643675,-97.7279697,Granny's Tacos,0.0,4.9,78702,austin-tx-taco
+85,"2101 E Cesar Chavez St, Austin, TX 78702, USA",d4f8c333a97904df55936528d3130cdbe32d9592,30.256079999999997,-97.7219098,Taqueria Chapala,2.0,4.2,78702,austin-tx-taco
+86,"1816 E 6th St, Austin, TX 78702, USA",bac84e31c06a4811bf8fc7877bf744b3094494c7,30.261930100000004,-97.7228003,6th Street Tacos y Mas,0.0,4.0,78702,austin-tx-taco
+87,"1501 E 6th St, Austin, TX 78702, USA",59613fb6186781a2cef7423c8228721170195ae7,30.263168,-97.7272016,Little Plaza Taco Truck,0.0,5.0,78702,austin-tx-taco
+88,"1628 E Cesar Chavez St, Austin, TX 78702, USA",d0ebc9a5a31cd9ccee60126961a70bc0e10bd49d,30.258294399999997,-97.7275536,Los Huaraches,0.0,3.9,78702,austin-tx-taco
+89,"2324 E Cesar Chavez St, Austin, TX 78702, USA",4b7641c2254bcec0ae2b27c04ff51f11609e652f,30.2551624,-97.7182167,The Vegan Nom,0.0,4.6,78702,austin-tx-taco
+90,"2305 E 7th St, Austin, TX 78702, USA",0d1fa2c5ffdab31b3f76266d3b2d5dfb3ee3a1eb,30.2611771,-97.71666040000001,Joe’s Bakery & Coffee Shop,1.0,4.5,78702,austin-tx-taco
+91,"2410 E 7th St, Austin, TX 78702, USA",51299551830f9c8f87e2d333d72883f7e2aacf65,30.261262800000004,-97.7140212,Tacos Y Mariscos,0.0,4.7,78702,austin-tx-taco
+92,"1701 E Cesar Chavez St, Austin, TX 78702, USA",6361b29aa1d9c903065777c598c7b044f85dade9,30.257679200000002,-97.7265645,Las Cazuelas Mexican Restaurant,2.0,3.7,78702,austin-tx-taco
+93,"1307 E 7th St, Austin, TX 78702, USA",235c3488d708c3499dead8c703b8deaf3f53bdfb,30.264457399999998,-97.72872590000001,Angie's,0.0,3.9,78702,austin-tx-taco
+94,"2012 E 7th St, Austin, TX 78702, USA",3814eec746889171329e4b90a20febb7ff290755,30.262123300000003,-97.719369,Tacos Doña rosita,0.0,5.0,78702,austin-tx-taco
+95,"2421 Webberville Rd, Austin, TX 78702, USA",19dd2d25788d01463f2d138e28646988e9a0ce7e,30.26267,-97.714397,Chico Jr's Deluxe Taco Emporium,0.0,4.6,78702,austin-tx-taco
+96,"2500 E 6th Street B, Austin, TX 78702, United States",cd51fdcebb6b04dc2ecaeaad65d1a3ae6ceda004,30.2590196,-97.71446970000001,Taco Flats Airstream,0.0,0.0,78702,austin-tx-taco
+97,"517 N Interstate Hwy 35, Austin, TX 78702, USA",7a7c49e1e75018fead3ce6b9b4d94ad15ce47141,30.2652908,-97.7340812,Savor De Moi,0.0,5.0,78702,austin-tx-taco
+98,"1614 E 7th St, Austin, TX 78702, USA",0475c5441687456729158386ec78bf7c55f0ddbd,30.263755600000003,-97.724835,Nasha,1.0,4.1,78702,austin-tx-taco
+99,"1306 E 6th St, Austin, TX 78702, USA",d3cff0b328d9f54c2f1fe56ddb66409e89e5eb63,30.264089000000002,-97.7287918,Licha's Cantina,2.0,4.5,78702,austin-tx-taco
+100,"1106 E 11th St, Austin, TX 78702, USA",4ae0f3dcbc6c752a746035c9ea71312317b3803d,30.269129,-97.728447,Cosmic Taco,0.0,5.0,78702,austin-tx-taco
+101,"1701 E 6th St, Austin, TX 78702, USA",18c3eaff8436280f8136f2490e9a577220c0e796,30.262050199999997,-97.72456120000001,Hot Mess,0.0,5.0,78702,austin-tx-taco
+102,"2730 E Cesar Chavez St, Austin, TX 78702, USA",0e0c3e0e2523b3ba5194379fc51ef20429adc27e,30.253308,-97.712918,Taqueria San Luis,0.0,4.8,78702,austin-tx-taco
+103,"1410 E 6th St, Austin, TX 78702, USA",4db4b763eb6fd1f5eabe22d42044ede45096bac8,30.26376119999999,-97.7276995,Revelry Kitchen + Bar,2.0,4.5,78702,austin-tx-taco
+104,"1618 E 6th St, Austin, TX 78702, USA",2fedcef6681a82d471293be6d5f70c0968491dd8,30.262704,-97.72507990000001,East Side King,2.0,4.4,78702,austin-tx-taco
+105,"750 Airport Blvd, Austin, TX 78702, USA",3eec7238a504c0d5686b692a40f0466557a3f5e0,30.254307,-97.6927566,Taco Stand,0.0,0.0,78702,austin-tx-taco
+106,"2121 E 6th St, Austin, TX 78702, USA",6059adc6a8960d64a5c3c0ce27a4dca441027ec8,30.260170000000002,-97.7189244,Hi Hat Public House,0.0,4.6,78702,austin-tx-taco
+107,"105 Tillery St, Austin, TX 78702, USA",b51f70ae72c96364d40b9845b25b1ea0a63959c9,30.252162899999995,-97.708226,Grizzelda's,2.0,4.2,78702,austin-tx-taco
+108,"2721 E Cesar Chavez St, Austin, TX 78702, USA",3731b49acdd9e57ba3b61766bc75f1675d11bb0c,30.252871600000002,-97.7131504,Yo lands,0.0,5.0,78702,austin-tx-taco
+109,"1914 E 6th St, Austin, TX 78702, USA",97807f8fea8d5fc87a0ca0b656210f03d8260725,30.261705699999997,-97.7216278,Counter Cafe,2.0,4.5,78702,austin-tx-taco
+110,"844 Airport Blvd, Austin, TX 78702, USA",f07736099ad8713b10058a834e7d9bf1e5beb0a1,30.258395,-97.6938267,Dan's Hamburgers,0.0,4.5,78702,austin-tx-taco
+111,"3223 E 7th St, Austin, TX 78702, USA",3ccdd3909c061a37c30eb3d32afc984c4ca9d3e9,30.257722499999996,-97.7048949,Chu-Mikal's Cafe,0.0,4.4,78702,austin-tx-taco
+112,"1901 E Martin Luther King Jr Blvd, Austin, TX 78702, USA",ddb127571848e73f3f9cac11d629cd956c19f342,30.279637199999996,-97.7207385,Shopper's Food Mart Eatery,1.0,3.0,78702,austin-tx-taco
+113,"2401 E Cesar Chavez St, Austin, TX 78702, USA",71e5c21f464f949ac3e0b1f989816be344e9bdf4,30.254503200000002,-97.7176111,Mongers,2.0,4.5,78702,austin-tx-taco
+114,"1501 E 6th St, Austin, TX 78702, USA",550acd92e17ebde0ee40e4d27c4b10effd08ce50,30.2629957,-97.7270297,Rollin Smoke BBQ,0.0,4.5,78702,austin-tx-taco
+115,"1818 E 12th St, Austin, TX 78702, USA",60ef5a420dad1662aea679989df470f690cc1228,30.2738494,-97.7200801,Pakal Autochthonous Mexican Cookery,0.0,5.0,78702,austin-tx-taco
+116,"1309 Rosewood Ave, Austin, TX 78702, USA",4e2cf1c0660598089c021e36362a24835fb33617,30.268562,-97.725136,Micklethwait Craft Meats,1.0,4.7,78702,austin-tx-taco
+117,"5011 E Cesar Chavez St, Austin, TX 78702, USA",1bc6104f83491d6b411af7289f2adb9f841187ee,30.251255,-97.6993028,La Taqueria Chilanga,0.0,5.0,78702,austin-tx-taco
+118,"1917 E 7th St, Austin, TX 78702, USA",4ab43a07f01e8d98d9cac3f561755eab102137ef,30.2620848,-97.7214364,La Michoacana Meat Market,0.0,3.7,78702,austin-tx-taco
+119,"1208 E 11th St, Austin, TX 78702, USA",3ac1c6e5bcb24a8f0d593c7dbf19253e4974b7f5,30.268694,-97.727243,Quickie Pickie,1.0,4.4,78702,austin-tx-taco
+120,"1900 E Martin Luther King Jr Blvd B, Austin, TX 78702, USA",9a7096e662d9221d3cac2607c40462d6975c0b17,30.28022039999999,-97.7211015,Austin Daily Press,0.0,4.6,78702,austin-tx-taco
+121,"2136 E 7th St, Austin, TX 78702, USA",c574e4e999f8d0f1dfd591cb350a0a46dafd8302,30.2618563,-97.7182818,Los Comales,2.0,3.9,78702,austin-tx-taco
+122,"1901 E Cesar Chavez St, Austin, TX 78702, USA",4cc4a2832c1a52f8d23a5ba223afe3ae157500ab,30.256821000000002,-97.724519,Mr. Natural,2.0,4.3,78702,austin-tx-taco
+123,"3209, 500 Comal St, Austin, TX 78702, United States",071c8eb152f160bdb888d6f7ec7cc58a1f814fb0,30.2625474,-97.727003,Baton Creole,0.0,4.3,78702,austin-tx-taco
+124,"817 Airport Blvd, Austin, TX 78702, USA",e1ff3b5c34cda64a3e9c910e2168b438ef564825,30.2562059,-97.6926276,El Secreto De La Abuela,0.0,4.3,78702,austin-tx-taco
+125,"1902 E 6th St, Austin, TX 78702, USA",f48a88c93f89f2ac4210f11215d7e39d5e46052d,30.2617385,-97.722008,Lazarus Brewing Co.,2.0,4.7,78702,austin-tx-taco
+126,"1700 E 6th St, Austin, TX 78702, USA",9579cb3cd751356bf8404b4609c786a5fba6aeb8,30.262661199999997,-97.724149,Arlo's,0.0,4.6,78702,austin-tx-taco
+127,"900 Red River, Austin, TX 78702, USA",c85df2747789149162c5ca113fd097a0bae5ec65,30.269505100000003,-97.7362431,Arlo's,1.0,4.7,78702,austin-tx-taco
+128,"1624 W 5th St, Austin, TX 78703, USA",5463e62622f8625946cd4bc1ce01ad75ada409c8,30.2749658,-97.764602,El Arroyo,2.0,3.8,78703,austin-tx-taco
+129,"915 N Lamar Blvd, Austin, TX 78703, USA",2c9851e2e5a3c072bf454f29813d56682f7a05b2,30.2744739,-97.7522235,Fresa's - 9th & Lamar,1.0,4.1,78703,austin-tx-taco
+130,"2608 W 7th St, Austin, TX 78703, USA",5cbbcd9851f7021c65f23e10800f07d4e91e6d1a,30.2828118,-97.77566790000002,Maudie's Cafe,2.0,4.0,78703,austin-tx-taco
+131,"3825 Lake Austin Blvd, Austin, TX 78703, USA",089c479b0873d939fccceb07479af54e6816e7b6,30.2946928,-97.7844186,Hula Hut,2.0,4.1,78703,austin-tx-taco
+132,"1000 W Lynn St, Austin, TX 78703, USA",62b83987eb0f7dd7b728188a2998d7b11db72cbd,30.2793876,-97.7600875,Galaxy Cafe,1.0,4.3,78703,austin-tx-taco
+133,"2304 Lake Austin Blvd, Austin, TX 78703, USA",e20cd08b659050cfe07943b4792422483730c3e3,30.278007399999996,-97.7716588,Magnolia Cafe,2.0,4.3,78703,austin-tx-taco
+134,"2825 Guadalupe St, Austin, TX 78705, USA",70a41d3993cc8f6cc0f2b0e747035ebd965c1a46,30.2951184,-97.7425561,Taco Shack,1.0,4.0,78705,austin-tx-taco
+135,"626 N Lamar Blvd, Austin, TX 78703, USA",b493e30ecf74b8e2e27cfbed0893f9c5fd776b80,30.272582300000003,-97.7536696,Counter Cafe,2.0,4.4,78703,austin-tx-taco
+136,"807 W 6th St, Austin, TX 78703, USA",3ece3985268975052c6ce7ba4261f4271ef795b5,30.270290000000003,-97.7511795,Hut's Hamburgers,1.0,4.2,78703,austin-tx-taco
+137,"501 W Oltorf St, Austin, TX 78704, USA",364276767e15c1574d16762d7bc2aece3ae04335,30.241218100000005,-97.7582295,Habanero Cafe,1.0,4.4,78704,austin-tx-taco
+138,"2004 S 1st St, Austin, TX 78704, USA",c742f1debf2ee5b22f843d3d150a6486e24fca06,30.245312199999997,-97.757427,Polvos,2.0,4.1,78704,austin-tx-taco
+139,"1210 Barton Springs Rd, Austin, TX 78704, USA",17ed778501b83f1ac5ecb07ed4472ae276bcbfbd,30.26101049999999,-97.7575651,Tacos El Quetzal,0.0,3.4,78704,austin-tx-taco
+140,"1815 W Ben White Blvd, Austin, TX 78704, USA",afbd2b957b4e4255e9918cb9be0ae271f9891c2e,30.2286031,-97.7871305,Taqueria Los Jaliscienses,0.0,3.9,78704,austin-tx-taco
+141,"4205 Manchaca Rd, Austin, TX 78704, USA",86e1d07421a8e5558390842af4e1f6402de5905b,30.2311179,-97.7871806,Trippy tacos,0.0,4.8,78704,austin-tx-taco
+142,"4208 Manchaca Rd, Austin, TX 78704, USA",51a9aee9397cfc7cfb14242b7140e27db21863dd,30.231381899999995,-97.7878533,Veracruz All Natural,0.0,4.7,78704,austin-tx-taco
+143,"2613 S Lamar Blvd, Austin, TX 78704, USA",5e18e12466311be436a914d97bd0838bfc804bd8,30.245117999999998,-97.77928100000001,Matt's El Rancho,2.0,4.1,78704,austin-tx-taco
+144,"2011 S 1st St, Austin, TX 78704, USA",b5274851c550aa75db19acfa3e5c9cdbd73e9a4a,30.2448208,-97.75734809999999,El Primo,0.0,4.9,78704,austin-tx-taco
+145,"4211 S Lamar Blvd A2, Austin, TX 78704, USA",b8e6e80250603808fcf9c81669f59133f3c802fe,30.233697999999997,-97.7922,Azul Tequila,2.0,3.9,78704,austin-tx-taco
+146,"343 S Congress Ave, Austin, TX 78704, USA",efe30d51115e4d0888706d3daaf545d0f9b5e833,30.2570446,-97.7464569,Don Gume's Tacos,0.0,5.0,78704,austin-tx-taco
+147,"614 E Oltorf St, Austin, TX 78704, USA",463b040f08c809be35d1e1e02ab45ae9dcb4fc61,30.237130100000005,-97.7494208,Curra's Grill,2.0,4.2,78704,austin-tx-taco
+148,"1728 Barton Springs Rd, Austin, TX 78704, USA",66bbf61a9a69c5bc038ade813ca4d1f9b113aaa9,30.263850800000004,-97.7632681,Chuy's,2.0,4.2,78704,austin-tx-taco
+149,"3023 Guadalupe St, Austin, TX 78705, USA",bbaac81858569e1201fb00b60782ff24a46f5798,30.2970408,-97.7414333,Changos Taqueria,1.0,4.1,78705,austin-tx-taco
+150,"3704 I-35, Austin, TX 78705, USA",c71e3535efe77cd62b397783a914aaeca10f7122,30.294219800000004,-97.7205038,Cafe Hornitos,1.0,4.5,78705,austin-tx-taco
+151,"2402 Guadalupe St, Austin, TX 78705, USA",69712dfd5486610142631e21b3e733df0e3c8ec4,30.2878674,-97.74196030000002,QDOBA Mexican Eats,1.0,3.9,78705,austin-tx-taco
+152,"3815, 2809 San Jacinto Blvd, Austin, TX 78705, United States",71bc6843818a2b9f53bcc241b5279f41dd1709a8,30.291573,-97.735008,Sao Paulo's Restaurant,2.0,4.3,78705,austin-tx-taco
+153,"411 W 23rd St, Austin, TX 78705, USA",8164b16f0626d507ec259527cd17c13f807f2d48,30.286389500000002,-97.7424823,Taqueria Jefe's,0.0,3.6,78705,austin-tx-taco
+154,"409 W 30th St, Austin, TX 78705, USA",54b10ddb5fed75046d3bb340c44f99477a2865d6,30.295748600000003,-97.741049,Trudy's Texas Star,2.0,4.2,78705,austin-tx-taco
+155,"2908 Fruth St, Austin, TX 78705, USA",05d028256ead6e15eb816b81212e906b3b5a800b,30.2955044,-97.7417585,Cool Beans,0.0,4.7,78705,austin-tx-taco
+156,"2025 Guadalupe St # 244, Austin, TX 78705, USA",c6072feb8c502b51085aef17641bbfc0de8f6771,30.283382399999997,-97.7413818,Burrito Factory,2.0,4.8,78705,austin-tx-taco
+157,"9605 Research Blvd, Austin, TX 78759, USA",cea6320863ae5a98116233a8614d9831dc5da80d,30.388287199999997,-97.7429839,Taco Cabana,1.0,3.5,78759,austin-tx-taco
+158,"2938 Guadalupe St, Austin, TX 78705, USA",694195965af701d5a5d4b146ce820bee0c9277ec,30.296705,-97.742257,El Patio Restaurant,2.0,4.1,78705,austin-tx-taco
+159,"9705 Manchaca Rd, Austin, TX 78748, USA",067a027f131115a864cd321ca3b56e880730c7ee,30.1751592,-97.82226240000001,Taco Cabana,1.0,3.2,78748,austin-tx-taco
+160,"4211 Spicewood Springs Rd, Austin, TX 78759, USA",6f04906d771c81ccc7f04d39f96af68d3d0687f1,30.3706872,-97.75627740000002,Torchy's Tacos,1.0,4.4,78759,austin-tx-taco
+161,"915 E Braker Ln, Austin, TX 78753, USA",87153127f943ceb9fc75457d79631c7e476e23dc,30.3753537,-97.672887,Vazquez Restaurant,1.0,4.2,78753,austin-tx-taco
+162,"9063 Research Blvd, Austin, TX 78758, USA",65740470af920fcec9852cca8233c4135731d837,30.374435499999997,-97.7272845,Vazquez Restaurant,2.0,4.1,78758,austin-tx-taco
+163,"13219 Research Blvd #100, Austin, TX 78750, USA",3e5512140b3e6dde6ac3042cd9eec6ac208272e8,30.4433424,-97.7842892,Papalote Taco House,1.0,4.4,78750,austin-tx-taco
+164,"9408 Dessau Rd, Austin, TX 78754, USA",1a6391e20e8b44ced99517b0d4094aeb675da06b,30.351654999999997,-97.6759418,Ken's Tacos,2.0,4.5,78754,austin-tx-taco
+165,"9320 N Lamar Blvd, Austin, TX 78753, USA",c9235d709b3783618b5e4eb0b521261afb5e9915,30.3629022,-97.6975599,El Tacorrido,2.0,4.2,78753,austin-tx-taco
+166,"1548 E Parmer Ln, Austin, TX 78754, USA",99eaa0a86ecd7020a8bc1ff1616a96dd969a59b2,30.3890653,-97.6507615,Taco Bell,1.0,3.1,78754,austin-tx-taco
+167,"2600 W Braker Ln, Austin, TX 78758, USA",45a317a7335da8b85040bb2226fa228f7f182903,30.391244099999998,-97.7201321,Taco Bell,1.0,3.7,78758,austin-tx-taco
+168,"8620 Burnet Rd, Austin, TX 78757, USA",641d50dbcc64ad0b6670ab1e46c2b5b33a9c034e,30.3689854,-97.7279748,Taco Cabana,1.0,3.4,78757,austin-tx-taco
+169,"1825 W Parmer Ln, Austin, TX 78727, USA",c06ef1bc0fe48a244c04ed3bc1cda005b7ab172e,30.4136964,-97.69279809999999,Taco Bell,1.0,3.3,78727,austin-tx-taco
+170,"4811 W Braker Ln, Austin, TX 78759, USA",2cb7c037d53161f7358d91fbeaa976731f1da096,30.400225199999998,-97.7472787,Taco Bell,1.0,3.1,78759,austin-tx-taco
+171,"8415 Research Blvd, Austin, TX 78758, USA",65d5c095fa91422e56064e79756ad91d990c9270,30.358677,-97.71564000000001,Taco Cabana,1.0,3.5,78758,austin-tx-taco
+172,"3501 Wells Branch Pkwy, Austin, TX 78728, USA",99db8092289289cc4835ed2cb15d9d58f3bbed2a,30.4393467,-97.6971121,Taco Bell,1.0,3.4,78728,austin-tx-taco
+173,"102 W Powell Ln, Austin, TX 78753, USA",063b65562e01bcdcee1a7320e27b2ab4f755640b,30.3480225,-97.7033188,Ñoños Tacos,0.0,4.6,78753,austin-tx-taco
+174,"15002 FM1825, Pflugerville, TX 78660, USA",46933d7b29de92b72300f8464d60cc07885290b5,30.4425679,-97.6661771,Taco Cabana,1.0,3.4,78660,austin-tx-taco
+175,"10205 N Lamar Blvd, Austin, TX 78753, USA",0d331d680707f09a3932ccdaa32ede509f7ecb36,30.37102999999999,-97.691385,Maudie's North Lamar,2.0,4.3,78753,austin-tx-taco
+176,"6513 N Interstate 35, Austin, TX 78752, USA",e3b839045c2e346e05b551fb576ca2813f68b4a8,30.326925,-97.704872,Pappasito's Cantina,0.0,4.1,78752,austin-tx-taco
+177,"2150 E Palm Valley Blvd Ste 100, Round Rock, TX 78665, USA",9d831d14b0ae72eaad2b06331e81d89d47c7854d,30.519122499999998,-97.65191290000001,Torchy's Tacos,0.0,4.5,78665,austin-tx-taco
+178,"13770 N Highway 183, Austin, TX 78750, United States",5824c9a06b980bab5702e7558a2e052c11f16e0c,30.461648200000003,-97.79507070000001,Taco Bell,1.0,2.7,78750,austin-tx-taco
+179,"201 E 24th St, Austin, TX 78712, USA",a7962441dba3625a2a2d4e22698fc37331d3fe1e,30.286869300000003,-97.73655600000001,O's Campus Cafe,2.0,3.8,78712,austin-tx-taco
+180,"3300 Bee Caves Rd #670, Austin, TX 78747, USA",65f76b5b86292c798e091030c7695ecbebb70ed9,30.274712,-97.799273,Chipotle Mexican Grill,1.0,3.9,78747,austin-tx-taco
+181,"7515 N FM 620, Austin, TX 78726, USA",360ae8cf0761d29b5f089fa1b9fb7385a3a05cbd,30.407751399999995,-97.85104840000001,Taco Bell,1.0,3.0,78726,austin-tx-taco
+182,"11521 Rr 620 N. E-1000, Austin, TX 78726, United States",143bd5e23f6e04a21b2e78902f0b53501bfe1a63,30.452964399999995,-97.8275789,Torchy's Tacos,2.0,4.4,78726,austin-tx-taco
+183,"9900 Parmer Lane, Bldg C, Austin, TX 78717, United States",9c9c3f2e489ae80d21ce5fc8dbd4ef0a8b6928ef,30.486569300000003,-97.7701047,Taco Bell,1.0,3.4,78717,austin-tx-taco
+184,"13376 Research Blvd, Austin, TX 78750, USA",1ffb7972b3ec48540966ce8d0c4076ce22547486,30.443776899999996,-97.7873032,Taco Cabana,1.0,2.6,78750,austin-tx-taco
+185,"12518 Research Blvd # M, Austin, TX 78759, USA",a4447a95ce3b025da5c7a46f2ada14ad92f183b8,30.428507300000003,-97.760494,Yummi Tacos,0.0,4.6,78759,austin-tx-taco
+186,"13729 Research Blvd, Austin, TX 78750, USA",5241101ddb4c282707b52ea84a63f51543b82a7f,30.4585554,-97.7918963,Vazquez Restaurant,2.0,4.0,78750,austin-tx-taco
+187,"12525 N Mopac Expy, Austin, TX 78727, USA",a6036add04852490463c6b0686b290d0ecc59176,30.4206908,-97.70269090000001,Taco Cabana,1.0,3.2,78727,austin-tx-taco
+188,"11228 Domain Dr, Austin, TX 78758, USA",9b3c7fdbaea2409769fc9321947ca2fd648b369e,30.3964164,-97.7273811,Rays World Taco,0.0,3.5,78758,austin-tx-taco
+189,"1921 Cedar Bend Dr, Austin, TX 78757, USA",fe1ee997f48a1485c4adeed18e363ba076c9eed3,30.4080678,-97.6976518,Jr's Tacos,0.0,4.6,78757,austin-tx-taco
+190,"12200 Research Blvd #400, Austin, TX 78759, USA",7afc34b528243d488d742c7e27a468fe78ad1a4f,30.42559799999999,-97.753773,OneTaco - an urban taqueria,0.0,4.4,78759,austin-tx-taco
+191,"7007 Village Center Dr, Austin, TX 78731, USA",7c892c1c503c8645b10911fa4fbb1aff6b6f53dd,30.351986800000002,-97.7565313,Tacos Ivan,0.0,4.7,78731,austin-tx-taco
+192,"11501 Rock Rose Ave Suite 160, Austin, TX 78758, USA",ddd030ebbdc136e4f501b990feed465a5ac7e43b,30.4006723,-97.7227287,Velvet Taco,2.0,4.4,78758,austin-tx-taco
+193,"8503 Hillmoore Dr, Austin, TX 78719, USA",f5506b3a88ef39b9514d693c0e8279086ca961ad,30.1708185,-97.6908142,El Taco Ton- FT,0.0,5.0,78719,austin-tx-taco
+194,"3600 Presidential Blvd, Austin, TX 78719, USA",f40674f73f6cfda9cca1443c4febb98809298e8f,30.201817,-97.6678979,Salt Lick,2.0,4.0,78719,austin-tx-taco
+195,"13820 Farm to Market Road 812, Del Valle, TX 78617, USA",d58ca38ee7f803114c23afa312bdf103d03857f7,30.1215657,-97.63590570000001,Meches Tacos,0.0,4.5,78617,austin-tx-taco
+196,"7709 E Ben White Blvd, Austin, TX 78744, USA",2bfb6e102610f54aead3b89fb344fe69960edcda,30.217777,-97.689705,Javi's Best Of Tex Mex,0.0,4.2,78744,austin-tx-taco
+197,"907 Montopolis Dr, Austin, TX 78741, USA",84ce73f268e618eea2f4b74e4a4bf4b497cfc792,30.235078299999998,-97.6966593,Alonzo's,0.0,4.1,78741,austin-tx-taco
+198,"10050 S Hwy 183, Austin, TX 78719, USA",70b7eafb83cca3b1945152bd1092b99716c24699,30.093988699999997,-97.6944298,La Bonita Mexican Restaurant,0.0,3.8,78719,austin-tx-taco
+199,"2463 E State Hwy 71 Service Rd, Del Valle, TX 78617, USA",9dc8cd444db5fdacc9efdf593379f02e6797f65c,30.2137386,-97.6591768,Jasmine's Restaurant,0.0,4.4,78617,austin-tx-taco
+200,"13602 FM812 Unit B, Del Valle, TX 78617, USA",32bf85df3b4b86eabb6498f79a19df870f5f7dfc,30.1236538,-97.6382218,Meches Mexican Restaurant,0.0,4.5,78617,austin-tx-taco
+201,"10201 Jollyville Rd, Austin, TX 78759, USA",818bc0972c50fb285e6011f5600aed0992c8f8d4,30.396711,-97.749321,Manuel's,2.0,3.9,78759,austin-tx-taco
+202,"8820 Burnet Rd, Austin, TX 78757, USA",cfc1abf19d598cd6981502024dd16fdf06941ea4,30.3706045,-97.7275391,Trudy's North Star,2.0,4.0,78757,austin-tx-taco
+203,"8300 N FM 620, Austin, TX 78726, USA",fc09e5a0f8b1a440f079ea1484a47bf035d24fed,30.421971999999997,-97.846598,Flores Mexican Restaurant,0.0,3.7,78726,austin-tx-taco
+204,"13233 Pond Springs Rd #301, Austin, TX 78729, USA",e49e7b1b477710b37e77df710651234945ce4b4d,30.44639059999999,-97.7793339,Jardin Corona,1.0,4.3,78729,austin-tx-taco
+205,"9400 Arboretum Blvd, Austin, TX 78759, USA",f825e58b868ec8d39b0c4aa510ac1a29bf3598eb,30.389141600000002,-97.7530001,Z'Tejas Mexican Restaurant and Grill,2.0,4.0,78759,austin-tx-taco
+206,"10515 N. Mopac Expressway NB, Austin, TX 78759, USA",faac89e57b101ec9527df552d61c6c0e889c06fa,30.386959,-97.733967,Lupe Tortilla,2.0,4.3,78759,austin-tx-taco
+207,"1810 S Lakeline Blvd, Cedar Park, TX 78613, USA",3b11ce18e6ac847798ce752f5e84b4ea3815bca4,30.4815396,-97.8312886,Taco Bell,1.0,3.2,78613,austin-tx-taco
+208,"1108 N Interstate 35 Frontage Rd, Round Rock, TX 78681, USA",905962ebd87091f613db9ff1f31730e13c1b11a5,30.5173502,-97.6893432,Taco Bell,1.0,3.1,78681,austin-tx-taco
+209,"1468 E Whitestone Blvd Ste 100, Cedar Park, TX 78613, USA",88619da41bee72377018338b91070ee0b5b961e1,30.5265751,-97.80908640000001,Torchy's Tacos,0.0,4.4,78613,austin-tx-taco
+210,"3306 Oak Springs Dr, Austin, TX 78721, USA",7b632f2c00614bd6274c46060025cebbe10b47ed,30.273962,-97.697034,Beto's Restaurant #2,0.0,3.9,78721,austin-tx-taco
+211,"1138 Gunter St, Austin, TX 78721, USA",04e8d8f18471dec1c238ce998681743fc17b8fdc,30.2703974,-97.6966121,Taqueria Don Emilio Austin,0.0,4.5,78721,austin-tx-taco
+212,"301 Brazos St #150, Austin, TX 78701, USA",f50b77e31a966d96b0ce60630913d0f4d22d20f9,30.2647999,-97.74162790000001,Uncle Julio's Mexican From Scratch,0.0,4.0,78701,austin-tx-taco
+213,"2908 Fruth St, Austin, TX 78705, USA",4e283718e1ebc6930cb30030ac6b5ed86f44b365,30.2954951,-97.7417417,Arlo's,1.0,4.4,78705,austin-tx-taco
+214,"310 Congress Ave, Austin, TX 78701, USA",d0b7d4d7480ff15be7869c971789854cd87bda08,30.265828000000003,-97.743923,Manuel's Downtown Mexican Restaurant,2.0,3.9,78701,austin-tx-taco
+215,"1005 Springdale Rd, Austin, TX 78721, USA",3116119047882fd4f3063a06494742366bc9ea6b,30.2659903,-97.6954441,Taqueria La China,0.0,3.0,78721,austin-tx-taco
+216,"3301 N Interstate 35 Frontage Rd, Austin, TX 78722, USA",0b76318f5913e1e27c714c7fdb1fff29cb6c3cab,30.2909428,-97.7216798,Taqueria Los Altos,0.0,4.4,78722,austin-tx-taco
+217,"3101 Interstate 35 Frontage Rd, Austin, TX 78722, USA",43cfc6bacb82a700d8c414eff8b3639a088b8a99,30.2886185,-97.723098,Star Seeds Cafe,2.0,4.2,78722,austin-tx-taco
+218,"1917 Manor Rd, Austin, TX 78722, USA",481d9d4e930ced6b81493046f56b17eb6147adbb,30.2838137,-97.7212401,Salty Sow,3.0,4.6,78722,austin-tx-taco
+219,"1304 E 51st St, Austin, TX 78723, USA",d18d7dad6b32fcff921c2fc6bd9b019f0dbe0d68,30.3074261,-97.705849,Paco's Tacos,2.0,4.5,78723,austin-tx-taco
+220,"5301 Manor Rd, Austin, TX 78723, USA",a1b24f00df9d4dd6361bbd9b34c305b8834ce122,30.2999967,-97.6854754,Taqueria Mi Trailita,0.0,4.6,78723,austin-tx-taco
+221,"3124 Manor Rd, Austin, TX 78723, USA",0ea00bb9a6797795f0d526a3075b7619407d0e0d,30.286852000000003,-97.7045887,La Fruta Feliz,0.0,4.3,78723,austin-tx-taco
+222,"1762 Colony Creek Dr, Austin, TX 78758, USA",41906e00990c5df2cdcfce2ae5f6b8a6e62d890b,30.36979299999999,-97.715203,Ñoños Tacos #2,0.0,4.8,78758,austin-tx-taco
+223,"4927 Craigwood Dr, Austin, TX 78725, USA",883355d853ca06aa2f4bb221a6f223205a05b5af,30.284411499999997,-97.6593402,Pollos Asados El Norteño,0.0,4.9,78725,austin-tx-taco
+224,"14010 FM 969, Austin, TX 78724, USA",5453782a14b56fcc39a977c90d7f54469831c1ab,30.248775199999997,-97.5854374,Welcome to alexandra,0.0,4.9,78724,austin-tx-taco
+225,"413 Bastrop Hwy, Austin, TX 78741, USA",fd1e3c635ec97eaa6adb63be769a2ee1ecfd74e7,30.2388257,-97.68692970000001,Mama'S Tacos,0.0,4.0,78741,austin-tx-taco
+226,"1201 Barbara Jordan Blvd #1300, Austin, TX 78723, USA",c4b32c0cb6597986466aa52cef756f3ad87dc359,30.305655100000003,-97.70799179999999,Chipotle,1.0,4.2,78723,austin-tx-taco
+227,"1011 Reinli St, Austin, TX 78723, USA",11cc20b8185f6a8bf6b24d1bca0f51b7f1574bae,30.317907199999997,-97.70660720000001,Taquerias Arandinas,0.0,3.9,78723,austin-tx-taco
+228,"2110 E Riverside Dr, Austin, TX 78741, USA",267d5d4f3ccb2cea5d3adf95df500dd72b1aa6d2,30.2405782,-97.7265513,Taquerias Arandinas,2.0,4.0,78741,austin-tx-taco
+229,"10910 N FM 620, Austin, TX 78726, USA",89eedea1838af64888719466bbd1ecd561578cfc,30.448416700000003,-97.8308215,Tacos Y Tortas Marus,0.0,4.7,78726,austin-tx-taco
+230,"1779 Wells Branch Pkwy # 108, Austin, TX 78728, USA",dcc677cc3b7fa592e0b970cdda07608e3014e4e5,30.435199199999996,-97.67432480000001,El Faro,1.0,4.6,78728,austin-tx-taco
+231,"11200 Research Blvd, Austin, TX 78759, USA",b72123241a10cd93f24975c3f52d33a12f2c3775,30.4083933,-97.7458869,Top Taco,0.0,4.7,78759,austin-tx-taco
+232,"14611 MoPac Expy # 103, Austin, TX 78728, USA",b2b3077014d00f2e2cf6ca7be2ea0ca6ec1a10e9,30.4501272,-97.6947771,Ramos Restaurant III,1.0,4.4,78728,austin-tx-taco
+233,"14735 Bratton Ln, Austin, TX 78728, USA",772fd4186a3fa7a5ab552d54360219eb82037da3,30.446126,-97.685389,Polvos Mexican Restaurant,2.0,2.9,78728,austin-tx-taco
+234,"13450 US-183, Austin, TX 78729, USA",76688ec62fc1f72ebec7a263df7ac41974166326,30.4464837,-97.7903238,La Tapatia,1.0,3.9,78729,austin-tx-taco
+235,"2905 Pearce Rd, Austin, TX 78730, USA",132d3d6640cb382f0e61837f1bf81f55f643c977,30.333565500000002,-97.822921,Ski Shores Cafe,2.0,4.1,78730,austin-tx-taco
+236,"6812 Ranch Rd 620 N, Austin, TX 78732, USA",dc94d95f64f00158331556e9c4186a9ee2272b3d,30.4017565,-97.855299,Tacos Don Chuy,0.0,5.0,78732,austin-tx-taco
+237,"1945 Medical Dr Suite 100, Lakeway, TX 78734, USA",72efc62d5ec106420bf95f9f1c23e0e9d0db319d,30.3466849,-97.9674009,Torchy's Tacos,0.0,4.5,78734,austin-tx-taco
+238,"11404 Ranch Rd 2222 Suite 4, Austin, TX 78730, USA",d4c6ca39c89e68b3bc09cde017d539b467ace032,30.402646999999998,-97.852115,Papa Murphy's Take 'N' Bake Pizza,1.0,4.4,78730,austin-tx-taco
+239,"1703 Ranch Rd 620 S, Lakeway, TX 78734, USA",64481fac865ea0c832f1754a3774c9e57f397fd3,30.3458652,-97.9643995,Taco Bell,1.0,4.1,78734,austin-tx-taco
+240,"5770 N Mopac Expy #500, Austin, TX 78731, USA",a7efc8afd52ffa869b07e44508f7ff0e3b7b871c,30.3392153,-97.7555662,ZuZu Handmade Mexican Food,2.0,4.1,78731,austin-tx-taco
+241,"3815 Dry Creek Dr, Austin, TX 78731, USA",b0845448484d8014f625cc6df438384134ccf0e7,30.342747999999997,-97.764071,Azul Tequila,2.0,4.1,78731,austin-tx-taco
+242,"3573 Far West Blvd, Austin, TX 78731, USA",3ee3217e5ecc71d2237fe53ddb05f544cae69e39,30.353284000000002,-97.754926,Kneaded Pleasures Pizza Cafe,1.0,3.9,78731,austin-tx-taco
+243,"3800 Dry Creek Dr, Austin, TX 78731, USA",289860f1cc04869b8876fdabbaf20da54822adf7,30.342768,-97.7636164,Wild Taco 2,0.0,0.0,78731,austin-tx-taco
+244,"6516, 5204 Ranch Rd 2222, Austin, TX 78731, United States",b6cebf98e0487c859f5482b1c064e5be395c8ef0,30.357107,-97.78562120000001,County Line,2.0,4.3,78731,austin-tx-taco
+245,"5000 W Slaughter Ln, Austin, TX 78749, USA",25686fb5a0f440ed9184eab6445af745fef5f2ed,30.200621999999996,-97.863998,Taco Bueno,1.0,3.9,78749,austin-tx-taco
+246,"Building A., Unit #100, 6611 S MoPac Expy, Austin, TX 78749, United States",5f4bfe2a2fb492585b5f5da0da53512709821f97,30.2199603,-97.8353418,Taco Cabana,1.0,3.0,78749,austin-tx-taco
+247,"6001 W William Cannon Dr # 301, Austin, TX 78749, USA",5cd3f438aef14347555c0c01037291d2f881d40a,30.2284462,-97.8632991,Hecho En Mexico,2.0,4.4,78749,austin-tx-taco
+248,"1700 Ranch Rd 620 N #110, Austin, TX 78734, USA",7d8301e6e9372a44c6695ffdba16d5d75a71ed5a,30.38147039999999,-97.9449414,Don Mario Mexican Restaurant,2.0,4.4,78734,austin-tx-taco
+249,"2127 Lohmans Crossing Rd, Austin, TX 78734, USA",712916a3d0348c7be7b497a57cc66544b9eb5e7b,30.342407,-97.9691843,Flores Mexican Restaurant,2.0,3.9,78734,austin-tx-taco
+250,"1200 Lakeway Dr, Lakeway, TX 78734, USA",84cf4ad9108167ba655cdf5c4805c796d1acb59a,30.363947600000003,-97.9823161,Cafe Lago,2.0,4.3,78734,austin-tx-taco
+251,"4919 Hudson Bend Rd, Austin, TX 78734, USA",5771ccbd72ab872cf30c6177d926db20e6d66a68,30.4119815,-97.9263037,Los Pinos Mexican Restaurant,2.0,4.0,78734,austin-tx-taco
+252,"6116 W US Hwy 290 Service Rd, Austin, TX 78735, USA",3658538b8afb8a4b37215c4e8ec1c829f1c12e22,30.235797899999998,-97.8553766,Taqueria Chapala 3,2.0,4.4,78735,austin-tx-taco
+253,"5030 W US Hwy 290 Service Rd, Austin, TX 78735, USA",b068962ef6b281e0a3b92649d4590e54d646a49b,30.236146999999995,-97.821823,Serranos Cocina y Cantina - Mopac,2.0,4.3,78735,austin-tx-taco
+254,"5446 US-290, Austin, TX 78735, USA",f1c259903cfd7461c38c9b1039e7b0a073a4f0d4,30.23733489999999,-97.8402056,Donut Taco Palace I,2.0,4.4,78735,austin-tx-taco
+255,"7720 TX-71, Austin, TX 78735, USA",987448870b1321e83c201d092556ab3329af624a,30.2435375,-97.8827662,Jack Allen's Kitchen Oak Hill,2.0,4.6,78735,austin-tx-taco
+256,"6705 W US Hwy 290 Service Rd Ste 608, Austin, TX 78735, USA",7d43b094fc67fc35a4b8953476f671641e86c525,30.233370500000003,-97.8659431,Chinos Banditos,0.0,4.7,78735,austin-tx-taco
+257,"12506 Shops Pkwy, Austin, TX 78738, USA",0919e5b08fe4baebc306d4a1ffef4c173d5b9753,30.304714399999998,-97.9373756,Maudie's Hill Country,2.0,3.9,78738,austin-tx-taco
+258,"3201 Bee Caves Rd #122, Austin, TX 78746, USA",7f487a4e8706d4a4f4c1bdcb00397b770ab92eb9,30.2717777,-97.8001346,Las Palomas,2.0,4.1,78746,austin-tx-taco
+259,"11940 Manchaca Rd, Austin, TX 78748, USA",23313d4a89464c5e2f9241e4936230da1c91813d,30.1454798,-97.8332753,Texican Cafe - Manchaca,2.0,4.2,78748,austin-tx-taco
+260,"9500 S IH 35 Frontage Rd, Austin, TX 78748, USA",cac26ba5d6117ae66ee9d58bda8c4f5e8f83b49c,30.162395,-97.790546,Serranos Cocina y Cantina,2.0,4.0,78748,austin-tx-taco
+261,"1901 W William Cannon Dr, Austin, TX 78745, USA",694c1117a5f54c629e2e27df3aedd480074560f9,30.201823100000002,-97.8058908,Casa Garcia's,2.0,4.2,78745,austin-tx-taco
+262,"9201 US-290, Austin, TX 78736, USA",804c0283febaec07c57145413236046aebe430b9,30.231389399999998,-97.9270072,Taco Brother,0.0,5.0,78736,austin-tx-taco
+263,"7001 Oak Meadow Dr, Austin, TX 78736, USA",20a694f87104ccd8a6fa6df8bedf53e126919f71,30.2325898,-97.8770543,Donn's Texas BBQ,2.0,4.1,78736,austin-tx-taco
+264,"12701 Nutty Brown Rd, Austin, TX 78737, USA",9b9779a4d691fc696c5378f5c77c1144d47771e9,30.199353000000002,-97.97184200000001,Tia's Kitchen,0.0,4.9,78737,austin-tx-taco
+265,"10900 US-290, Austin, TX 78737, USA",2b5a1dcdec9ed436ee6d3eff61f70e1458e2ff7e,30.2220221,-97.9567323,Taqueria La Escondida 2,0.0,3.5,78737,austin-tx-taco
+266,"Austin, TX 78737, USA",e9ef9cdb8870520006e1f02f85a230ff07ef116a,30.2086943,-97.9747388,Flores #2,0.0,4.6,78737,austin-tx-taco
+267,"9601 US-290, Austin, TX 78737, USA",395932de9b488b40b8154de5bee8848320e06125,30.2300256,-97.9353121,Gordo's Tortas & BBQ,0.0,4.5,78737,austin-tx-taco
+268,"12110 Manchaca Rd # 102, Austin, TX 78748, USA",eb89b7c3a7de81d4b091b901b4fded30afdb051f,30.1428091,-97.83403320000001,Macho Taco,1.0,4.6,78748,austin-tx-taco
+269,"13908 TX-71, Austin, TX 78738, USA",93d2432c1f87577f8b15671a0a0bd5949be9319e,30.309599100000003,-97.9612324,Hill Country Food Mart - Mr.Taco King,2.0,4.0,78738,austin-tx-taco
+270,"16018 Hamilton Pool Rd, Austin, TX 78738, USA",642cff1b202f67a8afe4681916ee627f773abb36,30.2980919,-98.0075888,Verde's Mexican Parrilla,2.0,4.4,78738,austin-tx-taco
+271,"12800 Hill Country Blvd. Suite G-115, Bee Cave, TX 78738, United States",fcd18068ed57d0341f64162d14dd095ca23310ff,30.309362800000002,-97.9401394,Cafe Blue at Hill Country Galleria,2.0,4.1,78738,austin-tx-taco
+272,"13436 TX-71, Austin, TX 78738, USA",885c74bea270d34e2740ceaa48b0ec178da9cf45,30.308591999999997,-97.94994399999999,Rosie's Tamale House,2.0,4.1,78738,austin-tx-taco
+273,"12532 Farm to Market 2244, Bee Cave, TX 78738, USA",69a9af9316fb519b492466fcd99b4a6bcbe5589e,30.3058413,-97.9357944,Schmidt Family Barbecue,2.0,4.0,78738,austin-tx-taco
+274,"11715 Bee Caves Rd, Austin, TX 78738, USA",2aa5b7c6c3f95e218e7c442163c422072f2a64a1,30.308057199999997,-97.919488,Los Pinos,0.0,4.2,78738,austin-tx-taco
+275,"9001 Brodie Ln, Austin, TX 78748, USA",0a2a19116ec3aac36374dc3bc1acdbfc3036f327,30.193780600000004,-97.84270009999999,Casa Arandinas,0.0,4.2,78748,austin-tx-taco
+276,"9911 Brodie Ln #900, Austin, TX 78748, USA",517ee052abed06e360f657eb16674bd81efef24e,30.183246999999998,-97.84773050000001,Maudie's Hacienda,2.0,4.2,78748,austin-tx-taco
+277,"2440 E Hwy 290, Dripping Springs, TX 78620, USA",32fc48e2cc2b1a0e229009965fda0f855c62c454,30.194246000000003,-98.0504985,Flores Mexican Restaurant,2.0,3.9,78620,austin-tx-taco
+278,"580 Old San Antonio Rd, Buda, TX 78610, USA",b3707c8748e2ffed8f2fb3deb33b2f259f42949e,30.085445,-97.82252159999999,Taco Bell,1.0,3.7,78610,austin-tx-taco
+279,"12115 Manchaca Rd, Austin, TX 78748, USA",0bcc3f53a6481f38db6dd76e5ea8cef23ae4a6d0,30.1417485,-97.83262950000001,Taco Aranda Mexican Food,0.0,4.2,78748,austin-tx-taco
+280,"6800 West Gate Blvd #143, Austin, TX 78745, USA",b1add66cb62807c39f2c83cb3cb9d13fade51ae0,30.208302000000003,-97.815417,La Posada,2.0,4.3,78745,austin-tx-taco
+281,"1911 E Riverside Dr, Austin, TX 78741, USA",f924f7a845dea4ab8a2338a6b70ce38ea446ee1c,30.242128899999997,-97.7299819,Rosita's Al Pastor,2.0,4.2,78741,austin-tx-taco
+282,"1713 E Riverside Dr, Austin, TX 78741, USA",f153c80aac38ab5352b46a320da101f957495b68,30.243789000000003,-97.7303747,El Taquito,2.0,4.1,78741,austin-tx-taco
+283,"1917 E Riverside Dr, Austin, TX 78741, USA",e7ea7f43416ec3a70ad7920d73d0fda25f4cc6e5,30.2415221,-97.7296738,Tacos Al Pastor,0.0,4.6,78741,austin-tx-taco
+284,"5808 Burleson Rd, Austin, TX 78744, USA",6f2801ebf622bfe32cffd3c6d5cd5847291169f2,30.2079126,-97.7209307,El Mesón,1.0,4.0,78744,austin-tx-taco
+285,"5310 S Pleasant Valley Rd, Austin, TX 78744, USA",04ab93dc8810340d29f05039e461c7d7b620f601,30.194588800000002,-97.7451895,La Placita,0.0,4.2,78744,austin-tx-taco
+286,"4606 Burleson Rd, Austin, TX 78744, USA",229d2c9616449b9b1bcf6bd8e723a000c1b6fc56,30.21306809999999,-97.7316547,Casa Moreno's,0.0,4.4,78744,austin-tx-taco
+287,"5303 Nuckols Crossing Rd, Austin, TX 78744, USA",9b21512b56b6eb807fdd02917ad90c992d189a55,30.1925973,-97.73867840000001,Taqueria Peloncitos,0.0,4.3,78744,austin-tx-taco
+288,"7612 Old Lockhart Hwy, Austin, TX 78744, USA",51ecfd15e0a9df702050784536930cfb13bda7fa,30.1746416,-97.7694583,Secret Taco Stand,0.0,4.0,78744,austin-tx-taco
+289,"8801 S IH 35 Frontage Rd, Austin, TX 78744, USA",17522651dcf2bcf905d04244da94d5469ae6dfb8,30.1698683,-97.78357240000001,Don Dario's Cantina,0.0,4.1,78744,austin-tx-taco
+290,"Austin, TX 78744, USA",56ee95a6084377113db149bf8820f79061464919,30.1972658,-97.7438147,Tacos,0.0,0.0,78744,austin-tx-taco
+291,"512) 619-3798, 4914 Pepper Ln, Austin, TX 78744, USA",1d29a6c2679a96659e02dd3998b104fdc5d944aa,30.202498699999996,-97.7521809,Lopez Taco Truck,0.0,4.9,78744,austin-tx-taco
+292,"6002 Burleson Rd, Austin, TX 78744, USA",e4f56f46ef8d54417007779114df370bfc5f4cd8,30.206563899999995,-97.7182453,Casa Vallarta,0.0,4.1,78744,austin-tx-taco
+293,"4415 S IH 35 Frontage Rd, Austin, TX 78744, USA",11f5619d001395ccabd5c53f46b258e87a401b76,30.2109152,-97.753298,The Limestone Kitchen Restaurant & Lounge,0.0,3.2,78744,austin-tx-taco
+294,"5510 S IH 35 Frontage Rd, Austin, TX 78745, USA",16bd510d862084e5cc9b8893119e3ee420e3a4ef,30.2005599,-97.7634307,Mariana's Kitchen,0.0,4.5,78745,austin-tx-taco
+295,"3100 US-183, Austin, TX 78744, USA",fc5feac4dd0e67af8f652595551cfe0a85f0b83c,30.204885700000002,-97.6837507,Taqueria Morelos,0.0,4.6,78744,austin-tx-taco
+296,"Austin, TX 78744, United States",5f3e90e2f337184241f2977049c339b449b78a9b,30.1804703,-97.74725450000001,Fruttilandia,0.0,0.0,78744,austin-tx-taco
+297,"1615-1679 E William Cannon Dr, Austin, TX 78744, USA",89ed4ea5248f08973ee02bb68904d1270997a7b4,30.188505699999997,-97.7673511,Chanitas Tacos,0.0,5.0,78744,austin-tx-taco
+298,"Austin, TX 78744, USA",c1af9a4a4e68beff6f1cfb8617ada03eff0df71d,30.1891267,-97.6861931,Veronica's Pupusas y Tacos,0.0,4.7,78744,austin-tx-taco
+299,"4329 S Congress Ave, Austin, TX 78745, USA",ede44fe8281160ddd5ae7a539fa9fb9bc37cfd58,30.218606,-97.76579,Kesos Taco House - Taco Truck,0.0,5.0,78745,austin-tx-taco
+300,"6601 S Congress Ave, Austin, TX 78745, USA",2f12d340ea6e2f1995af2d57a631776e2c56fdea,30.193873200000002,-97.7776352,Jalisco's,2.0,4.1,78745,austin-tx-taco
+301,"700 W William Cannon Dr, Austin, TX 78745, USA",641df6aadb055312421c29ab682df13da711d8cb,30.197649,-97.7878446,Taquerias Arandinas,2.0,4.3,78745,austin-tx-taco
+302,"4811 S Congress Ave, Austin, TX 78745, USA",d743c7258f030a9fb6f0b0e1d3ebd8e708b64e0b,30.2122979,-97.7702098,Tacos Las Amazonas Estilo Jalisco,0.0,4.8,78745,austin-tx-taco
+303,"1415 W William Cannon Dr, Austin, TX 78745, USA",92de2bb198f828b6de06943054c8faadef0c1a8f,30.2003403,-97.80002540000001,Taqueria Morales,0.0,4.7,78745,austin-tx-taco
+304,"4128 S 1st St, Austin, TX 78745, USA",533e94d64409300761167cd8e2fec89b942a715f,30.2249456,-97.7707065,Jefes Tacos,0.0,5.0,78745,austin-tx-taco
+305,"2901 S Capital of Texas Hwy, Austin, TX 78746, USA",8af38af41909ac174c08c8463b95cb8be8a6a4c3,30.2575506,-97.8078192,Mabos Craft Tacos,0.0,5.0,78746,austin-tx-taco
+306,"3801 N Capital of Texas Hwy, Austin, TX 78746, USA",ef158e597d3ac31ee121de07199b2ff0c63521c9,30.336909999999996,-97.80336700000001,Maudie's Milagro,2.0,4.2,78746,austin-tx-taco
+307,"1801 S Capital of Texas Hwy, Austin, TX 78746, USA",c69832ed68954a599bb095d24a4209cb3d2aca9f,30.271218199999996,-97.81712579999999,Vaqueros Cafe & Cantina,0.0,4.0,78746,austin-tx-taco
+308,"2712 Bee Caves Rd, Austin, TX 78746, USA",bdefc39e9e72060c0c3f8552220f8ea2ca60d20b,30.271813800000004,-97.7865383,Chinatown,2.0,4.1,78746,austin-tx-taco
+309,"701 S Capital of Texas Hwy E-550, Austin, TX 78746, USA",21498ed14a5f8ad9582f9c4e893a47c89bac2a55,30.290519899999996,-97.8260328,Izumi Sushi,2.0,4.0,78746,austin-tx-taco
+310,"10006 Manchaca Rd, Austin, TX 78748, USA",d9ced8a6131f3ed65b8167f385993977e154200a,30.1720664,-97.8253565,Panchita Taco Taco,0.0,3.7,78748,austin-tx-taco
+311,"3601 W William Cannon Dr # 900, Austin, TX 78749, USA",62edcfdd43baa7f20b3d53f357934d5bb31ddd64,30.2151337,-97.8337257,La Familia Mexican Restaurant,2.0,3.9,78749,austin-tx-taco
+312,"4301 W William Cannon Dr, Austin, TX 78749, USA",f14e5d754c47399635bfa56310d2eeeee33b5e27,30.2177657,-97.8415066,Chuy's,0.0,4.4,78749,austin-tx-taco
+313,"9600 Escarpment Blvd, Austin, TX 78749, USA",901153bbc3b4a2685fb88371965a61a3270ad1e4,30.203519899999996,-97.8789907,Waterloo Ice House Escarpment,2.0,4.0,78749,austin-tx-taco
+314,"12233 Ranch Rd 620 N, Austin, TX 78750, USA",47c7c8b8a22d09a581b449b09c656d8c00dc92aa,30.4623054,-97.8147877,Taco Shack,0.0,3.8,78750,austin-tx-taco
+315,"12226 Ranch Rd 620 N, Austin, TX 78750, USA",05a9846d4f1b6b7ec85a7b8d15a0dbc515e537bf,30.462668400000002,-97.8156697,Taqueria Guadalajara,2.0,4.1,78750,austin-tx-taco
+316,"4230 Duval St, Austin, TX 78751, USA",25ccd8234ca6166c1b25672b3e28ea841d2a5c36,30.3045299,-97.72637040000001,Julio's Cafe,2.0,4.3,78751,austin-tx-taco
+317,"1000 E 41st St Ste. 260, Austin, TX 78751, USA",f40ecc5340d7c8dd1a27dc6d164905f24856c661,30.299576000000002,-97.721317,Freebirds World Burrito,2.0,4.1,78751,austin-tx-taco
+318,"4000-4010 Red River St, Austin, TX 78751, USA",e47419802a3f490101d3b5eab9db28b8d1daa699,30.2994026,-97.7225921,Chetos Tacos,0.0,4.8,78751,austin-tx-taco
+319,"& e, Airport Blvd & E 51st St, Austin, TX 78751, United States",c5782d2d343c965174df5c32754abfb14e3aa96d,30.3121385,-97.7149946,Taqueria La Canaria,0.0,4.4,78751,austin-tx-taco
+320,"5621 Airport Blvd, Austin, TX 78751, USA",856ee9c822a5cf411421edc5ba3609c526574580,30.318313,-97.712265,Quality Seafood Market,2.0,4.3,78751,austin-tx-taco
+321,"5602 N Lamar Blvd, Austin, TX 78751, USA",e1387f2e6aee704a6d025e08daf567a115d1702f,30.324926899999998,-97.72739720000001,Dan's Hamburgers,1.0,4.5,78751,austin-tx-taco
+322,"4011 Red River St, Austin, TX 78751, USA",468982f36eaea2f507656e33ab84901d6539ac57,30.2992272,-97.7221515,Victors Tacos,0.0,0.0,78751,austin-tx-taco
+323,"5201 Airport Blvd, Austin, TX 78751, USA",64c9c95ff0cdce0f77df54a990a1a1baca9663f4,30.313105,-97.7147533,Sala and Betty,2.0,4.5,78751,austin-tx-taco
+324,"6801 Airport Blvd, Austin, TX 78752, USA",90f53c2e4190bb1f247a5a2f15cb0c5339cf3edf,30.3338256,-97.716262,Brazas Taco House,0.0,4.6,78752,austin-tx-taco
+325,"6903 Airport Blvd, Austin, TX 78752, USA",a33cd2892b6e7cc4565a4e026b2d275de0c0354f,30.335887,-97.717603,Taqueria Los Jaliscienses,0.0,4.1,78752,austin-tx-taco
+326,"720 N Lamar Blvd, Austin, TX 78752, USA",23fd26e13e8288d8fef9ded5736f03166af40ccb,30.3317135,-97.7221493,Jefes,0.0,4.5,78752,austin-tx-taco
+327,"600 Canion St, Austin, TX 78752, USA",b152fe37d02fe1c0661dd107d53744c355eba4c3,30.3332089,-97.7176161,Taco Wagon on the corner,0.0,0.0,78752,austin-tx-taco
+328,"704 E St Johns Ave, Austin, TX 78752, USA",ba6ab24b9ab561b27cf81e9c1e35ed2466dcd317,30.3335154,-97.7049515,Tacos La Esmeralda,0.0,5.0,78752,austin-tx-taco
+329,"7210 Cameron Rd, Austin, TX 78752, USA",5e9a34f97d15e3208a3bbf781b88e7085f134d32,30.3267966,-97.6924088,Aguileras Mexican Restaurant,0.0,4.0,78752,austin-tx-taco
+330,"6619 N Interstate Hwy 35, Austin, TX 78752, USA",2d297a39dfa2866eabc707f892c020c7a0b0e706,30.3278815,-97.7048525,Chili's Grill & Bar,1.0,3.8,78752,austin-tx-taco
+331,"7600 N Lamar Blvd, Austin, TX 78752, USA",b091d50bdf3435da45742fb74abccd14d87ac06a,30.3445163,-97.7152181,Tex Mex Joe's,0.0,4.5,78752,austin-tx-taco
+332,"6406 N Interstate Hwy 35, Austin, TX 78752, USA",5aa33f4ffe1e41e1aa386cfb91364b3f59d89a7a,30.3254429,-97.7084987,Vivo,2.0,4.3,78752,austin-tx-taco
+333,"7208 Cameron Rd, Austin, TX 78752, USA",975629965e68308995af4c5cb8598b00968d954f,30.326628399999997,-97.69250179999999,Taco-N-Share,0.0,0.0,78752,austin-tx-taco
+334,"7213 Cameron Rd, Austin, TX 78752, USA",a496093daed06331d406ea7c7537af21eadcc76f,30.3266397,-97.6915258,El Rinconcito Del Sabor,0.0,4.4,78752,austin-tx-taco
+335,"Austin, TX 78752, USA",c21f0dd04df9377c2d47f4255e39e7682d34fe09,30.335194399999995,-97.7201905,Taqueria Los Gallitos,0.0,0.0,78752,austin-tx-taco
+336,"10304 N Lamar Blvd, Austin, TX 78753, USA",b89e1c1ec60208ac1a7648cc9988a30f6e7e0c5d,30.372611699999997,-97.6920146,Tacos Matamoros,0.0,4.4,78753,austin-tx-taco
+337,"9616 N Lamar Blvd, Austin, TX 78753, USA",cc5824bb232ecae8e27f3a210a902873fad779fb,30.365662899999997,-97.6966792,Taquerias Arandinas,0.0,3.5,78753,austin-tx-taco
+338,"707 E Braker Ln #201, Austin, TX 78753, USA",726ed2515c89801264fbfd18236f8f887be8ce9e,30.3766482,-97.677488,La Montaña Tacos,0.0,4.0,78753,austin-tx-taco
+339,"701-755 Provines Dr, Austin, TX 78753, USA",00beaf114db42bd5801743b052a1f9a43ded47fe,30.376563800000003,-97.6891969,El Chilango,0.0,4.6,78753,austin-tx-taco
+340,"13609 I-35, Austin, TX 78753, USA",05569aa0046d639fc36a09b868c4a962b34f6162,30.423144,-97.670489,Baby Acapulco,2.0,3.8,78753,austin-tx-taco
+341,"2900 W Anderson Ln suite k, Austin, TX 78757, USA",9e99c76a2868cb31119070901f66a49b52aa57a5,30.359813,-97.73674399999999,OneTaco - an urban taqueria,0.0,4.6,78757,austin-tx-taco
+342,"6425 Burnet Rd, Austin, TX 78757, USA",36241bbf6b03b3b8204d2c4ab791d5a3d141c566,30.339978100000003,-97.7386743,El Chilito · Burnet,1.0,4.2,78757,austin-tx-taco
+343,"4516 Burnet Rd, Austin, TX 78756, USA",d936078430bce3ac738a594672807882c4affff9,30.316070899999996,-97.7414323,La Cocina de Consuelo,2.0,4.4,78756,austin-tx-taco
+344,"2330 W N Loop Blvd, Austin, TX 78756, USA",93d5854ff5c1b3793361185f80e49d8f56cfaade,30.325561699999998,-97.7433643,Fonda San Miguel,3.0,4.4,78756,austin-tx-taco
+345,"5520 Burnet Rd #100, Austin, TX 78756, USA",22bdbfb2327e1d40b27409d51d29734eb032ddac,30.330703999999997,-97.74027,The Peached Tortilla,2.0,4.5,78756,austin-tx-taco
+346,"1304 W Koenig Ln, Austin, TX 78756, USA",2c335eb0ceb270c25923cd1ddb6d2aba73cdc9b1,30.330893800000002,-97.7308286,Chekos,2.0,4.3,78756,austin-tx-taco
+347,"4400 N Lamar Blvd, Austin, TX 78756, USA",1c0ca4ce870a27fc23adb012c996fb5d499f88d2,30.312482,-97.738645,Chipotle Mexican Grill,1.0,4.2,78756,austin-tx-taco
+348,"2203 Hancock Dr, Austin, TX 78756, USA",d52d0204f0db08e8753ef420ad3e6e9d750faaf1,30.322490000000002,-97.740851,La Mancha,0.0,4.2,78756,austin-tx-taco
+349,"4420 N Lamar Blvd, Austin, TX 78756, USA",a83a7405f0b79cc47aa420b49a98c7f65ee0c22b,30.3133207,-97.7383558,Chili's Grill & Bar,1.0,3.9,78756,austin-tx-taco
+350,"5000 Burnet Rd, Austin, TX 78756, USA",212bf93b4c88cef23b2f461cb71c2d77d84f020a,30.3211689,-97.7395055,The Big Kahuna,1.0,4.8,78756,austin-tx-taco
+351,"3800 N Lamar Blvd #120, Austin, TX 78756, USA",2f5ad79ce96295efa31195f59fd5b7132f9da741,30.305619099999998,-97.7433834,Snooze an A.M. Eatery,2.0,4.5,78756,austin-tx-taco
+352,"1112 W Koenig Ln, Austin, TX 78756, USA",16a06a5a95f24d9cb06f92fb4cec6df6ebcf16db,30.329963199999998,-97.7290398,Taqueria Torres,0.0,5.0,78756,austin-tx-taco
+353,"4416 Burnet Rd, Austin, TX 78756, USA",9a5608735518fd2d514fdedb96f57dbe23a0e580,30.3152423,-97.7419763,Stinson's Bistro,0.0,4.2,78756,austin-tx-taco
+354,"2525 W Anderson Ln #175, Austin, TX 78757, USA",337a623bacaac75f3181364298bca229bfc7d8ab,30.356857300000005,-97.7352491,Dos Batos,2.0,4.4,78757,austin-tx-taco
+355,"1519 W Anderson Ln, Austin, TX 78757, USA",01696809ac69850d9d538610a7e2f3818582a8fb,30.351728700000002,-97.7224194,Casita Guanajuato,2.0,4.3,78757,austin-tx-taco
+356,"911 W Anderson Ln, Austin, TX 78757, USA",3131bab44c05af1c2d5529a79705eeda04aa025d,30.348007,-97.714701,El Nuevo Mexico,2.0,4.1,78757,austin-tx-taco
+357,"7414 Burnet Rd, Austin, TX 78757, USA",58131e2ba7dec2cac24e701b7e9bbfc9f78eec0f,30.350285999999997,-97.735164,El Mercado Restaurant,2.0,4.2,78757,austin-tx-taco
+358,"1911 W Anderson Ln, Austin, TX 78757, USA",55ff0421984c994d8f20bc48624d51f7525dbb31,30.3539849,-97.72691,Enchiladas Y Mas,2.0,4.3,78757,austin-tx-taco
+359,"1725 Ohlen Rd, Austin, TX 78757, USA",432b9d17a5d50093ac6cbec990d48a0816fb79fc,30.3626253,-97.7185666,Pollo Regio,1.0,4.2,78757,austin-tx-taco
+360,"6534 Burnet Rd, Austin, TX 78757, USA",c589b637e0f097abc83273322a0a8ad8a1c32251,30.3415668,-97.739163,Taqueria Guadalajara Arandas,2.0,4.1,78757,austin-tx-taco
+361,"3300 W Anderson Ln #303, Austin, TX 78757, USA",4c12d0958cbe4537a016b790682c49c17b4e8b32,30.362204100000003,-97.7423526,Eldorado Cafe,2.0,4.6,78757,austin-tx-taco
+362,"7310 Burnet Rd, Austin, TX 78757, USA",23a9839b0e1b31ba5279a78175f495896fdc13bf,30.3492178,-97.73588259999998,Ichiban Restaurant,3.0,4.5,78757,austin-tx-taco
+363,"2700 W Anderson Ln #204, Austin, TX 78757, USA",b37a66d7146122e1c1e54cbc67392ea0bf93785c,30.3585523,-97.7347398,Chipotle Mexican Grill,1.0,4.1,78757,austin-tx-taco
+364,"6801 Burnet Rd, Austin, TX 78757, USA",74d41446b8ee42daedb7269a22c2c0db2df5a9dc,30.343898,-97.7379892,The Frisco Shop,2.0,4.2,78757,austin-tx-taco
+365,"2900 W Anderson Ln #250, Austin, TX 78757, USA",e029b732171080eb35ffbd1c2b75546bb8ff9105,30.360251899999998,-97.73723829999999,Zen Japanese Food Fast,2.0,4.1,78757,austin-tx-taco
+366,"7329 Burnet Rd, Austin, TX 78757, USA",9ff268c505061f2fddb01402aafbae6e346a0593,30.349196999999997,-97.734632,Pizza Land,2.0,2.0,78757,austin-tx-taco
+367,"8909 Burnet Rd, Austin, TX 78757, USA",73c2d678c7382670e1c0972e824849c763e31334,30.3718474,-97.7256536,Lebowskis Grill,0.0,4.7,78757,austin-tx-taco
+368,"7858 Shoal Creek Blvd, Austin, TX 78757, USA",34c434b9790dcb7ae0ab0fbcc0628195480bacaa,30.360677000000003,-97.741392,Suzi's China Grill,2.0,3.9,78757,austin-tx-taco
+369,"10025 Burnet Rd, Austin, TX 78758, USA",75b3011e0e079beaa825a0cb849f4d441e74161e,30.3842965,-97.723295,Gringa's Street Tacos,0.0,4.4,78758,austin-tx-taco
+370,"9041 Research Blvd #100, Austin, TX 78758, USA",3c1ec33c4ad5c62c4b5056b72bdc253ad748b732,30.373693,-97.72529300000001,Casa Chapala,2.0,4.1,78758,austin-tx-taco
+371,"9003 Waterford Centre Blvd Suite 180, Austin, TX 78758, USA",e27570ecae8e8b32168e996c6bfe361b35a96fbe,30.375381199999996,-97.7293911,Veracruz All Natural,1.0,4.6,78758,austin-tx-taco
+372,"1200 Kramer Ln, Austin, TX 78758, USA",4b575375f75cd7567d68d9168dcef08046cd6c01,30.383073100000004,-97.694389,Tacos Luna,0.0,4.3,78758,austin-tx-taco
+373,"8538 Research Blvd, Austin, TX 78758, USA",94e508c1ddafb794b0e41076c65b78feebbd556f,30.360009,-97.7170181,Texican Tacos,0.0,5.0,78758,austin-tx-taco
+374,"8127 Mesa Dr, Austin, TX 78759, USA",e7327ad13df5c3e358bcfbc72779dd03e3910273,30.3728363,-97.7555645,Molcas Mexican Restaurant,2.0,3.9,78759,austin-tx-taco
+375,"8650 Spicewood Springs Rd, Austin, TX 78759, USA",2b9c97037e76dc229619553c7eaaf8c5ef0e6865,30.4325144,-97.7702023,Camino Real,2.0,3.9,78759,austin-tx-taco
+376,"9505 Stonelake Blvd, Austin, TX 78759, USA",d4603179e2e53f51e3cd56cdb9c64ce35dc990c6,30.386681,-97.73769500000002,Baby Acapulco Restaurant,2.0,3.7,78759,austin-tx-taco
+377,"11680 Research Blvd, Austin, TX 78759, USA",18ba27f14a6572353f85a6acbd0830af8c6418fd,30.4185614,-97.747836,Chuy's,2.0,4.3,78759,austin-tx-taco
+378,"8663-8667 Spicewood Springs Rd, Austin, TX 78759, USA",0888ffb4ea534d4b46c58b86885502e14366501d,30.433899600000004,-97.7711887,El Amigo Taco,0.0,5.0,78759,austin-tx-taco
+379,"606 Trinity St, Austin, TX 78701, USA",0e30205f8859ea791c2023a6a50cf30dd677a777,30.267395,-97.7394538,Iron Cactus Mexican Restaurant and Margarita Bar,0.0,3.8,78701,austin-tx-taco
+380,"517 W Martin Luther King Jr Blvd, Austin, TX 78701, USA",4c7207a76c00ccf2311ead2e0967f54b7ffeb6b4,30.2818636,-97.7435598,Taco Cabana,1.0,2.9,78701,austin-tx-taco
+381,"1302 S 1st St, Austin, TX 78704, USA",d7e14571d9565fdf6fa10d0314fb1fc4c205cd78,30.2513081,-97.75456329999999,El Mercado,2.0,4.0,78704,austin-tx-taco
+382,"5207 Brodie Ln #125, Sunset Valley, TX 78745, USA",a987aad77521eac169187efddc11733a38ecf9ee,30.23083209999999,-97.8174033,Cruzteca Mexican Kitchen,0.0,5.0,78745,austin-tx-taco
