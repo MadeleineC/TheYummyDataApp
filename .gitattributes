@@ -1,0 +1,2 @@
+testing_html/zips.json filter=lfs diff=lfs merge=lfs -text
+/static/zips.json filter=lfs diff=lfs merge=lfs -text
