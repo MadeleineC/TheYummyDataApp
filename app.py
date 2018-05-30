@@ -16,6 +16,7 @@ import json
 import requests
 from time import sleep
 import re
+from flask_cors import CORS
 
 
 ############
@@ -30,7 +31,7 @@ google_places_api_key = "AIzaSyB_i6T2QOcNmKeJUxF6FC5B1XN1j-mixjI"
 #################################################
 
 # create engine to connect to the database
-engine=create_engine("sqlite:///yummydata_1.sqlite", echo=False)
+engine=create_engine("sqlite:///yummydata.sqlite", echo=False)
 #automap_base
 Base = automap_base()
 Base.prepare(engine, reflect=True)
@@ -44,6 +45,7 @@ session=Session(engine)
 zip_demo=Base.classes.zip_demographics
 restaurant=Base.classes.restaurant_search
 user_input=Base.classes.user_input
+zip_shapes=Base.classes.zip_shapes
 
 
 
@@ -112,16 +114,26 @@ def get_demo(**kwargs):
     # demographics = json.loads(demographics)
     print("0000000")
     # demographics = jsonify(demographics)
-    demographics = []
+    features=[]
     for i in demoCall:
-        d = i.__dict__
-        demographics.append(d)
-        # print(demographics)
-    print(demographics)
-    # print(json.dumps(demographics, default=lambda o: o.__dict__))
-    # demographics = json.dumps(demographics, default=lambda o: o.__dict__)
-    # print(demographics)
-    return demographics
+        feature={}
+        zip_search = i.Zipcode
+        population=i.Population
+        income_per_capita=i.Wealthy
+        geometry=session.query(zip_shapes.geometry).filter(zip_shapes.zip_code==int(zip_search))[0][0]
+        start_index=geometry.find('[[')
+        # coordinate=geometry[start_index:-1]
+        coordinate=json.loads(geometry[start_index:-1])
+        type_end=geometry.find("', 'coordinates")
+        geo_type=geometry[10:type_end]
+#     coordinates=json.loads(geometry[35:-1])
+        feature={'type':'Feature',\
+             'properties':{'zipcode':zip_search,'population':population,'income_per_capita':i.Wealthy},\
+            'geometry':{'type':'MultiPolygon','coordinates':coordinate}\
+                }
+        features.append(feature)
+    feature_collections={"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },"name": "cb_2017_us_zcta510_500k","features":features}
+    return feature_collections
 
 def getYummyInfo(**kwargs):
     print("in getYummyInfo")
@@ -216,7 +228,7 @@ def apiCall(**kwargs):
         next_page=response.get("next_page_token")
         
         #sometimes it give me empty results if I make calls too often 
-        sleep(2)
+        sleep(1)
         
         #use a while loop for flipping pages, google allows a maximum of 3 pages 
         while bool(next_page)==True: 
@@ -233,7 +245,7 @@ def apiCall(**kwargs):
             #Add the new results to results here using 
             results=results+response["results"]
             # logging.info('debug now i have a total of {} restaurants'.format(len(results)))
-            sleep(2)
+            sleep(1)
             #update next_page token
             next_page=response.get("next_page_token")
             # logging.info('debug the current token is {}'.format(next_page))
@@ -242,38 +254,23 @@ def apiCall(**kwargs):
         # logging.info('current length info_list is {}'.format(len(info_list)))
     
     print('Harvested all data')
+    print('{} cells are retrieved'.format(len(info_list)))
     return info_list
 
 def clean_google_results(**kwargs):
     print("in clean_google_results")
     print(kwargs)
-    if("google_results" in kwargs and "state" in kwargs): 
+    if("google_results" in kwargs): 
         google_results = kwargs['google_results']
-        state = kwargs['state']
-        state = state.upper()
+        
     else:
         google_results = []
-        state= "tx"
-        state = state.upper()
-    # if "google_results" in kwargs: 
-    #     google_results = kwargs['google_results']
-    # else:
-    #     google_results = []
-    # if "state" in kwargs:
-    #     state = kwargs['state']
-    #     state = state.upper()
-    # else:
-    #     state = "tx"
-    #     state = state.upper()
-    print("inside cleaner")
-    print(state.upper())
-    state = state.upper()
-    #add code above here to process state if typed out & return 2 letter caps
+    
     cleaned_google_results = []
     for i in range(0,len(google_results)):
         if ('formatted_address' in google_results[i]):
             address = google_results[i]['formatted_address']
-            zip_store = re.findall(state+' [0-9]{5}',google_results[i]['formatted_address'])
+            zip_store = re.findall('[A-Z]{2} [0-9]{5}',google_results[i]['formatted_address'])
             zip_store = zip_store[0][3:]
             print(zip_store)
         else:
@@ -300,15 +297,24 @@ def clean_google_results(**kwargs):
             'Rating' : rating,
             'Zip' : zip_store
         }
-        if address == 'Nan':
+        #check if the restaurant is in the cleaned_google_results list already
+        Flag = 'Not Found'
+        for stored_item in cleaned_google_results:
+            if item['Google_ID']==stored_item['Google_ID']:
+                Flag='Found'
+                break
+        if address == 'Nan' or Flag=='Found':
             print('************> deleted' + business_name )
         else:
             cleaned_google_results.append(item)
-        print(i)
-        print(item)
+            print(i)
+            print(item)
+    #remove duplicate restaurants and convert it back to list
+    
+    
     print('done')
-    print(cleaned_google_results[0])
-    print(len(cleaned_google_results))
+    # print(cleaned_google_results[0])
+    print('#{} cleaned results after removing duplicates'.format(len(cleaned_google_results)))
     return cleaned_google_results
 
 #################################################
@@ -316,6 +322,7 @@ def clean_google_results(**kwargs):
 #################################################
 
 app = Flask(__name__)
+# cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 #################################################
 # Flask Routes
@@ -465,8 +472,16 @@ def dashboard():
     demographics = get_demo()
     yummy_info = getYummyInfo()
     google_results = apiCall()
-    google_results = clean_google_results(google_results=google_results, state="TX")
+    google_results = clean_google_results(google_results=google_results) #,state='TX')
     return render_template("dashboard.html", demographics=demographics, yummy_info=yummy_info, google_results=google_results)
+
+#deal with crossorgin issue
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)

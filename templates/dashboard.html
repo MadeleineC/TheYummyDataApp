@@ -1,7 +1,10 @@
 {% extends "header.html"%}
 
 {% block body %}
-
+<head><script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script></head>
 
 <div class="row">
         <ul class="nav navbar-nav navbar-right">
@@ -184,7 +187,17 @@ var msg_cust = Msg.factory(
 // **********
 // Variables
 // **********
+var demographics = '{{ demographics|tojson }}';
+// let demographicsObject = JSON.parse(demographics);
+var demographicsObject=JSON.parse(demographics);
 
+var yummy_info = '{{ yummy_info|tojson }}';
+let yummyObject = JSON.parse(yummy_info);
+var food = yummyObject[0].cuisine;
+console.log("food = " + food);
+
+var google_results = '{{ google_results|tojson }}';
+let googleObject = JSON.parse(google_results);
 // Currency formatter
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -195,8 +208,7 @@ var formatter = new Intl.NumberFormat('en-US', {
 });
 
 var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
-var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
-`access_token=${api_key}`;
+var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +`access_token=${api_key}`;
 var zippopulation;
 // var points;
 var clusters = L.markerClusterGroup();
@@ -222,17 +234,6 @@ var clusters = L.markerClusterGroup();
 // $.get("/getpythondata", function(data) {
 //     console.log(data)
 // })
-var demographics = '{{ demographics|tojson }}';
-let demographicsObject = JSON.parse(demographics);
-
-var yummy_info = '{{ yummy_info|tojson }}';
-let yummyObject = JSON.parse(yummy_info);
-var food = yummyObject[0].cuisine;
-console.log("food = " + food);
-
-var google_results = '{{ google_results|tojson }}';
-let googleObject = JSON.parse(google_results);
-
 
 jQuery.each( yummyObject, function( data ) {
   $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
@@ -265,92 +266,15 @@ console.log(yummyObject);
 console.log(yummyObject[0].city);
 console.log("0000");
 console.log(demographicsObject);
-console.log(demographicsObject.length);
-for (i=0; i<demographicsObject.length; i++){
-    console.log(demographicsObject[i].Zipcode + " : " + 
-    formatter.format(demographicsObject[i].Wealthy) + " &  " + 
-    new Intl.NumberFormat('en-IN').format(demographicsObject[i].Population) + " people.");
-    };
-console.log("1111");
-// console.log(yummy_info);
+var one_geo=demographicsObject.features[0].geometry.coordinates;
+console.log(typeof one_geo[0][0][1])
 
-// let jsonObject = JSON.parse(demographics);
-// console.log(demographics)
-
-// console.log("2222");
-// console.log(yummy_info['city']);
-
-var zipcodetosearch = [];
-var population = [];
-var income = [];
-var selectedgeo = [];
-var plotgeo = {};
-var plotcluster = [];
-var zip_url = 'http://localhost:5000/zips/austintx';
-var restaurant_url = '/restaurant';
-var zipjson = "{{ url_for('static', filename='zips.json')}}"
-// {{ url_for('static', filename='icon/burger.ico') }}
-
-// **********
-// Intake All Data
-// **********
+console.log(demographicsObject.features[0].geometry.coordinates);
 
 $(".progress-bar").css("width", 35 + "%")
-
-// first d3 query for zip_url to search then get a list of zip code we need to use to search for 
-//json data in the zipjson file
- d3.json(zip_url,function(queryzip){
-     console.log(queryzip)
-    queryzip.forEach(i =>{
-        income.push(i.AverageIncome);
-        zipcodetosearch.push(i.Zip+'');
-        population.push(i.Population);
-    })
-
-//before search for zipcodes first get the restaurant_data for restaurant
-d3.json(restaurant_url, function(restaurant_data){
-    console.log('x')
-    console.log(restaurant_data)
-
-    $(".progress-bar").css("width", 50 + "%")
-
-d3.json(zipjson, function(zipdata){
-
-    $(".progress-bar").css("width", 75 + "%")
-
-
-    console.log(zipdata);
-
-
-// **********
-// make geoJSON file for population and income layers
-// ********** 
-
-  var features=zipdata.features;
-  for (var i=0;i<zipcodetosearch.length;i++){
-            for (var j=0;j<features.length;j++){
-                var featureobj=features[j];
-                if(featureobj.properties.ZCTA5CE10==zipcodetosearch[i]){
-                featureobj.properties['Population']=population[i];
-                featureobj.properties['Income']=income[i];
-                selectedgeo.push(featureobj);
-    
-                }  
-            }
-        }
-    // make ZIP geoJASON file
-    plotgeo['type']='"FeatureCollection"';
-    plotgeo['name']="cb_2017_us_zcta510_500k";
-    plotgeo['features']=selectedgeo;
-    // console.log(plotgeo);
-
-
-
-// **********
-// Chloropleth Functions
-// ********** 
-
-// write a function to color scale population
+var zippopulation;
+var zipincome;
+// function to scale color for population
 function getColor_Pop(d) {
     return d > 50000 ? '#800026' :
            d > 40000  ? '#BD0026' :
@@ -360,10 +284,9 @@ function getColor_Pop(d) {
            d > 10000   ? '#FEB24C' :
            d > 5000   ? '#FED976' :
                       '#FFEDA0';
-}
+};
 
-// write a function to color scare income; 
-//scale is based on percentile of income per capita in the US;
+//function to scale color for income
 function getColor_Income(d) {
     return d > 60000 ? '#91003f' :
            d > 45000  ? '#ce1256' :
@@ -373,32 +296,32 @@ function getColor_Income(d) {
            d > 15000   ? '#d4b9da' :
            d > 10000   ? '#e7e1ef' :
                       '#f7f4f9';
-}
+};
 
 // get style for population
 function style_population(feature) {
         return {
-            fillColor: getColor_Pop(feature.properties.Population),
+            fillColor: getColor_Pop(feature.properties.population),
             weight: 2,
             opacity: 1,
             color: 'white',
             dashArray: '3',
             fillOpacity: 0.7
             };
-        }
+        };
 
 // get style for income
 function style_income(feature) {
         return {
-                fillColor: getColor_Income(feature.properties.Income),
+                fillColor: getColor_Income(feature.properties.income_per_capita),
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7
                 };
-            }
-// highlight drawn zipcode area on mouseover
+            };
+
 function highlightFeature(e) {
     var layer = e.target;
     layer.setStyle({
@@ -410,37 +333,29 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
-}
+};
 
 // un-highlight when mouse leaves
 function resetHighlight(e) {
     zippopulation.resetStyle(e.target);
-}
-
-// this doesn't work but it should zoom in on a zipcode are when clicked
-function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-}
+    // zipincome.resetStyle(e.target)
+};
 
 // create a marker & popup for each location
 function onEachFeature(feature, layer) {
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight
-            }).bindPopup("<strong><center><h4>" + feature.properties.ZCTA5CE10 + "</strong></center></h4><br/>"+ 
-                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.Population)
+            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
+                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
                         + "</i></center><br/> " +
-                        "<center>Average Income: <i>" + formatter.format(feature.properties.Income)
+                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
                         + "</i></center><br/>" +
                         "<hr>");
               }
 
-// make population layer and income layer
-var zippopulation=L.geoJSON(plotgeo,{style:style_population,onEachFeature: onEachFeature});
-var zipincome=L.geoJSON(plotgeo,{style:style_income,onEachFeature: onEachFeature});
-
-
-
+var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature});
+var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature});
 
 // **********
 // Create Cluster Layers
@@ -474,11 +389,11 @@ function pickIcon(food){
 
  // make a cluster marker layer   
 var markers = L.markerClusterGroup();
-console.log(restaurant_data[0]);
+
 
 // bind each restaurant_data as marker to markers group
- for (var i = 0; i < restaurant_data.length; i++) {
-    var object = restaurant_data[i];
+ for (var i = 0; i < googleObject.length; i++) {
+    var object = googleObject[i];
     markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
         .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
         "<center>Price: " + object.Price_Level + "</center><br/> " +
@@ -489,6 +404,7 @@ console.log(restaurant_data[0]);
 // **********
 // Add Layers to Map
 // ********** 
+
 
 var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
@@ -506,18 +422,21 @@ var overlayMaps = {
             "Income":zipincome,
             "Restaurants":markers
           };
-        
+
+// streetmap.addTo(myMap);
+// zippopulation.addTo(myMap);
+
+                           
 var myMap = L.map("map", {
-            center: [30.307182, -97.755996],
+            center: [googleObject[0].Latitude, googleObject[0].Longitude],
             zoom: 9,
-            layers: [streetmap, zippopulation]
+            layers: [streetmap, markers]
           }).invalidateSize();
      
            
 L.control.layers(baseMaps,overlayMaps, {
                   collapsed: false
                 }).addTo(myMap);
-
 
 // **********
 // Create the legend
@@ -560,12 +479,6 @@ income_legend.onAdd = function (map){
 $(".progress-bar").css("width", 90 + "%")
 
 pop_legend.addTo(myMap);
-    
-
-//
-//  Still need to fix how the color doesn't change correctly upon
-//      selecting different chloropleth layers
-//
 
 // switch legend on selection
 myMap.on('overlayadd',function(eventLayer){
@@ -578,19 +491,349 @@ myMap.on('overlayadd',function(eventLayer){
         // {this.removeControl(pop_legend)|| this.removeControl(income_legend)}
 
     });
-   
-    $(window).on("resize", function () { 
+
+$(window).on("resize", function () { 
         $("#map").height($(window).height()-150); 
         myMap.invalidateSize(); 
         }).trigger("resize");
 
-  $(document).ready(function(){    
+
+$(document).ready(function(){    
     $("#progress").remove();
 });
 
-});
-});
-});   
+
+
+
+
+
+
+// for (i=0; i<demographicsObject.length; i++){
+//     console.log(demographicsObject[i].Zipcode + " : " + 
+//     formatter.format(demographicsObject[i].Wealthy) + " &  " + 
+//     new Intl.NumberFormat('en-IN').format(demographicsObject[i].Population) + " people.");
+//     };
+console.log("1111");
+// // console.log(yummy_info);
+console.log(markers);
+
+// // let jsonObject = JSON.parse(demographics);
+// // console.log(demographics)
+
+// // console.log("2222");
+// // console.log(yummy_info['city']);
+
+// var zipcodetosearch = [];
+// var population = [];
+// var income = [];
+// var selectedgeo = [];
+// var plotgeo = {};
+// var plotcluster = [];
+// var zip_url = 'http://localhost:5000/zips/austintx';
+// var restaurant_url = '/restaurant';
+// var zipjson = "{{ url_for('static', filename='zips.json')}}"
+// // {{ url_for('static', filename='icon/burger.ico') }}
+
+// // **********
+// // Intake All Data
+// // **********
+
+// $(".progress-bar").css("width", 35 + "%")
+
+// // first d3 query for zip_url to search then get a list of zip code we need to use to search for 
+// //json data in the zipjson file
+//  d3.json(zip_url,function(queryzip){
+//      console.log(queryzip)
+//     queryzip.forEach(i =>{
+//         income.push(i.AverageIncome);
+//         zipcodetosearch.push(i.Zip+'');
+//         population.push(i.Population);
+//     })
+
+// //before search for zipcodes first get the restaurant_data for restaurant
+// d3.json(restaurant_url, function(restaurant_data){
+//     console.log('x')
+//     console.log(restaurant_data)
+
+//     $(".progress-bar").css("width", 50 + "%")
+
+// d3.json(zipjson, function(zipdata){
+
+//     $(".progress-bar").css("width", 75 + "%")
+
+
+//     console.log(zipdata);
+
+
+// // **********
+// // make geoJSON file for population and income layers
+// // ********** 
+
+//   var features=zipdata.features;
+//   for (var i=0;i<zipcodetosearch.length;i++){
+//             for (var j=0;j<features.length;j++){
+//                 var featureobj=features[j];
+//                 if(featureobj.properties.ZCTA5CE10==zipcodetosearch[i]){
+//                 featureobj.properties['Population']=population[i];
+//                 featureobj.properties['Income']=income[i];
+//                 selectedgeo.push(featureobj);
+    
+//                 }  
+//             }
+//         }
+//     // make ZIP geoJASON file
+//     plotgeo['type']='"FeatureCollection"';
+//     plotgeo['name']="cb_2017_us_zcta510_500k";
+//     plotgeo['features']=selectedgeo;
+//     // console.log(plotgeo);
+
+
+
+// // **********
+// // Chloropleth Functions
+// // ********** 
+
+// // write a function to color scale population
+// function getColor_Pop(d) {
+//     return d > 50000 ? '#800026' :
+//            d > 40000  ? '#BD0026' :
+//            d > 30000  ? '#E31A1C' :
+//            d > 20000  ? '#FC4E2A' :
+//            d > 15000   ? '#FD8D3C' :
+//            d > 10000   ? '#FEB24C' :
+//            d > 5000   ? '#FED976' :
+//                       '#FFEDA0';
+// }
+
+// // write a function to color scare income; 
+// //scale is based on percentile of income per capita in the US;
+// function getColor_Income(d) {
+//     return d > 60000 ? '#91003f' :
+//            d > 45000  ? '#ce1256' :
+//            d > 35000  ? '#e7298a' :
+//            d > 25000  ? '#df65b0' :
+//            d > 20000   ? '#c994c7' :
+//            d > 15000   ? '#d4b9da' :
+//            d > 10000   ? '#e7e1ef' :
+//                       '#f7f4f9';
+// }
+
+// // get style for population
+// function style_population(feature) {
+//         return {
+//             fillColor: getColor_Pop(feature.properties.Population),
+//             weight: 2,
+//             opacity: 1,
+//             color: 'white',
+//             dashArray: '3',
+//             fillOpacity: 0.7
+//             };
+//         }
+
+// // get style for income
+// function style_income(feature) {
+//         return {
+//                 fillColor: getColor_Income(feature.properties.Income),
+//                 weight: 2,
+//                 opacity: 1,
+//                 color: 'white',
+//                 dashArray: '3',
+//                 fillOpacity: 0.7
+//                 };
+//             }
+// // highlight drawn zipcode area on mouseover
+// function highlightFeature(e) {
+//     var layer = e.target;
+//     layer.setStyle({
+//         weight: 5,
+//         color: '#666',
+//         dashArray: '',
+//         fillOpacity: 0.7
+//     });
+//     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+//         layer.bringToFront();
+//     }
+// }
+
+// // un-highlight when mouse leaves
+// function resetHighlight(e) {
+//     zippopulation.resetStyle(e.target);
+// }
+
+// // this doesn't work but it should zoom in on a zipcode are when clicked
+// function zoomToFeature(e) {
+//     map.fitBounds(e.target.getBounds());
+// }
+
+// // create a marker & popup for each location
+// function onEachFeature(feature, layer) {
+//             layer.on({
+//                 mouseover: highlightFeature,
+//                 mouseout: resetHighlight
+//             }).bindPopup("<strong><center><h4>" + feature.properties.ZCTA5CE10 + "</strong></center></h4><br/>"+ 
+//                         "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.Population)
+//                         + "</i></center><br/> " +
+//                         "<center>Average Income: <i>" + formatter.format(feature.properties.Income)
+//                         + "</i></center><br/>" +
+//                         "<hr>");
+//               }
+
+// // make population layer and income layer
+// var zippopulation=L.geoJSON(plotgeo,{style:style_population,onEachFeature: onEachFeature});
+// var zipincome=L.geoJSON(plotgeo,{style:style_income,onEachFeature: onEachFeature});
+
+
+
+
+// // **********
+// // Create Cluster Layers
+// // ********** 
+
+// var vizIcon = L.icon({
+//     //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+//       iconUrl: pickIcon(food),
+//       iconSize: [60,50]
+//     });
+
+// // customize the icon!    
+// function pickIcon(food){
+//     console.log(food);
+//     if (food == "pizza"){
+//         return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
+//     } else if(food == "chinese"){
+//         return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
+//     } else if(food == "brewery"|| food == "pub"){
+//         return "https://image.flaticon.com/icons/svg/202/202127.svg"
+//     } else if(food == "burger" || food == "fastfood"){
+//         return "https://image.flaticon.com/icons/svg/579/579048.svg"
+//     } else if(food == "japanese"){
+//         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+//     } else if(food == "sushi"){
+//         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+//     } else {
+//         return "https://image.flaticon.com/icons/svg/66/66281.svg"
+//     }
+//     };
+
+//  // make a cluster marker layer   
+// var markers = L.markerClusterGroup();
+// console.log(restaurant_data[0]);
+
+// // bind each restaurant_data as marker to markers group
+//  for (var i = 0; i < restaurant_data.length; i++) {
+//     var object = restaurant_data[i];
+//     markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
+//         .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
+//         "<center>Price: " + object.Price_Level + "</center><br/> " +
+//         "<center>Rating: " + object.Rating + "</center><br/>" +
+//         "<hr>"));
+//   }
+
+// // **********
+// // Add Layers to Map
+// // ********** 
+
+// var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+//         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+// var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
+//         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+// var baseMaps = {
+//             "Street Map": streetmap,
+//             "Satellite Map": satellite
+//           };
+        
+// var overlayMaps = {
+//             "Population": zippopulation,
+//             "Income":zipincome,
+//             "Restaurants":markers
+//           };
+        
+// var myMap = L.map("map", {
+//             center: [30.307182, -97.755996],
+//             zoom: 9,
+//             layers: [streetmap, zippopulation]
+//           }).invalidateSize();
+     
+           
+// L.control.layers(baseMaps,overlayMaps, {
+//                   collapsed: false
+//                 }).addTo(myMap);
+
+
+// // **********
+// // Create the legend
+// // ********** 
+
+// var pop_legend=L.control({position: 'bottomright'});
+// var income_legend=L.control({position: 'bottomright'});
+
+// pop_legend.onAdd = function(map){
+// var div = L.DomUtil.create('div', 'info legend'),
+//             grades = [0, 5000, 10000, 15000, 20000, 30000, 40000, 50000],
+//             labels = [];
+//             div.innerHTML+='  Population:<br/>'
+            
+//                 // loop through our density intervals and generate a label with a colored square for each interval
+//             for (var i = 0; i < grades.length; i++) {
+//                     div.innerHTML +='<i style="background:' + getColor_Pop(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+//                                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+//                 }
+               
+//                 return div;
+//             };
+
+// income_legend.onAdd = function (map){
+//             var div = L.DomUtil.create('div', 'info legend'),
+//                     grades = [0, 10000, 15000, 20000, 25000, 35000, 45000, 60000],
+//                     labels = [];
+//                     div.innerHTML+='  Income:<br/>'
+            
+//                 // loop through our density intervals and generate a label with a colored square for each interval
+//                 for (var i = 0; i < grades.length; i++) {
+//                     div.innerHTML +='<i style="background:' + getColor_Income(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+//                                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+//                 }
+               
+//                 return div;
+    
+//         };
+
+// $(".progress-bar").css("width", 90 + "%")
+
+// pop_legend.addTo(myMap);
+    
+
+// //
+// //  Still need to fix how the color doesn't change correctly upon
+// //      selecting different chloropleth layers
+// //
+
+// // switch legend on selection
+// myMap.on('overlayadd',function(eventLayer){
+//         if(eventLayer.name=='Population'){
+//             this.removeControl(income_legend);
+//             pop_legend.addTo(this);}
+//         else if(eventLayer.name=='Income'){this.removeControl(pop_legend);
+//             income_legend.addTo(this);}
+//         // else if (eventLayer.name=='Restaurants')
+//         // {this.removeControl(pop_legend)|| this.removeControl(income_legend)}
+
+//     });
+   
+//     $(window).on("resize", function () { 
+//         $("#map").height($(window).height()-150); 
+//         myMap.invalidateSize(); 
+//         }).trigger("resize");
+
+//   $(document).ready(function(){    
+//     $("#progress").remove();
+// });
+
+// });
+// });
+// });   
 
 
 
