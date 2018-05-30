@@ -129,9 +129,12 @@ def get_demo(**kwargs):
 #     coordinates=json.loads(geometry[35:-1])
         feature={'type':'Feature',\
              'properties':{'zipcode':zip_search,'population':population,'income_per_capita':i.Wealthy},\
-            'geometry':{'type':'MultiPolygon','coordinates':coordinate}\
+            'geometry':{'type':geo_type,'coordinates':coordinate}\
                 }
-        features.append(feature)
+        if feature['properties']['population']==0:
+            print('>>>>>>>>>>>>>>>>>> delete' + feature['properties']['zipcode'])
+        else:
+            features.append(feature)
     feature_collections={"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },"name": "cb_2017_us_zcta510_500k","features":features}
     return feature_collections
 
