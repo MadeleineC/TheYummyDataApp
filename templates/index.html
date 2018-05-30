@@ -2,9 +2,13 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>Yummy Data Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+=======
+    <title>project map</title>
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
     <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
@@ -27,6 +31,7 @@
   <script type="text/javascript" src="http://timwis.com/leaflet-choropleth/dist/choropleth.js"></script>
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
+<<<<<<< HEAD
   
 
 
@@ -38,6 +43,10 @@
 </head>
 
 
+=======
+ 
+  </head>
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 <body>
 
     <nav class="navbar navbar-default">
@@ -50,7 +59,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+<<<<<<< HEAD
             <a class="navbar-brand" href="index.html">
+=======
+            <a class="navbar-brand" href="index_leaflet.html">
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
                 <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
                 &nbsp; <strong>Y</strong>ummy data map &nbsp;
             </a>
@@ -61,6 +74,7 @@
                     this one will be a JS popup on click explaining on things work 
                 -->
 
+<<<<<<< HEAD
                     <li>
                         <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
                         <!-- <a href="#">
@@ -101,6 +115,9 @@
                             </div>
                         <!-- </a> -->
                     </li>
+=======
+                    <li><a href="#"><span class ='' aria-hidden='true'></span>&nbsp; FAQ</a></li>
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 
                 <!-- 
                     this one will just be a generic contact us button (email or something)
@@ -130,6 +147,7 @@
         </nav>    
         <div class="row">
         <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
                 <form method="POST" action="/fetch/" role="form" name="foodstring" class="form-inline">
                   <div class="form-group mb-2">
                       <input type="text" class="form-control" id="city" name="city" placeholder="City">
@@ -144,6 +162,19 @@
                   <!-- <a href="http://127.0.0.1:5000/"class="btn btn-primary btn-lg" onclick="fetch(this.href); return false;" role="button"id="search" >Search</a> -->
                   <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="search">Search</a> -->
                   
+=======
+                <form class="form-inline">
+                  <div class="form-group mb-2">
+                      <input type="text" class="form-control" id="city" placeholder="City">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="state" placeholder="State">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="cuisine" placeholder="Cuisine">
+                  </div>
+                  <a class="btn btn-primary btn-lg" href="/fetch" role="button">Search</a>
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
                 </form>
           </ul></div>
 
@@ -158,9 +189,14 @@
               <div class="col-md-3"></div>
               <div class="col-md-3"></div>
               <div class="col-md-3"></div>
+<<<<<<< HEAD
               <div class="col-md-3 offset-md-9" id="accessed" style="display:none;">last updated: </div>
             </div>
             <!-- <div id='pie'>{{test}}</div> -->
+=======
+              <div class="col-md-3 offset-md-9" id="accessed">last updated: </div>
+            </div>
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
         <div class="container-fluid" id='map'>                              
         </div>
 
@@ -184,7 +220,10 @@ html {
   line-height: 18px;
   color: #555;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 .legend i {
   width: 12px;
   height: 12px;
@@ -193,6 +232,10 @@ html {
   opacity: 0.7;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 .info {
   padding: 6px 8px;
   font: 10px/14px Arial, Helvetica, sans-serif;
@@ -201,7 +244,10 @@ html {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 .info h4 {
   margin: 0 0 5px;
   color: #777;
@@ -209,6 +255,7 @@ html {
 </style>
 
 <script type="text/javascript">
+<<<<<<< HEAD
 
 
 // **********
@@ -292,6 +339,12 @@ var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2
 var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
 `access_token=${api_key}`;
 var zippopulation;
+=======
+var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
+var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+`access_token=${api_key}`;
+// var geojson;
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 // var points;
 var clusters = L.markerClusterGroup();
 // var myMap = L.map('map', {
@@ -300,6 +353,7 @@ var clusters = L.markerClusterGroup();
 // });
 // L.tileLayer(mapbox).addTo(myMap);
 
+<<<<<<< HEAD
 
 var city_ = document.getElementById("city").value.toUpperCase();
 var state_ = document.getElementById("state").value.toUpperCase();
@@ -314,6 +368,8 @@ console.log(state_);
 console.log(cuisine_);
 
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 var zipcodetosearch=[];
 var population=[];
 var income=[];
@@ -324,11 +380,14 @@ var zip_url='/zips/austintx';
 var restaurant_url='/restaurant';
 var zipjson='static/zips.json'
 
+<<<<<<< HEAD
 
 // **********
 // Intake All Data
 // **********
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 // first d3 query for zip_url to search then get a list of zip code we need to use to search for 
 //json data in the zipjson file
  d3.json(zip_url,function(queryzip){
@@ -342,6 +401,7 @@ var zipjson='static/zips.json'
 d3.json(restaurant_url, function(restaurant_data){
 
 d3.json(zipjson, function(zipdata){
+<<<<<<< HEAD
     
 
     console.log(zipdata);
@@ -350,6 +410,12 @@ d3.json(zipjson, function(zipdata){
 // **********
 // make geoJSON file for population and income layers
 // ********** 
+=======
+
+//____________________________________________________
+// make geoJSON file for population and income layers
+//___________________________________________________
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 
   var features=zipdata.features;
   for (var i=0;i<zipcodetosearch.length;i++){
@@ -369,12 +435,15 @@ d3.json(zipjson, function(zipdata){
     plotgeo['features']=selectedgeo;
     // console.log(plotgeo);
 
+<<<<<<< HEAD
 
 
 // **********
 // Chloropleth Functions
 // ********** 
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 // write a function to color scale population
 function getColor_Pop(d) {
     return d > 50000 ? '#800026' :
@@ -411,7 +480,10 @@ function style_population(feature) {
             fillOpacity: 0.7
             };
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 // get style for income
 function style_income(feature) {
         return {
@@ -423,7 +495,12 @@ function style_income(feature) {
                 fillOpacity: 0.7
                 };
             }
+<<<<<<< HEAD
 // highlight drawn zipcode area on mouseover
+=======
+
+
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 function highlightFeature(e) {
     var layer = e.target;
     layer.setStyle({
@@ -436,6 +513,7 @@ function highlightFeature(e) {
         layer.bringToFront();
     }
 }
+<<<<<<< HEAD
 
 // un-highlight when mouse leaves
 function resetHighlight(e) {
@@ -443,21 +521,36 @@ function resetHighlight(e) {
 }
 
 // this doesn't work but it should zoom in on a zipcode are when clicked
+=======
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+}
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
 
+<<<<<<< HEAD
 // create a marker & popup for each location
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 function onEachFeature(feature, layer) {
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight
+<<<<<<< HEAD
             }).bindPopup("<strong><center><h4>" + feature.properties.ZCTA5CE10 + "</strong></center></h4><br/>"+ 
                         "<center>Current population: : <i>" + (feature.properties.Population).toLocaleString()
                         + "</i></center><br/> " +
                         "<center>Average Income: <i>" + Math.floor(feature.properties.Income).toLocaleString()
                         + "</i></center><br/>" +
                         "<hr>");
+=======
+            }).bindPopup("<h3>" +"Zipcode: "+feature.properties.ZCTA5CE10+"<br/>"+ 
+                        "Population: "+feature.properties.Population +"<br/> "+
+                        "Average Income: "+Math.floor(feature.properties.Income) +"<br/>"+
+                        "</h3><hr>");
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
               }
 
 // make population layer and income layer
@@ -465,6 +558,7 @@ var zippopulation=L.geoJSON(plotgeo,{style:style_population,onEachFeature: onEac
 var zipincome=L.geoJSON(plotgeo,{style:style_income,onEachFeature: onEachFeature});
 
 
+<<<<<<< HEAD
 
 
 // **********
@@ -494,6 +588,18 @@ function pickIcon(food){
     }
     };
 
+=======
+//______________________________________________________
+// Make cluster Layer
+//______________________________________________________
+
+// pick icon image 
+var vizIcon = L.icon({
+      iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+      iconSize: [60,50]
+    });
+
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
  // make a cluster marker layer   
 var markers = L.markerClusterGroup();
 
@@ -501,6 +607,7 @@ var markers = L.markerClusterGroup();
  for (var i = 0; i < restaurant_data.length; i++) {
     var object = restaurant_data[i];
     markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
+<<<<<<< HEAD
         .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
         "<center>Price: " + object.Price_Level + "</center><br/> " +
         "<center>Rating: " + object.Rating + "</center><br/>" +
@@ -510,6 +617,17 @@ var markers = L.markerClusterGroup();
 // **********
 // Add Layers to Map
 // ********** 
+=======
+        .bindPopup("<h3>" +"Name: "+object.Name+"<br/>"+ 
+        "Price: "+object.Price_Level +"<br/> "+
+        "Rating: "+object.Rating +"<br/>"+
+        "</h3><hr>"));
+  }
+
+//_______________________________________________________________
+//Put layers on the map
+//________________________________________________________________
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 
 var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
@@ -517,6 +635,10 @@ var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v1
 var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 var baseMaps = {
             "Street Map": streetmap,
             "Satellite Map": satellite
@@ -528,20 +650,35 @@ var overlayMaps = {
             "Restaurants":markers
           };
         
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 var myMap = L.map("map", {
             center: [30.307182, -97.755996],
             zoom: 9,
             layers: [streetmap, zippopulation]
           });
+<<<<<<< HEAD
            
+=======
+        
+        
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 L.control.layers(baseMaps,overlayMaps, {
                   collapsed: false
                 }).addTo(myMap);
 
+<<<<<<< HEAD
 
 // **********
 // Create the legend
 // ********** 
+=======
+//____________________________________________
+// Create legend for population and zip layer
+//_____________________________________________
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 
 var pop_legend=L.control({position: 'bottomright'});
 var income_legend=L.control({position: 'bottomright'});
@@ -579,7 +716,11 @@ income_legend.onAdd = function (map){
 
 pop_legend.addTo(myMap);
     
+<<<<<<< HEAD
 // switch legend on selection
+=======
+    // switch legend
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 myMap.on('overlayadd',function(eventLayer){
         if(eventLayer.name=='Population'){
             this.removeControl(income_legend);
@@ -595,8 +736,11 @@ myMap.on('overlayadd',function(eventLayer){
 });
 });   
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d3270cbb668029129fa20cdc1df7d6790fd2d9e2
 </script>
 
 </body>
