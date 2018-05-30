@@ -336,16 +336,29 @@ function highlightFeature(e) {
 };
 
 // un-highlight when mouse leaves
-function resetHighlight(e) {
+function resetHighlightPop(e) {
     zippopulation.resetStyle(e.target);
-    zipincome.resetStyle(e.target)
+};
+function resetHighlightIncome(e) {
+    zipincome.resetStyle(e.target);
 };
 
 // create a marker & popup for each location
-function onEachFeature(feature, layer) {
+function onEachFeature_Pop(feature, layer) {
             layer.on({
                 mouseover: highlightFeature,
-                mouseout: resetHighlight
+                mouseout: resetHighlightPop
+            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
+                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
+                        + "</i></center><br/> " +
+                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
+                        + "</i></center><br/>" +
+                        "<hr>");
+              }
+function onEachFeature_Income(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlightIncome
             }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
                         "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
                         + "</i></center><br/> " +
@@ -354,8 +367,8 @@ function onEachFeature(feature, layer) {
                         "<hr>");
               }
 
-var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature});
-var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature});
+var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop});
+var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income});
 
 // **********
 // Create Cluster Layers
