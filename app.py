@@ -371,6 +371,7 @@ app = Flask(__name__)
 #get route for restaurant results
 @app.route("/fetch/", methods=["GET", "POST"]) 
 def fetch():
+    print('******************* AT Fetch')
     """send variables to python"""
     if request.method == "POST":
         city = request.form["city"]
@@ -442,7 +443,7 @@ def get_python_data():
 @app.route('/')
 @app.route('/dashboard/')
 def dashboard():
-    print("\nGGGGGGGGGGGGGGGGGG\n At DASHBOARD")
+    print("\nGGGGGGGGGGGGGGGGGG\n At DASHBOARD--Initial Loading")
     demographics = get_demo()
     yummy_info = getYummyInfo()
     city=yummy_info[0]['city']

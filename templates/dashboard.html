@@ -110,6 +110,12 @@ html {
     
 
 $(".progress-bar").css("width", 15 + "%")
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 // **********
 // Convoluted intake of data from javascript to python
@@ -393,6 +399,8 @@ function pickIcon(food){
         return "https://image.flaticon.com/icons/svg/805/805342.svg"
     } else if(food == "sushi"){
         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "taco"){
+        return "https://cdn.emojidex.com/emoji/px128/taco.png"
     } else {
         return "https://image.flaticon.com/icons/svg/66/66281.svg"
     }
