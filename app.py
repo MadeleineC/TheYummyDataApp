@@ -1,5 +1,3 @@
-import numpy as np
-import pandas as pd
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -315,9 +313,15 @@ def clean_google_results(**kwargs):
         else:
             address = 'Nan'
 
+        business_name = google_results[i]['name']
+        if re.findall('\"(.+?)\"', business_name)!=[]:
+                print('>>>>>>>>>$$$$$$$$$$$$-Modify this Inquote {}'.format(business_name))
+                # quot_start=dict_result['Name'].find('\"')
+                business_name=' '.join(business_name.split('\"'))
+                print('New business_name is {}'.format(business_name))
+
         latitude =  google_results[i]['geometry']['location']['lat']
         longitude = google_results[i]['geometry']['location']['lng']
-        business_name = google_results[i]['name']
         if ('price_level' in google_results[i]):
             price = google_results[i]['price_level']
         else:
@@ -420,7 +424,13 @@ def fetch():
                 for i in results:
                     dict_result=i.__dict__
                     del dict_result['_sa_instance_state']
+                    if re.findall('\"(.+?)\"', dict_result['Name'])!=[]:
+                        print('>>>>>>>>>$$$$$$$$$$$$-Modify this Inquote {}'.format(dict_result))
+                        # quot_start=dict_result['Name'].find('\"')
+                        dict_result['Name']=' '.join(dict_result['Name'].split('\"'))
+                        print('New dict_result is {}'.format(dict_result['Name']))
                     google_results.append(dict_result)
+                
                 print('SSSSSSSSSSS-Queried-Result')
                 print(google_results[0])
 
