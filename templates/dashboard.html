@@ -110,6 +110,12 @@ html {
     
 
 $(".progress-bar").css("width", 15 + "%")
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 // **********
 // Convoluted intake of data from javascript to python
@@ -393,6 +399,54 @@ function pickIcon(food){
         return "https://image.flaticon.com/icons/svg/805/805342.svg"
     } else if(food == "sushi"){
         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "taco"){
+        return "https://cdn.emojidex.com/emoji/px128/taco.png"
+    } else if(food == "french"){
+        return "https://image.flaticon.com/icons/svg/768/768157.svg"
+    } else if(food == "italian"){
+        return "https://image.flaticon.com/icons/svg/267/267916.svg"
+    } else if(food == "fish" || food == "seafood"){
+        return "https://image.flaticon.com/icons/svg/372/372978.svg"
+    // } else if(food == "fish" || food == "seafood"){
+    //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
+    } else if(food == "vietnamese"){
+        return "https://image.flaticon.com/icons/svg/791/791584.svg"
+    } else if(food == "mediterranean" || food == "greek" || food == "mediterannean"){
+        return "https://image.flaticon.com/icons/svg/123/123309.svg"
+    } else if(food == "colombian"){
+        return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
+    // } else if(food == "thai" || food == "pad thai"){
+    //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
+    } else if(food == "thai" || food == "pad thai"){
+        return "https://image.flaticon.com/icons/svg/898/898122.svg"
+    } else if(food == "indian"){
+        return "https://image.flaticon.com/icons/svg/342/342857.svg"
+    } else if(food == "steroids"|| food == "gym"){
+        return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
+    } else if(food == "winery" || food == "wine"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
+    } else if(food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
+    } else if(food == "ice cream"){
+        return "https://image.flaticon.com/icons/svg/816/816190.svg"
+    } else if(food == "coffee" || food == "tea"){
+        return "https://image.flaticon.com/icons/svg/924/924514.svg"
+    } else if(food == "bakery"){
+        return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
+    } else if(food == "salad"){
+        return "https://image.flaticon.com/icons/svg/267/267917.svgb"
+    } else if(food == "mexican"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
+    } else if(food == "paleo"){
+        return "https://image.flaticon.com/icons/svg/884/884643.svg"
+    } else if(food == "bbq" || food == "ribs" || food == "barbecue"){
+        return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
+    } else if(food == "breakfast"){
+        return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
+    } else if(food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free"){
+        return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
+    } else if(food == "doughnut" || food == "doughnuts"){
+        return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
     } else {
         return "https://image.flaticon.com/icons/svg/66/66281.svg"
     }

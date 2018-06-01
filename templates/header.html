@@ -29,7 +29,7 @@
   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
   
 
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/msg.js') }}"></script>
   <link rel="shortcut icon" href="{{ url_for('static', filename='icon/burger.ico') }}">
@@ -62,7 +62,7 @@
                 -->
 
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                        <a href="#" data-toggle="modal" data-target="#faqModalCenter">
                         <!-- <a href="#">
                             <span class ="" onclick="msg_cust.show([faq_name, faq_msg]);" aria-hidden='true'>
                                 &nbsp; FAQ
@@ -76,25 +76,90 @@
                             <!-- </button> -->
                             </a>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="faqModalCenter" tabindex="-1" role="dialog" aria-labelledby="faqModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Yummy Data Map FAQ</h5>
+                                    <h5 class="modal-title" id="faqModalLongTitle">Yummy Data Map FAQ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                            <h5>Popover in a modal</h5>
+                                            
+                                            <h5>
+                                                What is the YummyData? 
+                                            </h5>
+                                                <p>
+                                                   YummyData is the easiest way to identify the best area to launch your 
+                                                   new restaurant to reach the most success.
+                                                </p>
+                                            <h5>
+                                                How Does YummyData work? 
+                                            </h5>
+                                                <p>
+                                                    Simply give us 3 things:  your city, your state, and your cuisine type. We'll give you a map that
+                                                    shows current competition, population, and income level per each zipcode in your targetted area!
+                                                   
+                                                </p>
+                                            <h5>
+                                                What is visible through the YummyMap?
+                                            </h5>
+                                                <p>
+                                                    The YummyMap will provide the client with the exact points of competitors in their area, 
+                                                    the average income of the area, along with the population density to allow for a precursory view of
+                                                    potential areas for launching a new restaurant or expansion!
+                                                </p>
+                                            <h5>
+                                                    Why is Waco, Tx autoloading?
+                                            </h5>
+                                                <p>
+                                                    We wanted to do our part to bring awareness to the fact that Waco, Tx, home of the 
+                                                    Dr Pepper Museum, actuall has a good number of sushi restaurants. 
+                                                </p>
+                                            <h5>
+                                                    Denny's doesnt serve tacos!
+                                            </h5>
+                                                <p>
+                                                    Contrary to popular belief, Denny's is actually quite accomodating. <br/>
+                                                    Our restaurant results are sourced from Google Places...so if they say Denny's has tacos, 
+                                                    well, Google knows all.
+                                                </p>
+                                            <h5>
+                                                Have other questions? 
+                                            </h5>
+                                                <p>
+                                                    Our five-star customer support team is here to help by email at contact@yummydata.com
+                                                </p>
+                                            <h5>
+                                                Something is broken!
+                                            </h5>
+                                                <p>
+                                                    Send us a message, or use the contact form on the page!
+                                                </p>
+                                            <h5>
+                                                I really want to hire yall...how do i do this?
+                                            </h5>
+                                                <p>
+                                                    We like money so just let us know
+                                                </p>
+                                            <hr>
+                                            <h5>
+                                                How did you make this?
+                                            </h5>
+                                                <p>
+                                                        <!-- <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p> -->
+                                                    Externally: <a href="#" role="button" class="btn btn-secondary popover-test" title="Bootstrap" data-content="we used bootstrap!">Bootstrap</a> & <a href="https://jquery.com/" role="button" class="btn btn-secondary popover-test" title="jquery" data-content="we used jquery!">jquery</a> <br>
+                                                    Internally: <a href="http://flask.pocoo.org/" role="button" class="btn btn-secondary popover-test" title="Flask" data-content="we used flask!">Flask</a>, <a href="https://www.python.org/" role="button" class="btn btn-secondary popover-test" title="Python" data-content="we used python!">Python</a>, & <a href="https://www.sqlite.org/" role="button" class="btn btn-secondary popover-test" title="SQLite" data-content="we used sqlite!">SQLite</a> 
+                                                </p>                                            
+                                            <!-- <h5>Popover in a modal</h5>
                                             <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
                                             <hr>
                                             <h5>Tooltips in a  modal</h5>
-                                            <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+                                            <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p> -->
                                         </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                                 </div>
@@ -102,12 +167,50 @@
                         <!-- </a> -->
                     </li>
 
+                    <li>
+                            <a href="#" data-toggle="modal" data-target="#contactModalCenter">
+                            <!-- <a href="#">
+                                <span class ="" onclick="msg_cust.show([faq_name, faq_msg]);" aria-hidden='true'>
+                                    &nbsp; FAQ
+                                </span> -->
+                                <!-- <span class="" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter">
+                                    &nbsp; FAQ
+                                </span> -->
+                                <!-- Button trigger modal -->
+                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> -->
+                                    Contact Us
+                                <!-- </button> -->
+                                </a>
+                                <!-- Modal -->
+                                <div class="modal fade" id="contactModalCenter" tabindex="-1" role="dialog" aria-labelledby="contactModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="contactModalLongTitle">Contact</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                                    <p>
+                                                       Contact us at <a href="mailto:contact@yummydata.com?Subject=Yummy%20Data%20Map" target="_top">contact@yummydata.com</a> !
+                                                 </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            <!-- </a> -->
+                        </li>
                 <!-- 
                     this one will just be a generic contact us button (email or something)
                  -->
 
-                    <li><a href="contact.html"><span class ='' aria-hidden='true'></span>&nbsp; Contact Us</a></li>
-                   
+                    <!-- <li>
+                        
+                        <a href="contact.html"><span class ='' aria-hidden='true'></span>&nbsp; Contact Us</a></li>
+                    -->
                 </ul>
                                 <!-- <ul class="nav navbar-nav navbar-right">
                                     <form class="form-inline">
