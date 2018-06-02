@@ -1,0 +1,598 @@
+{% extends "header.html"%}
+
+{% block body %}
+<head><script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script></head>
+
+<div class="row">
+        <!-- <ul class="nav navbar-nav navbar-right"> -->
+            <div class="container">
+                <form method="POST" action="/fetch/" role="form" name="foodstring" class="form-inline">
+                  <div class="form-group mb-2">
+                      <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Cuisine">
+                  </div>
+                  <input type="submit" value="Search" class="btn btn-default">
+                  <!-- <a href="http://127.0.0.1:5000/"class="btn btn-primary btn-lg" onclick="fetch(this.href); return false;" role="button"id="search" >Search</a> -->
+                  <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="search">Search</a> -->
+                  
+                </form>
+            </div>
+        <!-- </ul> -->
+</div>
+
+<div class="row ">
+    <div class="container top-buffer" id='info-display' ></div>
+
+    </div>
+          <!-- 
+              
+            the below should load the details on when the database was last updated 
+            
+            we can have this only show up when a city is searched (so if we pre-load austin/taco,
+                this label won't display)
+        -->
+          <!-- <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3 offset-md-9" id="accessed" style="display:none;">last updated: </div>
+            </div> -->
+            <!-- <div id='pie'>{{test}}</div> -->
+        <div class="container top-buffer" id='map' style="height:100%; display:block;"> 
+            <div id="progress">Map is loading...  
+                <div class="progress" id="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                      </div>
+                </div>
+        </div>
+  
+
+
+<style>
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+/* #map,
+body,
+html {
+  height: 90%;
+  width: 90%
+} */
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend i {
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.info {
+  padding: 6px 8px;
+  font: 10px/14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.top-buffer{
+    margin-top:10px;
+}
+
+.bottom-buffer{
+    margin-bottom: 10px;
+}
+</style>
+
+<script type="text/javascript">
+
+    
+
+$(".progress-bar").css("width", 15 + "%")
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// **********
+// Convoluted intake of data from javascript to python
+// ********** 
+
+// var url_to_click;
+// var $submitBtn = document.querySelector("#search");
+// $submitBtn.addEventListener("click", handleSubmitClick);
+
+// function handleSubmitClick() {
+//   event.preventDefault();
+//   var city_, state_, cuisine_;
+//   city_ = document.getElementById("city").value.toUpperCase();
+//   state_ = document.getElementById("state").value.toUpperCase();
+//   cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+
+// console.log(city_);
+// console.log(state_);
+// console.log(cuisine_);
+// };
+
+// function fetch(link){
+//     event.preventDefault();
+//     var city_, state_, cuisine_;
+//     city_ = document.getElementById("city").value.toUpperCase();
+//     state_ = document.getElementById("state").value.toUpperCase();
+//     cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+
+//         console.log(city_);
+//         console.log(state_);
+//         console.log(cuisine_);
+//     url_to_click = `fetch/city=${city_}&state=${state_}&cuisine=${cuisine_}`;
+//     link = link+url_to_click;
+//         console.log(link);
+//         console.log(url_to_click);
+//         console.log(link)
+//     window.location.href = link;
+// };
+
+
+
+// **********
+// FAQ Popup
+// **********
+
+var faq_name = "Yummy Data FAQ";
+
+// var faq_msg = [
+// "1. How do I use this?",
+// "type in a city, a state, and a cuisine, press search, and wait.",
+// "2. It's taking forever?",
+// "deal with it."
+// ]
+// ;
+var faq_msg =
+"1. How do I use this?<br/>" +
+"type in a city, a state, and a cuisine, press search, and wait.<br/>" +
+"2. It's taking forever?<br/>" +
+"deal with it.<br/>" +
+"3. How does it work?<br/>" + 
+"Leaflet + API calls + JS.msg"
+;
+
+var msg_cust = Msg.factory(
+{
+	class:"white",
+	overlay_class:"white",
+	window_inner_x_class:"red",
+	enable_titlebar:true,
+	window_width:"65%"
+})
+
+
+
+// **********
+// Variables
+// **********
+var demographics = '{{ demographics|tojson }}';
+// let demographicsObject = JSON.parse(demographics);
+var demographicsObject=JSON.parse(demographics);
+
+var yummy_info = '{{ yummy_info|tojson }}';
+let yummyObject = JSON.parse(yummy_info);
+var food = yummyObject[0].cuisine;
+console.log("food = " + food);
+
+var google_results = '{{ google_results|tojson }}';
+
+let googleObject = JSON.parse(google_results);
+// Currency formatter
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+  // the default value for minimumFractionDigits depends on the currency
+  // and is usually already 2
+});
+
+var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
+var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +`access_token=${api_key}`;
+// var points;
+// var myMap = L.map('map', {
+//   center: [36.7749, -97.4194],
+//   zoom: 5
+// });
+// L.tileLayer(mapbox).addTo(myMap);
+
+
+// var city_ = document.getElementById("city").value.toUpperCase();
+// var state_ = document.getElementById("state").value.toUpperCase();
+// var cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+
+// $.get("/getpythondata/", function(pythondata) {
+//     console.log(pythondata);
+//     console.log(pythondata[0].city);
+//     if (pythondata){
+//         console.log('its here');
+//     }
+// })
+
+// $.get("/getpythondata", function(data) {
+//     console.log(data)
+// })
+
+jQuery.each( yummyObject, function( data ) {
+  $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
+                                                        yummyObject[0].city +
+                                                        ", " + yummyObject[0].state +
+                                                        " - " + yummyObject[0].cuisine
+                                                        )  );
+});
+
+// if ('{{ yummy_info }}'  == 0) {
+//     console.log('empty');
+//     $.get("/getpythondata/", function(pythondata) {
+//     console.log(pythondata);
+//     // console.log(pythondata[0].city);
+//     if (pythondata){
+//         console.log('its here');
+//         // setTimeout("console.log('timeout');", 10000);
+//         yummy_info = pythondata;
+//     }
+//     })
+//     console.log(yummy_info);
+// } else {
+//     console.log('user data');
+//     yummy_info = '{{ yummy_info}}';
+//     console.log(yummy_info);
+// };
+
+console.log(googleObject);
+console.log(yummyObject);
+console.log(yummyObject[0].city);
+console.log("0000");
+console.log(demographicsObject);
+var one_geo=demographicsObject.features[0].geometry.coordinates;
+console.log(typeof one_geo[0][0][1])
+
+console.log(demographicsObject.features[0].geometry.coordinates);
+
+$(".progress-bar").css("width", 35 + "%")
+var zippopulation;
+var zipincome;
+// function to scale color for population
+function getColor_Pop(d) {
+    return d > 50000 ? '#800026' :
+           d > 40000  ? '#BD0026' :
+           d > 30000  ? '#E31A1C' :
+           d > 20000  ? '#FC4E2A' :
+           d > 15000   ? '#FD8D3C' :
+           d > 10000   ? '#FEB24C' :
+           d > 5000   ? '#FED976' :
+                      '#FFEDA0';
+};
+
+//function to scale color for income
+function getColor_Income(d) {
+    return d > 60000 ? '#91003f' :
+           d > 45000  ? '#ce1256' :
+           d > 35000  ? '#e7298a' :
+           d > 25000  ? '#df65b0' :
+           d > 20000   ? '#c994c7' :
+           d > 15000   ? '#d4b9da' :
+           d > 10000   ? '#e7e1ef' :
+                      '#f7f4f9';
+};
+
+// get style for population
+function style_population(feature) {
+        return {
+            fillColor: getColor_Pop(feature.properties.population),
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+            };
+        };
+
+// get style for income
+function style_income(feature) {
+        return {
+                fillColor: getColor_Income(feature.properties.income_per_capita),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+                };
+            };
+
+function highlightFeature(e) {
+    var layer = e.target;
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+};
+
+// un-highlight when mouse leaves
+function resetHighlightPop(e) {
+    zippopulation.resetStyle(e.target);
+};
+function resetHighlightIncome(e) {
+    zipincome.resetStyle(e.target);
+};
+
+// create a marker & popup for each location
+function onEachFeature_Pop(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlightPop
+            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
+                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
+                        + "</i></center><br/> " +
+                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
+                        + "</i></center><br/>" +
+                        "<hr>");
+              }
+function onEachFeature_Income(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlightIncome
+            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
+                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
+                        + "</i></center><br/> " +
+                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
+                        + "</i></center><br/>" +
+                        "<hr>");
+              }
+
+var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop});
+var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income});
+
+// **********
+// Create Cluster Layers
+// ********** 
+
+var vizIcon = L.icon({
+    //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+      iconUrl: pickIcon(food),
+      iconSize: [60,50]
+    });
+
+// customize the icon!    
+// customize the icon!    
+function pickIcon(food){
+    console.log(food);
+    if (food == "pizza"){
+        return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
+    } else if(food == "chinese"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
+    } else if(food == "brewery"|| food == "pub"){
+        return "https://image.flaticon.com/icons/svg/202/202127.svg"
+    } else if(food == "burger" || food == "fastfood"){
+        return "https://image.flaticon.com/icons/svg/579/579048.svg"
+    } else if(food == "japanese"){
+        return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "sushi"){
+        return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "taco"){
+        return "https://cdn.emojidex.com/emoji/px128/taco.png"
+    } else if(food == "french"){
+        return "https://image.flaticon.com/icons/svg/768/768157.svg"
+    } else if(food == "italian"){
+        return "https://image.flaticon.com/icons/svg/267/267916.svg"
+    } else if(food == "fish" || food == "seafood"){
+        return "https://image.flaticon.com/icons/svg/372/372978.svg"
+    // } else if(food == "fish" || food == "seafood"){
+    //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
+    } else if(food == "vietnamese"){
+        return "https://image.flaticon.com/icons/svg/791/791584.svg"
+    } else if(food == "mediterranean" || food == "greek" || food == "mediterannean"){
+        return "https://image.flaticon.com/icons/svg/123/123309.svg"
+    } else if(food == "colombian"){
+        return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
+    // } else if(food == "thai" || food == "pad thai"){
+    //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
+    } else if(food == "thai" || food == "pad thai"){
+        return "https://image.flaticon.com/icons/svg/898/898122.svg"
+    } else if(food == "indian"){
+        return "https://image.flaticon.com/icons/svg/342/342857.svg"
+    } else if(food == "steroids"|| food == "gym"){
+        return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
+    } else if(food == "winery" || food == "wine"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
+    } else if(food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
+    } else if(food == "ice cream"){
+        return "https://image.flaticon.com/icons/svg/816/816190.svg"
+    } else if(food == "coffee" || food == "tea"){
+        return "https://image.flaticon.com/icons/svg/924/924514.svg"
+    } else if(food == "bakery"){
+        return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
+    } else if(food == "salad"){
+        return "https://image.flaticon.com/icons/svg/267/267917.svgb"
+    } else if(food == "mexican"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
+    } else if(food == "paleo"){
+        return "https://image.flaticon.com/icons/svg/884/884643.svg"
+    } else if(food == "bbq" || food == "ribs" || food == "barbecue"){
+        return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
+    } else if(food == "breakfast"){
+        return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
+    } else if(food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free"){
+        return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
+    } else if(food == "doughnut" || food == "doughnuts"){
+        return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
+    } else {
+        return "https://image.flaticon.com/icons/svg/66/66281.svg"
+    }
+    };
+
+
+
+
+ // make a cluster marker layer   
+var markers = L.markerClusterGroup();
+
+
+// bind each restaurant_data as marker to markers group
+ for (var i = 0; i < googleObject.length; i++) {
+    var object = googleObject[i];
+    markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
+        .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
+        "<center>Price: " + object.Price_Level + "</center><br/> " +
+        "<center>Rating: " + object.Rating + "</center><br/>" +
+        "<hr>"));
+  }
+
+// **********
+// Add Layers to Map
+// ********** 
+
+
+var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+        "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
+        "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+var baseMaps = {
+            "Street Map": streetmap,
+            "Satellite Map": satellite
+          };
+        
+var overlayMaps = {
+            "Population": zippopulation,
+            "Income":zipincome,
+            "Restaurants":markers
+          };
+
+// streetmap.addTo(myMap);
+// zippopulation.addTo(myMap);
+
+                           
+var myMap = L.map("map", {
+            center: [googleObject[0].Latitude, googleObject[0].Longitude],
+            zoom: 9,
+            layers: [streetmap, markers]
+          }).invalidateSize();
+     
+           
+L.control.layers(baseMaps,overlayMaps, {
+                  collapsed: false
+                }).addTo(myMap);
+
+// **********
+// Create the legend
+// ********** 
+
+var pop_legend=L.control({position: 'bottomright'});
+var income_legend=L.control({position: 'bottomright'});
+
+pop_legend.onAdd = function(map){
+var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 5000, 10000, 15000, 20000, 30000, 40000, 50000],
+            labels = [];
+            div.innerHTML+='  Population:<br/>'
+            
+                // loop through our density intervals and generate a label with a colored square for each interval
+            for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +='<i style="background:' + getColor_Pop(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+                                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+                }
+               
+                return div;
+            };
+
+income_legend.onAdd = function (map){
+            var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [0, 10000, 15000, 20000, 25000, 35000, 45000, 60000],
+                    labels = [];
+                    div.innerHTML+='  Income:<br/>'
+            
+                // loop through our density intervals and generate a label with a colored square for each interval
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +='<i style="background:' + getColor_Income(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+                                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+                }
+               
+                return div;
+    
+        };
+
+$(".progress-bar").css("width", 90 + "%")
+
+pop_legend.addTo(myMap);
+
+// switch legend on selection
+myMap.on('overlayadd',function(eventLayer){
+        if(eventLayer.name=='Population'){
+            this.removeControl(income_legend);
+            pop_legend.addTo(this);}
+        else if(eventLayer.name=='Income'){this.removeControl(pop_legend);
+            income_legend.addTo(this);}
+        // else if (eventLayer.name=='Restaurants')
+        // {this.removeControl(pop_legend)|| this.removeControl(income_legend)}
+
+    });
+
+$(window).on("resize", function () { 
+        $("#map").height($(window).height()-150); 
+        myMap.invalidateSize(); 
+        }).trigger("resize");
+
+
+$(document).ready(function(){    
+    $("#progress").remove();
+});
+
+
+
+
+
+
+
+// for (i=0; i<demographicsObject.length; i++){
+//     console.log(demographicsObject[i].Zipcode + " : " + 
+//     formatter.format(demographicsObject[i].Wealthy) + " &  " + 
+//     new Intl.NumberFormat('en-IN').format(demographicsObject[i].Population) + " people.");
+//     };
+console.log("1111");
+// // console.log(yummy_info);
+console.log(markers);
+
+
+
+
+
+</script>
+
+{% endblock %}
