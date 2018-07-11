@@ -7,7 +7,8 @@ from flask import (
     render_template,
     jsonify,
     request,
-    redirect)
+    redirect, 
+    url_for)
 from uszipcode import ZipcodeSearchEngine
 import uszipcode
 import json
@@ -15,6 +16,13 @@ import requests
 from time import sleep
 import re
 from flask_cors import CORS
+### celery
+# from celery_add import add
+from celery_config import make_celery
+import random
+import time
+
+# celery -A app.celery worker --loglevel=info
 
 
 ############
@@ -138,7 +146,7 @@ def get_demo(**kwargs):
         city = kwargs['city']
         state = kwargs['state']
     else:
-        city = "waco"
+        city = "austin"
         state= "tx"
     print(city,state)
     zipSearch = ZipcodeSearchEngine()
@@ -186,7 +194,7 @@ def getYummyInfo(**kwargs):
         state = kwargs['state']
         cuisine = kwargs['cuisine']
     else:
-        city = "waco"
+        city = "austin"
         state= "tx"
         cuisine = "sushi"
     
@@ -208,7 +216,7 @@ def get_ziplist(**kwargs):
         city = kwargs['city']
         state = kwargs['state']
     else:
-        city = "waco"
+        city = "austin"
         state= "tx"
     print(city,state)
     ziplist = []
@@ -233,10 +241,10 @@ def apiCall(**kwargs):
         state = kwargs['state']
         key_word = kwargs['cuisine']
     else:
-        city = "waco"
+        city = "austin"
         state= "tx"
         key_word = "sushi"
-
+    print("searching: " + city + " " + state + " " + key_word)
     search_type='restaurant'
     root_url='https://maps.googleapis.com/maps/api/place/textsearch/json?'
         
@@ -249,6 +257,7 @@ def apiCall(**kwargs):
         # logging.info(page)
         #set up url for the first call 
         initial_url=root_url+'query={}+in+{}'.format(key_word,i)+'&type='+search_type+'&key='+api_key
+        print(initial_url)
         response=requests.get(initial_url).json()
         
         #extract results in a variable called results
@@ -365,17 +374,22 @@ def clean_google_results(**kwargs):
 # Flask Setup
 #################################################
 
-app = Flask(__name__)
+application = Flask(__name__)
 # cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+application.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
+application.config['CELERY_BACKEND'] = 'redis://localhost'
+
+celery = make_celery(application)
 
 #################################################
 # Flask Routes
 #################################################
 
 #get route for restaurant results
-@app.route("/fetch/", methods=["GET", "POST"]) 
+@application.route("/fetch/", methods=["GET", "POST"]) 
 def fetch():
     print('******************* AT Fetch')
+    celery_add.delay(4, 5)
     """send variables to python"""
     if request.method == "POST":
         city = request.form["city"]
@@ -392,6 +406,9 @@ def fetch():
             yummy_info=getYummyInfo()
 
         else:
+            # celery_spit.delay(city)
+            # celery_spit.s(city).set(countdown=5).delay()
+            celery_spit.apply_async(args=[city], countdown=5)
             demographics=get_demo(city=city,state=state)
             yummy_info=getYummyInfo(city=city,state=state,cuisine=cuisine)
 
@@ -436,7 +453,169 @@ def fetch():
 
     return render_template("dashboard.html", demographics=demographics, yummy_info=yummy_info , google_results=google_results)
 
-@app.route('/getpythondata/')
+@celery.task(name='app.celery_add')
+def celery_add(a, b):
+	return a + b
+
+@celery.task(name='app.celery_spit')
+def celery_spit(name):
+    return name
+
+@celery.task(name='app.google_task', bind=True)
+def google_task(self, **kwargs):
+    # self.city = city
+    # print(self.city)
+    if("city" in kwargs and "state" in kwargs and "cuisine" in kwargs): 
+        city = kwargs['city']
+        state = kwargs['state']
+        cuisine = kwargs['cuisine']
+    else:
+        city = "austin"
+        state= "tx"
+        cuisine = "sushi"
+    print(kwargs)
+    city = city.lower().strip(' ')
+    state = state.strip(' ')
+    state = check_state(state)
+    cuisine = cuisine.lower().strip(' ')
+    """background google api call"""
+    print("in google task: " + str(city) + " " + str(state) + " " + str(cuisine))
+    print(city)
+    print('.....')
+    print(state)
+    print('xxxxx')
+    print(cuisine)
+    print('cuisine ^^')
+    if state=="Not found":
+        demographics = get_demo()
+        yummy_info=getYummyInfo()
+    else:
+        demographics=get_demo(city=city,state=state)
+        print('celery demographics done')
+        print(demographics)
+        yummy_info=getYummyInfo(city=city,state=state,cuisine=cuisine)
+        print('celery yummy done')
+        print(yummy_info)
+    city_state_cuisine='-'.join([city,state,cuisine])
+    print('\n*******************\n task city_state_cuisine is {}'.format(city_state_cuisine))
+    search=session.query(user_input).filter(user_input.City_State_Cuisine==city_state_cuisine).first()
+    if search == None:
+        print('******************** search back in task')
+        google_results = apiCall(city=city, state=state, cuisine=cuisine)
+        print("XXXX")
+        # print(google_results)
+        print("TTTTTT")
+        # print(google_results[0])
+        google_results = clean_google_results(google_results=google_results,city_state_cuisine=city_state_cuisine)
+        # print(google_results)
+        print('celery task harvest done')
+        #insert into the database if the google_results are not empty
+        if google_results !=[]:
+            conn = engine.connect()
+            conn.execute(restaurant.__table__.insert(), google_results)
+            new_user=[{'City':city,'State':state,'Cuisine':cuisine,
+                    'City_State':'-'.join([city,state]),'City_State_Cuisine':city_state_cuisine}]
+            conn.execute(user_input.__table__.insert(),new_user)
+        print("after task db insert")
+        # print(google_results)
+    else:
+        print('DDDDDDDDDDDDDD DATABASE')
+        results=session.query(restaurant).filter(restaurant.City_State_Cuisine==city_state_cuisine).all()
+        google_results=[]
+        for i in results:
+            dict_result=i.__dict__
+            del dict_result['_sa_instance_state']
+            if re.findall('\"(.+?)\"', dict_result['Name'])!=[]:
+                print('>>>>>>>>>$$$$$$$$$$$$-Modify this Inquote {}'.format(dict_result))
+                # quot_start=dict_result['Name'].find('\"')
+                dict_result['Name']=' '.join(dict_result['Name'].split('\"'))
+                print('New dict_result is {}'.format(dict_result['Name']))
+            google_results.append(dict_result)
+        print('SSSSSSSSSSS-Queried-Result')
+        print(google_results[0])
+    return {'current': 100, 'total': 100, 'status': 'Task completed!',
+            'result': 42, 'length': len(google_results), 'data': google_results,
+            'demographics': demographics, 'yummy_info': yummy_info
+             }
+
+
+########
+    
+@application.route('/longtask', methods=['POST'])
+def longtask(**kwargs):
+    if request.method == "POST":
+        city = request.form['city']
+        state = request.form['state']
+        cuisine = request.form['cuisine']
+    else:
+        city = "austin"
+        state= "tx"
+        cuisine = "sushi"
+    print('from javascript: ' + str(city) + " - " + str(state) + " " + str(cuisine))
+    # task = google_task.apply_async(((),{'city':city, 'state':state, 'cuisine':cuisine}))
+    # task = google_task.apply_async(city=city, state=state, cuisine=cuisine)
+    task = google_task.delay(city=city, state=state, cuisine=cuisine)
+    return jsonify({}), 202, {'Location': url_for('taskstatus',
+                                                  task_id=task.id)}
+
+@celery.task(name='app.long_task', bind=True)
+def long_task(self):
+    """Background task that runs a long function with progress reports."""
+    verb = ['Starting up', 'Booting', 'Repairing', 'Loading', 'Checking']
+    adjective = ['master', 'radiant', 'silent', 'harmonic', 'fast']
+    noun = ['solar array', 'particle reshaper', 'cosmic ray', 'orbiter', 'bit']
+    message = ''
+    total = random.randint(10, 25)
+    print("time to wait: " + str(total))
+    for i in range(total):
+        if not message or random.random() < 0.25:
+            message = '{0} {1} {2}...'.format(random.choice(verb),
+                                              random.choice(adjective),
+                                              random.choice(noun))
+        self.update_state(state='PROGRESS',
+                          meta={'current': i, 'total': total,
+                                'status': message})
+        time.sleep(1)
+    return {'current': 100, 'total': 100, 'status': 'Task completed!',
+            'result': 42}
+
+@application.route('/status/<task_id>')
+def taskstatus(task_id):
+    task = long_task.AsyncResult(task_id)
+    if task.state == 'PENDING':
+        # job did not start yet
+        response = {
+            'state': task.state,
+            'current': 0,
+            'total': 1,
+            'status': 'Pending...'
+        }
+    elif task.state != 'FAILURE':
+        response = {
+            'state': task.state,
+            'current': task.info.get('current', 0),
+            'total': task.info.get('total', 1),
+            'status': task.info.get('status', ''),
+            'length': task.info.get('length', ''),
+            'data': task.info.get('data', ''),
+            'demographics': task.info.get('demographics', ''),
+            'yummy_info': task.info.get('yummy_info', '')
+        }
+        if 'result' in task.info:
+            response['result'] = task.info['result']
+    else:
+        # something went wrong in the background job
+        response = {
+            'state': task.state,
+            'current': 1,
+            'total': 1,
+            'status': str(task.info),  # this is the exception raised
+        }
+    return jsonify(response)
+
+##########
+
+@application.route('/getpythondata/')
 def get_python_data():
     # print(city)
     # pythondata=[{'foo':'bar','baz':'jazz'}]
@@ -450,8 +629,8 @@ def get_python_data():
 
     return jsonify(pythondata)
 
-@app.route('/')
-@app.route('/dashboard/')
+@application.route('/')
+@application.route('/dashboard/')
 def dashboard():
     print("\nGGGGGGGGGGGGGGGGGG\n At DASHBOARD--Initial Loading")
     demographics = get_demo()
@@ -492,7 +671,7 @@ def dashboard():
     return render_template("dashboard.html", demographics=demographics, yummy_info=yummy_info, google_results=google_results)
 
 #deal with crossorgin issue
-@app.after_request
+@application.after_request
 def after_request(response):
     response.headers.add('Access-Control-Allow-Origin', '*')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
@@ -500,5 +679,5 @@ def after_request(response):
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
 

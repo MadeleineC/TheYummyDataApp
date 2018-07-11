@@ -23,18 +23,20 @@
     <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css"/>
-  <!-- <script type="text/javascript" src="http://timwis.com/leaflet-choropleth/dist/choropleth.js"></script> -->
+    <!-- <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css"/>
+  <script type="text/javascript" src="http://timwis.com/leaflet-choropleth/dist/choropleth.js"></script> -->
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
   
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/msg.js') }}"></script>
   <link rel="shortcut icon" href="{{ url_for('static', filename='icon/burger.ico') }}">
   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
-  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nanobar/0.2.1/nanobar.min.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 </head>
 
 
@@ -60,160 +62,174 @@
                 <!-- 
                     this one will be a JS popup on click explaining on things work 
                 -->
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#faqModalCenter">
-                    FAQ
-                        </a>
-                        <div class="modal fade" id="faqModalCenter" tabindex="-1" role="dialog" aria-labelledby="faqModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="faqModalLongTitle">Yummy Data Map FAQ</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                        
-                                        <h5>
-                                            What is the YummyData? 
-                                        </h5>
-                                            <p>
-                                               YummyData is the easiest way to identify the best area to launch your 
-                                               new restaurant to reach the most success.
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                            How Does YummyData work? 
-                                        </h5>
-                                            <p>
-                                                Simply give us 3 things:  your city, your state, and your cuisine type. We'll give you a map that
-                                                shows current competition, population, and income level per each zipcode in your targetted area!
-                                               
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                            What is visible through the YummyMap?
-                                        </h5>
-                                            <p>
-                                                The YummyMap will provide the client with the exact points of competitors in their area, 
-                                                the average income of the area, along with the population density to allow for a precursory view of
-                                                potential areas for launching a new restaurant or expansion!
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                                Why is Waco, Tx autoloading?
-                                        </h5>
-                                            <p>
-                                                We wanted to do our part to bring awareness to the fact that Waco, Tx, home of the 
-                                                Dr Pepper Museum, actuall has a good number of sushi restaurants. 
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                                Denny's doesnt serve tacos!
-                                        </h5>
-                                            <p>
-                                                Contrary to popular belief, Denny's is actually quite accomodating. <br/>
-                                                Our restaurant results are sourced from Google Places...so if they say Denny's has tacos, 
-                                                well, Google knows all.
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                                Every zipcode in my search is impoverished!
-                                        </h5>
-                                            <p>
-                                                Income data was normalized so that the income levels you're seeing are compared to the
-                                                national average.
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                            Have other questions? 
-                                        </h5>
-                                            <p>
-                                                Our five-star customer support team is here to help by email at contact@yummydata.com
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                            Something is broken!
-                                        </h5>
-                                            <p>
-                                                Send us a message, or use the contact form on the page!
-                                            </p>
-                                            <br/>
-                                        <h5>
-                                            I really want to hire yall...how do i do this?
-                                        </h5>
-                                            <p>
-                                                We like money so just let us know
-                                            </p>
-                                        <hr>
-                                        <h5>
-                                            How did you make this?
-                                        </h5>
-                                            <p>
-                                                 Externally: 
-                                                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="Bootstrap" data-placement="top" data-content="we used bootstrap!">Bootstrap</button>
-                                                &
-                                                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="jQuery" data-placement="right" data-content="we used jquery!">jQuery</button>
-                                                <br/>
-                                                Internally: 
-                                                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="Flask" data-placement="bottom" data-content="we used Flask!">Flask</button>
-                                                ,
-                                                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="python" data-placement="bottom" data-content="we used python!">python</button>
-                                                &
-                                                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="SQLite" data-placement="right" data-content="we used SQLite!">SQLite</button>
-                                                </p>  
-                                                <br/>                                          
-                                         </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                </li>
-                   
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#contactModalCenter">
-                     Contact Us
-                        </a>
-                        <div class="modal fade" id="contactModalCenter" tabindex="-1" role="dialog" aria-labelledby="contactModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="contactModalLongTitle">Contact</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                            <p>
-                                               Contact us at <a href="mailto:contact@yummydata.com?Subject=Yummy%20Data%20Map" target="_top">contact@yummydata.com</a> !
-                                         </p>
-                                         <hr>
-                                         <p>
-                                             
-                                             <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Madeline" data-placement="top" data-content="her <a href='https://github.com/MadeleineC'>github</a> & <a href='https://www.linkedin.com/in/madeleine-case-5b959214/'>LinkedIn</a> !">Madeline</button>
-                                             <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Sara" data-placement="top" data-content="her <a href='https://github.com/sarahmendi'>github</a> & <a href='https://www.linkedin.com/in/sarah-mendiola-45998199/'>LinkedIn</a> !">Sarah</button>
-                                             <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Yizi" data-placement="top" data-content="her <a href='https://github.com/yizhiyin86'>github</a> & <a href='https://www.linkedin.com/in/yizhiyin/'>LinkedIn</a> !">Yizhi</button>
-                                             <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Marko" data-placement="top" data-content="his <a href='https://github.com/justanothergymrat'>github</a> & <a href='https://www.linkedin.com/in/marko-s/'>LinkedIn</a> !">Marko</button>
-                                         </p>
-                                            </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                </li>
-                <!-- 
-                    this one will just be a generic contact us button (email or something)
-                 -->
 
-                    <!-- <li>
-                        
-                        <a href="contact.html"><span class ='' aria-hidden='true'></span>&nbsp; Contact Us</a></li>
-                    -->
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#faqModalCenter">
+                        FAQ
+                            </a>
+                            <div class="modal fade" id="faqModalCenter" tabindex="-1" role="dialog" aria-labelledby="faqModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="faqModalLongTitle">Yummy Data Map FAQ</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                            
+                                            <h5>
+                                                What is the YummyData? 
+                                            </h5>
+                                                <p>
+                                                   YummyData is the easiest way to identify the best area to launch your 
+                                                   new restaurant to reach the most success.
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                How Does YummyData work? 
+                                            </h5>
+                                                <p>
+                                                    Simply give us 3 things:  your city, your state, and your cuisine type. We'll give you a map that
+                                                    shows current competition, population, and income level per each zipcode in your targetted area!
+                                                   
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                What is visible through the YummyMap?
+                                            </h5>
+                                                <p>
+                                                    The YummyMap will provide the client with the exact points of competitors in their area, 
+                                                    the average income of the area, along with the population density to allow for a precursory view of
+                                                    potential areas for launching a new restaurant or expansion!
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                    Why is Waco, Tx autoloading?
+                                            </h5>
+                                                <p>
+                                                    We wanted to do our part to bring awareness to the fact that Waco, Tx, home of the 
+                                                    Dr Pepper Museum, actuall has a good number of sushi restaurants. 
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                    Why is nothing loading?
+                                            </h5>
+                                                <p>
+                                                    Searches for larger cities that are not currently in the database may result in timeouts when we're
+                                                    gathering the data. This is a limitation from the free hosting site we used, not of our program.
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                    Where are you getting your numbers from?
+                                            </h5>
+                                                <p>
+                                                    Income & population levels are sourced from a python module which sourced their data on the
+                                                    2010 census. 
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                    Denny's doesnt serve tacos!
+                                            </h5>
+                                                <p>
+                                                    Contrary to popular belief, Denny's is actually quite accomodating. <br/>
+                                                    Our restaurant results are sourced from Google Places...so if they say Denny's has tacos, 
+                                                    well, Google knows all.
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                    Every zipcode in my search is impoverished!
+                                            </h5>
+                                                <p>
+                                                    Income data was normalized so that the income levels you're seeing are compared to the
+                                                    national average.
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                Have other questions? 
+                                            </h5>
+                                                <p>
+                                                    Our five-star customer support team is here to help by email at contact@yummydata.com
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                Something is broken!
+                                            </h5>
+                                                <p>
+                                                    Send us a message, or use the contact form on the page!
+                                                </p>
+                                                <br/>
+                                            <h5>
+                                                I really want to hire yall...how do i do this?
+                                            </h5>
+                                                <p>
+                                                    We like money so just let us know
+                                                </p>
+                                            <hr>
+                                            <h5>
+                                                How did you make this?
+                                            </h5>
+                                                <p>
+                                                     Externally: 
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="Bootstrap" data-placement="top" data-content="we used bootstrap!">Bootstrap</button>
+                                                    &
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="jQuery" data-placement="right" data-content="we used jquery!">jQuery</button>
+                                                    <br/>
+                                                    Internally: 
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="Flask" data-placement="bottom" data-content="we used Flask!">Flask</button>
+                                                    ,
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="python" data-placement="bottom" data-content="we used python!">python</button>
+                                                    ,
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="SQLite" data-placement="right" data-content="we used SQLite!">SQLite</button>
+                                                    ,
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="Celery" data-placement="right" data-content="we used Celery!">Celery</button>
+                                                    &
+                                                    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="focus" title="redis" data-placement="right" data-content="we used redis!">redis</button>
+                                                    </p>  
+                                                    <br/>                                          
+                                             </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                    </li>
+
+                    <li>
+                            <a href="#" data-toggle="modal" data-target="#contactModalCenter">
+                             Contact Us
+                                </a>
+                                <div class="modal fade" id="contactModalCenter" tabindex="-1" role="dialog" aria-labelledby="contactModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="contactModalLongTitle">Contact</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                                    <p>
+                                                       Contact us at <a href="mailto:contact@yummydata.com?Subject=Yummy%20Data%20Map" target="_top">contact@yummydata.com</a> !
+                                                 </p>
+                                                 <hr>
+                                                 <p>
+                                                     
+                                                     <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Madeline" data-placement="top" data-content="her <a href='https://github.com/MadeleineC'>github</a> & <a href='https://www.linkedin.com/in/madeleine-case-5b959214/'>LinkedIn</a> !">Madeline</button>
+                                                     <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Sara" data-placement="top" data-content="her <a href='https://github.com/sarahmendi'>github</a> & <a href='https://www.linkedin.com/in/sarah-mendiola-45998199/'>LinkedIn</a> !">Sarah</button>
+                                                     <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Yizi" data-placement="top" data-content="her <a href='https://github.com/yizhiyin86'>github</a> & <a href='https://www.linkedin.com/in/yizhiyin/'>LinkedIn</a> !">Yizhi</button>
+                                                     <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"  title="Marko" data-placement="top" data-content="his <a href='https://github.com/justanothergymrat'>github</a> & <a href='https://www.linkedin.com/in/marko-s/'>LinkedIn</a> !">Marko</button>
+                                                 </p>
+                                                    </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </li>
+                
                 </ul>
                                 <!-- <ul class="nav navbar-nav navbar-right">
                                     <form class="form-inline">
@@ -240,10 +256,22 @@
         <!-- </div> -->
         <div>
         <!-- <div class="container-fluid" style="min-height:100%" > -->
-
+<!-- <script>
+    $(".progress-bar").css("width", 15 + "%")
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script> -->
             {% block body %}
 
             {% endblock %}
+
+            <br/>
+            <br/>
+            <br/>
 
         </div>
         

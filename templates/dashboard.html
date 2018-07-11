@@ -1,15 +1,15 @@
 {% extends "header.html"%}
 
 {% block body %}
-<head><script
+<!-- <head><script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script></head>
+    crossorigin="anonymous"></script></head> -->
 
-<div class="row">
-        <!-- <ul class="nav navbar-nav navbar-right"> -->
-            <div class="container">
-                <form method="POST" action="/fetch/" role="form" name="foodstring" class="form-inline">
+<!--  original search bars
+    <div class="row">
+        <ul class="nav navbar-nav navbar-right">
+                <form method="POST" onsubmit="/fetch/" role="form" name="foodstring" class="form-inline">
                   <div class="form-group mb-2">
                       <input type="text" class="form-control" id="city" name="city" placeholder="City">
                   </div>
@@ -19,20 +19,43 @@
                   <div class="form-group mx-sm-3 mb-3">
                       <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Cuisine">
                   </div>
-                  <input type="submit" value="Search" class="btn btn-default">
+                  <input type="submit" value="Search" id="submit" class="btn btn-default">
+                  <!-- <a href="http://127.0.0.1:5000/"class="btn btn-primary btn-lg" onclick="fetch(this.href); return false;" role="button"id="search" >Search</a> -->
+                  <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="search">Search</a> -->
+ <!--                 
+                </form>
+        </ul>
+</div>
+-->
+<div class="row">
+        <ul class="nav navbar-nav navbar-right">
+                <form role="form" name="foodstring" class="form-inline">
+                  <div class="form-group mb-2">
+                      <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                  </div>
+                  <div class="form-group mx-sm-3 mb-3">
+                      <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Cuisine">
+                  </div>
+                  <input type="submit" value="Search" id="submit" class="btn btn-default">
                   <!-- <a href="http://127.0.0.1:5000/"class="btn btn-primary btn-lg" onclick="fetch(this.href); return false;" role="button"id="search" >Search</a> -->
                   <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="search">Search</a> -->
                   
                 </form>
-            </div>
-        <!-- </ul> -->
+        </ul>
 </div>
 
-<div class="row ">
-    <div class="container top-buffer" id='info-display' ></div>
 
+<div class="row ">
+    <div class="container top-buffer" id='info-display'>
+        <div id="celery_progress_main" class='container'></div>
+        <div id="info-display2"></div>
     </div>
-          <!-- 
+</div>
+<div id="celery_progress_main" class='container'></div>
+<!-- 
               
             the below should load the details on when the database was last updated 
             
@@ -46,14 +69,27 @@
               <div class="col-md-3 offset-md-9" id="accessed" style="display:none;">last updated: </div>
             </div> -->
             <!-- <div id='pie'>{{test}}</div> -->
-        <div class="container top-buffer" id='map' style="height:100%; display:block;"> 
+        <div class="container top-buffer" id="map" style="height:100%; display:block;"> 
             <div id="progress">Map is loading...  
                 <div class="progress" id="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                       </div>
                 </div>
         </div>
+        <!-- <div class="container top-buffer" id="map2" style="height:100%; display:block;"> 
+            <div id="progress">Map is loading...  
+                <div class="progress" id="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                      </div>
+                </div>
+        </div> -->
+
+        
   
+        <!--<button onclick="start_long_task();">Start Long Calculation</button><br><br>-->
+<!-- <button id="start-bg-job">Start Long Calculation</button><br><br> -->
+
+
 
 
 <style>
@@ -63,13 +99,21 @@ body {
   margin: 0;
 }
 
+#info-display,
+.celery_progress_child {
+    /* padding-top: 10px; */
+    /* padding-right: 30px; */
+    /* padding-bottom: 10px; */
+    padding-left: 50px;
+}
+
 /* set map, body, and html to 100% of the screen size */
-/* #map,
+#map,
 body,
 html {
   height: 90%;
   width: 90%
-} */
+}
 
 .legend {
   line-height: 18px;
@@ -105,19 +149,52 @@ html {
 .bottom-buffer{
     margin-bottom: 10px;
 }
+
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
 </style>
 
 <script type="text/javascript">
 
-    
+  
 
 $(".progress-bar").css("width", 15 + "%")
 $(function () {
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({html:true})
 })
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+var city_, state_, cuisine_;
+
+$('.form-inline').on('submit', function () {
+    // var input = $('.form-inline').serialize();
+    // console.log(input);
+    event.preventDefault();
+    // alert('Form submitted!');
+
+    city_ = document.getElementById("city").value.toUpperCase();
+    state_ = document.getElementById("state").value.toUpperCase();
+    cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+    start_long_task(city_, state_, cuisine_)
+    return false;
+});
+
 
 // **********
 // Convoluted intake of data from javascript to python
@@ -205,7 +282,6 @@ var food = yummyObject[0].cuisine;
 console.log("food = " + food);
 
 var google_results = '{{ google_results|tojson }}';
-
 let googleObject = JSON.parse(google_results);
 // Currency formatter
 var formatter = new Intl.NumberFormat('en-US', {
@@ -218,6 +294,21 @@ var formatter = new Intl.NumberFormat('en-US', {
 
 var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
 var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +`access_token=${api_key}`;
+var markers;
+var myMap;
+var zippopulation;
+var zipincome;
+var streetmap;
+var satellite;
+var baseMaps;
+var overlayMaps;           
+var myMap;
+var pop_legend;
+var income_legend;
+var layer_control;
+var vizIcon;
+var food;
+
 // var points;
 // var myMap = L.map('map', {
 //   center: [36.7749, -97.4194],
@@ -243,7 +334,7 @@ var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}
 // })
 
 jQuery.each( yummyObject, function( data ) {
-  $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
+  $( "#info-display2" ).append( document.createTextNode( "Displaying results for: " + 
                                                         yummyObject[0].city +
                                                         ", " + yummyObject[0].state +
                                                         " - " + yummyObject[0].cuisine
@@ -279,8 +370,7 @@ console.log(typeof one_geo[0][0][1])
 console.log(demographicsObject.features[0].geometry.coordinates);
 
 $(".progress-bar").css("width", 35 + "%")
-var zippopulation;
-var zipincome;
+
 // function to scale color for population
 function getColor_Pop(d) {
     return d > 50000 ? '#800026' :
@@ -376,86 +466,17 @@ function onEachFeature_Income(feature, layer) {
 
 var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop});
 var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income});
+// console.log(zipincome);
 
 // **********
 // Create Cluster Layers
 // ********** 
 
-var vizIcon = L.icon({
+vizIcon = L.icon({
     //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
       iconUrl: pickIcon(food),
       iconSize: [60,50]
     });
-
-// customize the icon!    
-// customize the icon!    
-function pickIcon(food){
-    console.log(food);
-    if (food == "pizza"){
-        return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
-    } else if(food == "chinese"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
-    } else if(food == "brewery"|| food == "pub"){
-        return "https://image.flaticon.com/icons/svg/202/202127.svg"
-    } else if(food == "burger" || food == "fastfood"){
-        return "https://image.flaticon.com/icons/svg/579/579048.svg"
-    } else if(food == "japanese"){
-        return "https://image.flaticon.com/icons/svg/805/805342.svg"
-    } else if(food == "sushi"){
-        return "https://image.flaticon.com/icons/svg/805/805342.svg"
-    } else if(food == "taco"){
-        return "https://cdn.emojidex.com/emoji/px128/taco.png"
-    } else if(food == "french"){
-        return "https://image.flaticon.com/icons/svg/768/768157.svg"
-    } else if(food == "italian"){
-        return "https://image.flaticon.com/icons/svg/267/267916.svg"
-    } else if(food == "fish" || food == "seafood"){
-        return "https://image.flaticon.com/icons/svg/372/372978.svg"
-    // } else if(food == "fish" || food == "seafood"){
-    //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
-    } else if(food == "vietnamese"){
-        return "https://image.flaticon.com/icons/svg/791/791584.svg"
-    } else if(food == "mediterranean" || food == "greek" || food == "mediterannean"){
-        return "https://image.flaticon.com/icons/svg/123/123309.svg"
-    } else if(food == "colombian"){
-        return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
-    // } else if(food == "thai" || food == "pad thai"){
-    //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
-    } else if(food == "thai" || food == "pad thai"){
-        return "https://image.flaticon.com/icons/svg/898/898122.svg"
-    } else if(food == "indian"){
-        return "https://image.flaticon.com/icons/svg/342/342857.svg"
-    } else if(food == "steroids"|| food == "gym"){
-        return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
-    } else if(food == "winery" || food == "wine"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
-    } else if(food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
-    } else if(food == "ice cream"){
-        return "https://image.flaticon.com/icons/svg/816/816190.svg"
-    } else if(food == "coffee" || food == "tea"){
-        return "https://image.flaticon.com/icons/svg/924/924514.svg"
-    } else if(food == "bakery"){
-        return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
-    } else if(food == "salad"){
-        return "https://image.flaticon.com/icons/svg/267/267917.svgb"
-    } else if(food == "mexican"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
-    } else if(food == "paleo"){
-        return "https://image.flaticon.com/icons/svg/884/884643.svg"
-    } else if(food == "bbq" || food == "ribs" || food == "barbecue"){
-        return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
-    } else if(food == "breakfast"){
-        return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
-    } else if(food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free"){
-        return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
-    } else if(food == "doughnut" || food == "doughnuts"){
-        return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
-    } else {
-        return "https://image.flaticon.com/icons/svg/66/66281.svg"
-    }
-    };
-
 
 
 
@@ -506,7 +527,7 @@ var myMap = L.map("map", {
           }).invalidateSize();
      
            
-L.control.layers(baseMaps,overlayMaps, {
+layer_control = L.control.layers(baseMaps,overlayMaps, {
                   collapsed: false
                 }).addTo(myMap);
 
@@ -585,13 +606,667 @@ $(document).ready(function(){
 //     formatter.format(demographicsObject[i].Wealthy) + " &  " + 
 //     new Intl.NumberFormat('en-IN').format(demographicsObject[i].Population) + " people.");
 //     };
-console.log("1111");
-// // console.log(yummy_info);
-console.log(markers);
+// console.log("1111");
+// // // console.log(yummy_info);
+// console.log(markers);
+
+// // let jsonObject = JSON.parse(demographics);
+// // console.log(demographics)
+
+// // console.log("2222");
+// // console.log(yummy_info['city']);
+
+// var zipcodetosearch = [];
+// var population = [];
+// var income = [];
+// var selectedgeo = [];
+// var plotgeo = {};
+// var plotcluster = [];
+// var zip_url = 'http://localhost:5000/zips/austintx';
+// var restaurant_url = '/restaurant';
+// var zipjson = "{{ url_for('static', filename='zips.json')}}"
+// // {{ url_for('static', filename='icon/burger.ico') }}
+
+// // **********
+// // Intake All Data
+// // **********
+
+// $(".progress-bar").css("width", 35 + "%")
+
+// // first d3 query for zip_url to search then get a list of zip code we need to use to search for 
+// //json data in the zipjson file
+//  d3.json(zip_url,function(queryzip){
+//      console.log(queryzip)
+//     queryzip.forEach(i =>{
+//         income.push(i.AverageIncome);
+//         zipcodetosearch.push(i.Zip+'');
+//         population.push(i.Population);
+//     })
+
+// //before search for zipcodes first get the restaurant_data for restaurant
+// d3.json(restaurant_url, function(restaurant_data){
+//     console.log('x')
+//     console.log(restaurant_data)
+
+//     $(".progress-bar").css("width", 50 + "%")
+
+// d3.json(zipjson, function(zipdata){
+
+//     $(".progress-bar").css("width", 75 + "%")
+
+
+//     console.log(zipdata);
+
+
+// // **********
+// // make geoJSON file for population and income layers
+// // ********** 
+
+//   var features=zipdata.features;
+//   for (var i=0;i<zipcodetosearch.length;i++){
+//             for (var j=0;j<features.length;j++){
+//                 var featureobj=features[j];
+//                 if(featureobj.properties.ZCTA5CE10==zipcodetosearch[i]){
+//                 featureobj.properties['Population']=population[i];
+//                 featureobj.properties['Income']=income[i];
+//                 selectedgeo.push(featureobj);
+    
+//                 }  
+//             }
+//         }
+//     // make ZIP geoJASON file
+//     plotgeo['type']='"FeatureCollection"';
+//     plotgeo['name']="cb_2017_us_zcta510_500k";
+//     plotgeo['features']=selectedgeo;
+//     // console.log(plotgeo);
+
+
+
+// // **********
+// // Chloropleth Functions
+// // ********** 
+
+// // write a function to color scale population
+// function getColor_Pop(d) {
+//     return d > 50000 ? '#800026' :
+//            d > 40000  ? '#BD0026' :
+//            d > 30000  ? '#E31A1C' :
+//            d > 20000  ? '#FC4E2A' :
+//            d > 15000   ? '#FD8D3C' :
+//            d > 10000   ? '#FEB24C' :
+//            d > 5000   ? '#FED976' :
+//                       '#FFEDA0';
+// }
+
+// // write a function to color scare income; 
+// //scale is based on percentile of income per capita in the US;
+// function getColor_Income(d) {
+//     return d > 60000 ? '#91003f' :
+//            d > 45000  ? '#ce1256' :
+//            d > 35000  ? '#e7298a' :
+//            d > 25000  ? '#df65b0' :
+//            d > 20000   ? '#c994c7' :
+//            d > 15000   ? '#d4b9da' :
+//            d > 10000   ? '#e7e1ef' :
+//                       '#f7f4f9';
+// }
+
+// // get style for population
+// function style_population(feature) {
+//         return {
+//             fillColor: getColor_Pop(feature.properties.Population),
+//             weight: 2,
+//             opacity: 1,
+//             color: 'white',
+//             dashArray: '3',
+//             fillOpacity: 0.7
+//             };
+//         }
+
+// // get style for income
+// function style_income(feature) {
+//         return {
+//                 fillColor: getColor_Income(feature.properties.Income),
+//                 weight: 2,
+//                 opacity: 1,
+//                 color: 'white',
+//                 dashArray: '3',
+//                 fillOpacity: 0.7
+//                 };
+//             }
+// // highlight drawn zipcode area on mouseover
+// function highlightFeature(e) {
+//     var layer = e.target;
+//     layer.setStyle({
+//         weight: 5,
+//         color: '#666',
+//         dashArray: '',
+//         fillOpacity: 0.7
+//     });
+//     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+//         layer.bringToFront();
+//     }
+// }
+
+// // un-highlight when mouse leaves
+// function resetHighlight(e) {
+//     zippopulation.resetStyle(e.target);
+// }
+
+// // this doesn't work but it should zoom in on a zipcode are when clicked
+// function zoomToFeature(e) {
+//     map.fitBounds(e.target.getBounds());
+// }
+
+// // create a marker & popup for each location
+// function onEachFeature(feature, layer) {
+//             layer.on({
+//                 mouseover: highlightFeature,
+//                 mouseout: resetHighlight
+//             }).bindPopup("<strong><center><h4>" + feature.properties.ZCTA5CE10 + "</strong></center></h4><br/>"+ 
+//                         "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.Population)
+//                         + "</i></center><br/> " +
+//                         "<center>Average Income: <i>" + formatter.format(feature.properties.Income)
+//                         + "</i></center><br/>" +
+//                         "<hr>");
+//               }
+
+// // make population layer and income layer
+// var zippopulation=L.geoJSON(plotgeo,{style:style_population,onEachFeature: onEachFeature});
+// var zipincome=L.geoJSON(plotgeo,{style:style_income,onEachFeature: onEachFeature});
 
 
 
 
+// // **********
+// // Create Cluster Layers
+// // ********** 
+
+// var vizIcon = L.icon({
+//     //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+//       iconUrl: pickIcon(food),
+//       iconSize: [60,50]
+//     });
+
+// // customize the icon!    
+// function pickIcon(food){
+//     console.log(food);
+//     if (food == "pizza"){
+//         return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
+//     } else if(food == "chinese"){
+//         return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
+//     } else if(food == "brewery"|| food == "pub"){
+//         return "https://image.flaticon.com/icons/svg/202/202127.svg"
+//     } else if(food == "burger" || food == "fastfood"){
+//         return "https://image.flaticon.com/icons/svg/579/579048.svg"
+//     } else if(food == "japanese"){
+//         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+//     } else if(food == "sushi"){
+//         return "https://image.flaticon.com/icons/svg/805/805342.svg"
+//     } else {
+//         return "https://image.flaticon.com/icons/svg/66/66281.svg"
+//     }
+//     };
+
+//  // make a cluster marker layer   
+// var markers = L.markerClusterGroup();
+// console.log(restaurant_data[0]);
+
+// // bind each restaurant_data as marker to markers group
+//  for (var i = 0; i < restaurant_data.length; i++) {
+//     var object = restaurant_data[i];
+//     markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
+//         .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
+//         "<center>Price: " + object.Price_Level + "</center><br/> " +
+//         "<center>Rating: " + object.Rating + "</center><br/>" +
+//         "<hr>"));
+//   }
+
+// // **********
+// // Add Layers to Map
+// // ********** 
+
+// var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+//         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+// var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
+//         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+// var baseMaps = {
+//             "Street Map": streetmap,
+//             "Satellite Map": satellite
+//           };
+        
+// var overlayMaps = {
+//             "Population": zippopulation,
+//             "Income":zipincome,
+//             "Restaurants":markers
+//           };
+        
+// var myMap = L.map("map", {
+//             center: [30.307182, -97.755996],
+//             zoom: 9,
+//             layers: [streetmap, zippopulation]
+//           }).invalidateSize();
+     
+           
+// L.control.layers(baseMaps,overlayMaps, {
+//                   collapsed: false
+//                 }).addTo(myMap);
+
+
+// // **********
+// // Create the legend
+// // ********** 
+
+// var pop_legend=L.control({position: 'bottomright'});
+// var income_legend=L.control({position: 'bottomright'});
+
+// pop_legend.onAdd = function(map){
+// var div = L.DomUtil.create('div', 'info legend'),
+//             grades = [0, 5000, 10000, 15000, 20000, 30000, 40000, 50000],
+//             labels = [];
+//             div.innerHTML+='  Population:<br/>'
+            
+//                 // loop through our density intervals and generate a label with a colored square for each interval
+//             for (var i = 0; i < grades.length; i++) {
+//                     div.innerHTML +='<i style="background:' + getColor_Pop(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+//                                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+//                 }
+               
+//                 return div;
+//             };
+
+// income_legend.onAdd = function (map){
+//             var div = L.DomUtil.create('div', 'info legend'),
+//                     grades = [0, 10000, 15000, 20000, 25000, 35000, 45000, 60000],
+//                     labels = [];
+//                     div.innerHTML+='  Income:<br/>'
+            
+//                 // loop through our density intervals and generate a label with a colored square for each interval
+//                 for (var i = 0; i < grades.length; i++) {
+//                     div.innerHTML +='<i style="background:' + getColor_Income(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+//                                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+//                 }
+               
+//                 return div;
+    
+//         };
+
+// $(".progress-bar").css("width", 90 + "%")
+
+// pop_legend.addTo(myMap);
+    
+
+// //
+// //  Still need to fix how the color doesn't change correctly upon
+// //      selecting different chloropleth layers
+// //
+
+// // switch legend on selection
+// myMap.on('overlayadd',function(eventLayer){
+//         if(eventLayer.name=='Population'){
+//             this.removeControl(income_legend);
+//             pop_legend.addTo(this);}
+//         else if(eventLayer.name=='Income'){this.removeControl(pop_legend);
+//             income_legend.addTo(this);}
+//         // else if (eventLayer.name=='Restaurants')
+//         // {this.removeControl(pop_legend)|| this.removeControl(income_legend)}
+
+//     });
+   
+//     $(window).on("resize", function () { 
+//         $("#map").height($(window).height()-150); 
+//         myMap.invalidateSize(); 
+//         }).trigger("resize");
+
+//   $(document).ready(function(){    
+//     $("#progress").remove();
+// });
+
+// });
+// });
+// });   
+
+function start_long_task(city=city_, state=state_, cuisine=cuisine_) {
+console.log(city);
+console.log(state);
+console.log(cuisine);
+console.log('sending');
+    // clear the map
+    markers.clearLayers();
+    zippopulation.clearLayers();
+    zipincome.clearLayers();
+    myMap.removeControl(layer_control);
+    var displaying_results_node = document.getElementById("info-display");
+        displaying_results_node.innerHTML = '<div id="info-display2"></div>';
+    var displaying_results_node_child = document.getElementById("info-display2");
+    var loading_button = $('<button class="btn btn-sm btn-warning" id="spinning_button"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>');
+        $(displaying_results_node_child).append(loading_button);  
+
+
+
+        // add task status elements 
+        celery_div = $('<div class="celery_progress_child" id="celery_progress"><div id="celery_map"></div><div></div><div></div><div></div><div>&nbsp;</div></div>');
+        // $('#celery_progress_main').append(celery_div);
+
+        // create a progress bar
+        var nanobar = new Nanobar({
+            bg: '#44f',
+            target: celery_div[0].childNodes[0]
+        });
+        // send ajax POST request to start background job
+        var celery_data = {
+                        'city':city,
+                        'state':state,
+                        'cuisine':cuisine
+                        };
+                        console.log(celery_data);
+        $.ajax({
+            type: 'POST',
+            url: '/longtask',
+            data: {'city' : city_, 
+                    'state' : state_,
+                    'cuisine' : cuisine
+                    },
+            // data: JSON.stringify(celery_data),
+            // data: $("#form-inline").serialize(),
+            // data: {'city': 'dfgdfgdfggdfg'},
+            success: function(data, status, request) {
+                status_url = request.getResponseHeader('Location');
+                console.log(status_url);
+                // status_url = 'http://127.0.0.1:5000/longtask'
+                update_progress(status_url, nanobar, celery_div[0]);
+            },
+            error: function() {
+                alert('Unexpected error');
+            }
+        });
+    }
+
+function update_progress(status_url, nanobar, status_div) {
+        // send GET request to status URL
+        $.getJSON(status_url, function(data) {
+            // update UI
+            // percent = parseInt(data['current'] * 100 / data['total']);
+            // console.log(data['current']);
+            // console.log(data['total']);
+            console.log(data['state']);
+            // console.log(data);
+            // nanobar.go(percent);       
+            if (data['state'] != 'SUCCESS') {
+                // var test3 = document.contains('#celery_progress');
+                // var spinner = document.getElementById("spinning_button");
+                // var spinner_exists = document.getElementById("celery_progress").contains(spinner);
+                // console.log(test3);
+                // console.log(test3.firstChild.nodeName);
+                // if (spinner_exists != true) {
+                //     loading_button = $('<button class="btn btn-sm btn-warning" id="spinning_button"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>');
+                //     $(status_div.childNodes[0]).append(loading_button);  
+                //                                 }   
+            }
+            // $(status_div.childNodes[1]).text(percent + '%');
+            // $(status_div.childNodes[2]).text(data['status']);
+            // $(status_div.childNodes[3]).text(data['state']);
+            if (data['state'] != 'PENDING' && data['state'] != 'PROGRESS') {
+                // if (document.getElementById("spinning_button")){
+                //     var elem = document.getElementById("spinning_button");
+                //     elem.parentNode.removeChild(elem);
+                // }
+                if ('result' in data) {
+                    // show result
+                    // $(status_div.childNodes[4]).text('Result: ' + data['result']);
+                    console.log(data['result']);
+                    console.log(data);
+
+                    // var demographics = '{{ demographics|tojson }}';
+                    // let demographicsObject = JSON.parse(demographics);
+                    // var demographicsObject=JSON.parse(demographics);
+                    // console.log(data['demographics']);
+                    console.log(data);
+                    console.log('pppp');
+                    let demographicsObject = data['demographics'];
+                    console.log(demographicsObject);
+                    // var yummy_info = '{{ yummy_info|tojson }}';
+                    // let yummyObject = JSON.parse(yummy_info);
+                    console.log(data['yummy_info']);
+                    let yummyObject = data['yummy_info'];
+                    console.log(yummyObject);
+                    food = (yummyObject[0].cuisine).toLowerCase();
+                    console.log("food celery = " + food);
+
+                    // var google_results = '{{ google_results|tojson }}';
+                    // let googleObject = JSON.parse(google_results);
+                    let googleObject = data['data'];
+                    console.log(googleObject);
+                    // console.log(yummyObject);
+                    // console.log(yummyObject[0].city);
+                    // console.log("0000");
+                    // console.log(demographicsObject);
+                    // var one_geo=demographicsObject.features[0].geometry.coordinates;
+                    // console.log(typeof one_geo[0][0][1])
+
+                    // console.log(demographicsObject.features[0].geometry.coordinates);
+
+                    // $(".progress-bar").css("width", 35 + "%")
+                    // var zippopulation;
+                    // var zipincome;
+                    // zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop}).addTo(myMap);
+                    // var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop});
+                    // var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income});
+                    // zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income}).addTo(myMap);
+                    // var vizIcon = L.icon({
+                    // //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+                    // iconUrl: pickIcon(food),
+                    // iconSize: [60,50]
+                    // });
+                    // var markers = L.markerClusterGroup();
+
+                    var displaying_results_old = document.getElementById("info-display2");
+                    var displaying_results_new = document.createTextNode( "Displaying results for: " + 
+                                                        yummyObject[0].city +
+                                                        ", " + yummyObject[0].state +
+                                                        " - " + yummyObject[0].cuisine
+                                                        ) ;
+                    // mySpan.innerHTML = "replaced anchor!";
+                    displaying_results_old.parentNode.replaceChild(displaying_results_new, displaying_results_old);
+// 
+//                     $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
+//                                                         yummyObject[0].city +
+//                                                         ", " + yummyObject[0].state +
+//                                                         " - " + yummyObject[0].cuisine
+//                                                         )  );
+
+vizIcon = L.icon({
+    //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+      iconUrl: pickIcon(food),
+      iconSize: [60,50]
+    });
+
+                    // bind each restaurant_data as marker to markers group
+                    for (var i = 0; i < googleObject.length; i++) {
+                        var object = googleObject[i];
+                        // console.log('in');
+                        // console.log(object);
+                        markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
+                            .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
+                            "<center>Price: " + object.Price_Level + "</center><br/> " +
+                            "<center>Rating: " + object.Rating + "</center><br/>" +
+                            "<hr>"));
+                    }
+
+                //     // **********
+                //     // Add Layers to Map
+                //     // ********** 
+
+
+                //     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+                //             "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+                //     var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
+                //             "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
+
+                //     var baseMaps = {
+                //                 "Street Map": streetmap,
+                //                 "Satellite Map": satellite
+                //             };
+                // console.log(baseMaps);
+                            
+                //     var overlayMaps = {
+                //                 "Population": zippopulation,
+                //                 "Income":zipincome,
+                //                 "Restaurants":markers
+                //             };
+                // console.log(overlayMaps);
+                //     // streetmap.addTo(myMap);
+                //     // zippopulation.addTo(myMap);
+
+                                            
+                //     var myMap2 = L.map("map2", {
+                //                 center: [googleObject[0]['geometry']['location'].lat, googleObject[0]['geometry']['location'].lng],
+                //                 zoom: 9,
+                //                 layers: [streetmap, markers]
+                //             }).invalidateSize();
+
+                //     $("#map2").height($(window).height()-150); 
+
+                //     updateMapPosition();
+                        
+                            
+
+
+                    // markers.addTo(myMap);
+                    // console.log(zippopulation);
+                    // zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop}).addTo(myMap);
+                    zippopulation = L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop})
+                    // zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income}).addTo(myMap);
+                    zipincome = L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income})
+
+                    overlayMaps = {
+                                "Population": zippopulation,
+                                "Income":zipincome,
+                                "Restaurants":markers
+                            };
+                    layer_control = L.control.layers(baseMaps,overlayMaps, {
+                                    collapsed: false
+                                    }).addTo(myMap);
+
+                    updateMapPosition();
+                    console.log(googleObject[0].Latitude);
+                    myMap.panTo([googleObject[0].Latitude, googleObject[0].Longitude]);
+                    myMap.setZoom(9);
+
+                    $(".progress-bar").css("width", 90 + "%")
+
+
+
+                }
+                else {
+                    // something unexpected happened
+                    $(status_div.childNodes[4]).text('Result: ' + data['state']);
+                    console.log(data['state']);
+                }
+            }
+            else {
+                // rerun in 2 seconds
+                setTimeout(function() {
+                    update_progress(status_url, nanobar, status_div);
+                    console.log('updating')
+                }, 2000);
+            }
+        });
+    }
+
+// $(function() {
+//         $('#start-bg-job').click(start_long_task);
+//     });
+// $(function() {
+//     $('#submit').click(start_long_task);
+// });
+
+// customize the icon!    
+function pickIcon(food){
+    console.log(food);
+    if (food == "pizza"){
+        return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
+    } else if(food == "chinese"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
+    } else if(food == "brewery"|| food == "pub"){
+        return "https://image.flaticon.com/icons/svg/202/202127.svg"
+    } else if(food == "burger" || food == "fastfood"){
+        return "https://image.flaticon.com/icons/svg/579/579048.svg"
+    } else if(food == "japanese"){
+        return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "sushi"){
+        return "https://image.flaticon.com/icons/svg/805/805342.svg"
+    } else if(food == "taco"){
+        return "https://cdn.emojidex.com/emoji/px128/taco.png"
+    } else if(food == "french"){
+        return "https://image.flaticon.com/icons/svg/768/768157.svg"
+    } else if(food == "italian"){
+        return "https://image.flaticon.com/icons/svg/267/267916.svg"
+    } else if(food == "fish" || food == "seafood"){
+        return "https://image.flaticon.com/icons/svg/372/372978.svg"
+    // } else if(food == "fish" || food == "seafood"){
+    //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
+    } else if(food == "vietnamese"){
+        return "https://image.flaticon.com/icons/svg/791/791584.svg"
+    } else if(food == "mediterranean" || food == "greek" || food == "mediterannean"){
+        return "https://image.flaticon.com/icons/svg/123/123309.svg"
+    } else if(food == "colombian"){
+        return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
+    // } else if(food == "thai" || food == "pad thai"){
+    //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
+    } else if(food == "thai" || food == "pad thai"){
+        return "https://image.flaticon.com/icons/svg/898/898122.svg"
+    } else if(food == "indian"){
+        return "https://image.flaticon.com/icons/svg/342/342857.svg"
+    } else if(food == "steroids"|| food == "gym"){
+        return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
+    } else if(food == "winery" || food == "wine"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
+    } else if(food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
+    } else if(food == "ice cream"){
+        return "https://image.flaticon.com/icons/svg/816/816190.svg"
+    } else if(food == "coffee" || food == "tea"){
+        return "https://image.flaticon.com/icons/svg/924/924514.svg"
+    } else if(food == "bakery"){
+        return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
+    } else if(food == "salad"){
+        return "https://image.flaticon.com/icons/svg/267/267917.svgb"
+    } else if(food == "mexican"){
+        return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
+    } else if(food == "paleo"){
+        return "https://image.flaticon.com/icons/svg/884/884643.svg"
+    } else if(food == "bbq" || food == "ribs" || food == "barbecue"){
+        return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
+    } else if(food == "breakfast"){
+        return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
+    } else if(food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free"){
+        return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
+    } else if(food == "doughnut" || food == "doughnuts"){
+        return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
+    } else {
+        return "https://image.flaticon.com/icons/svg/66/66281.svg"
+    }
+    };
+
+function updateMapPosition() { 
+    setTimeout(function(){
+        myMap.invalidateSize(true);}
+    ,500)
+    
+}
+
+function toggleShow(toggled_element_name) {
+    var x = document.getElementById(toggled_element_name);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 
 </script>
 
