@@ -53,6 +53,10 @@ restaurant=Base.classes.restaurant_search
 user_input=Base.classes.user_input
 zip_shapes=Base.classes.zip_shapes
 
+################################################
+# Dash
+###############################################
+
 
 ###
 # ideal:
@@ -453,6 +457,11 @@ def fetch():
 
     return render_template("dashboard.html", demographics=demographics, yummy_info=yummy_info , google_results=google_results)
 
+
+########################################
+# celery tasks
+#######################################
+
 @celery.task(name='app.celery_add')
 def celery_add(a, b):
 	return a + b
@@ -677,6 +686,25 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
+
+# girls pie chart
+@application.route('/api/pie')
+def value_counts():
+
+    results = session.query(
+        func.count(restaurant.Price_Level).label("value_count"),
+        restaurant.Price_Level
+        ).group_by(
+            restaurant.Price_Level
+            ).having(restaurant.Price_Level != None).all()
+    
+    payload = [
+        {
+            "key": r.Price_Level,
+            "priceLevel": r.value_count} for r in results
+        ]
+    print(payload)
+    return jsonify(payload)
 
 if __name__ == '__main__':
     application.run(debug=True)

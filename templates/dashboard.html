@@ -83,7 +83,13 @@
                       </div>
                 </div>
         </div> -->
-
+        <div class="row ">
+                <div class="container top-buffer" id='pie-display'>
+                    <button class="btn btn-default" id="btnPie">Pie</button>
+                    <button class="btn btn-default" id="btnBar">Bar</button>
+                    <div class = "svg-container" id="pie"></div>
+                </div>
+        </div>
         
   
         <!--<button onclick="start_long_task();">Start Long Calculation</button><br><br>-->
@@ -107,14 +113,38 @@ body {
     padding-left: 50px;
 }
 
+#pie-display{
+    width:80%;
+    height:80%;
+    border: 2px solid black;
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
 /* set map, body, and html to 100% of the screen size */
 #map,
 body,
 html {
   height: 90%;
-  width: 90%
+  width: 90%;
 }
 
+#pie {
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+}
 .legend {
   line-height: 18px;
   color: #555;
@@ -1077,11 +1107,11 @@ function update_progress(status_url, nanobar, status_div) {
 //                                                         " - " + yummyObject[0].cuisine
 //                                                         )  );
 
-vizIcon = L.icon({
-    //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
-      iconUrl: pickIcon(food),
-      iconSize: [60,50]
-    });
+                    vizIcon = L.icon({
+                        //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+                        iconUrl: pickIcon(food),
+                        iconSize: [60,50]
+                        });
 
                     // bind each restaurant_data as marker to markers group
                     for (var i = 0; i < googleObject.length; i++) {
@@ -1267,6 +1297,229 @@ function toggleShow(toggled_element_name) {
         x.style.display = "none";
     }
 }
+//  girls pie chart
+
+        var m = [20, 20, 30, 20],
+            w = 960 - m[1] - m[3],
+            h = 450 - m[0] - m[2];
+
+        var x,
+            y,
+            duration = 2000,
+            delay = 500;
+
+        var color = d3.scale.category10();
+
+        var svg = d3.select("#pie")
+                        .append("div")
+                        .classed("svg-container", true) //container class to make it responsive
+                        .append("svg")
+                        //responsive SVG needs these 2 attributes and no width and height attr
+                        .attr("preserveAspectRatio", "xMinYMin meet")
+                        .attr("viewBox", "0 0 800 600")
+                        //class to make it responsive
+                        .classed("svg-content-responsive", true)
+                        .append("g")
+                        //  .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+        // var svg = d3.select("#pie").append("svg")
+        //     .attr("width", w + m[1] + m[3])
+        //     .attr("height", h + m[0] + m[2])
+        //     .append("g")
+        //     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+        /*var data = [{
+            key: "Rating 1",
+            avgRating: 223.02,
+            sumZipCount: 7961.850000000001
+        }, {
+            key: "Rating 2",
+            maxPrice: 135.91,
+            sumZipCount: 5902.409999999999
+        }, {
+            key: "Rating 3",
+            maxPrice: 130.32,
+            sumZipCount: 11225.13
+        }, {
+            key: "Rating 4",
+            maxPrice: 43.22,
+            sumZipCount: 3042.6200000000017
+        }]*/
+
+        x = d3.scale.ordinal();
+
+        y = d3.scale.linear();
+
+        d3.json("/api/pie", function (error, data) {
+
+            if (error) { console.error(error) }
+            x.domain(data.map(function (d) {
+                return d.key;
+            }))
+                .rangeRoundBands([0, w], .2);
+
+            var pie = d3.layout.pie()
+                .value(function (d) {
+                    return d.priceLevel;
+                });
+
+            var arc = d3.svg.arc();
+
+            y.domain([0, d3.max(data.map(function (d) {
+                return d.priceLevel;
+            }))])
+                .range([h / 4 - 20, 0]);
+
+            var g = svg.selectAll(".symbol")
+                .data(function () {
+                    return pie(data);
+                })
+                .enter()
+                .append("g")
+                .attr("class", "symbol");
+
+            g.append("rect")
+                .style("fill", function (d) {
+                    return color(d.data.key);
+                })
+                .attr("x", function (d) {
+                    return x(d.data.key);
+                })
+                .attr("y", function (d) {
+                    return y(d.data.priceLevel);
+                })
+                .attr("width", x.rangeBand())
+                .attr("height", function (d) {
+                    return h - y(d.data.priceLevel);
+                });
+
+            //draw bar chart first 
+
+            g.append("path")
+                .style("fill", function (d) {
+                    return color(d.data.key);
+                });
+
+            g.append("text")
+                .attr("transform", function (d) {
+                    return "translate(" + (x(d.data.key) + x.rangeBand() / 3) + "," + (h + 20) + ")";
+                })
+                .text(function (d) {
+                    return d.data.key;
+                });
+
+
+            document.getElementById("btnBar").addEventListener("click", toBar)
+            document.getElementById("btnPie").addEventListener("click", toPie)
+            //then use path element of bars do transition;
+            function toPie() {
+                var g = svg.selectAll(".symbol");
+
+                g.selectAll("rect").remove();
+
+                g.selectAll("path")
+                    .transition()
+                    .duration(duration)
+                    .tween("arc", arcTween);
+
+                //The idea here is to first draw an arc like a bar,
+                //then tween the bar-like arc to the donut arc. 
+                //Thus, the key is find the initial bar size and position:
+                //The initial bar height is approximated by the length of 
+                //outside arc: barHeight = init_OuterRadius * init_Angle. 
+                //So we can get the startAngle shown in f;
+                //(Note that: the measure of angle in d3 starts from vertical y:
+                // y    angle
+                // |    /   
+                // |   /        
+                // |  /             
+                // |o/
+                // |/      
+                // )                                       
+                function arcTween(d) {
+                    var path = d3.select(this),
+                        text = d3.select(this.parentNode).select("text"),
+                        x0 = x(d.data.key),
+                        y0 = h - y(d.data.priceLevel); //initial height
+
+                    return function (t) {
+                        var r = h / 2 / Math.min(1, t + 1e-3),
+                            //a is stepping factor, starting from 1 to 0,
+                            //as the timer t goes.
+                            //A simper alternative: a = 1 - t;
+                            a = Math.cos(t * Math.PI / 2),
+                            xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+                            yy = ((a) * h + (1 - a) * h / 2),
+                            f = {
+                                innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+                                //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+                                outerRadius: r,
+                                startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+                                endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+                            };
+
+
+                        path.attr("transform", "translate(" + xx + "," + yy + ")");
+                        path.attr("d", arc(f));
+                        text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+                    };
+                }
+            }
+
+            function toBar() {
+                var g = svg.selectAll(".symbol");
+
+                //g.selectAll("rect").remove();
+
+                g.selectAll("path")
+                    .transition()
+                    .duration(duration)
+                    .tween("arc", arcTween);
+
+                //The idea here is to first draw an arc like a bar,
+                //then tween the bar-like arc to the donut arc. 
+                //Thus, the key is find the initial bar size and position:
+                //The initial bar height is approximated by the length of 
+                //outside arc: barHeight = init_OuterRadius * init_Angle. 
+                //So we can get the startAngle shown in f;
+                //(Note that: the measure of angle in d3 starts from vertical y:
+                // y    angle
+                // |    /   
+                // |   /        
+                // |  /             
+                // |o/
+                // |/      
+                // )                                       
+                function arcTween(d) {
+                    var path = d3.select(this),
+                        text = d3.select(this.parentNode).select("text"),
+                        x0 = x(d.data.key),
+                        y0 = h - y(d.data.priceLevel); //initial height
+
+                    return function (t) {
+                        t = 1 - t;
+                        var r = h / 2 / Math.min(1, t + 1e-3),
+                            //a is stepping factor, starting from 1 to 0,
+                            //as the timer t goes.
+                            //A simper alternative: a = 1 - t;
+                            a = Math.cos(t * Math.PI / 2),
+                            xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+                            yy = ((a) * h + (1 - a) * h / 2),
+                            f = {
+                                innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+                                //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+                                outerRadius: r,
+                                startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+                                endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+                            };
+
+
+                        path.attr("transform", "translate(" + xx + "," + yy + ")");
+                        path.attr("d", arc(f));
+                        text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+                    };
+                }
+            }
+        });
 
 </script>
 
