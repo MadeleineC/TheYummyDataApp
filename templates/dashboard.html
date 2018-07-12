@@ -59,11 +59,34 @@
         </div> -->
 
 <!-- yy add dropdown menu for zipcode -->
-<div class="row">
+<div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="well">
+                    <h5>SELECT Zip:</h5>
+                    <select id="selDataset" onchange="getData(this.value)"></select>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div id="line"></div>
+            </div>
+            <div class="col-md-5">
+                <div id="pie2"></div>
+            </div>
+        </div>
+    </div>
+
+<!-- <div class="row">
     <div id='select_box' style="width:50px;height:20px;margin-left:5rem;margin-top:2rem">
         <select id="selDataset" onchange="getData(this.value)"></select>
     </div>
-</div>
+</div> -->
+
+<!-- <div class="row ">
+            <div class="svg-container" style ="width:50%;height:50%;" id='line-display'>
+                    <div id="line"></div>
+                </div>
+</div> -->
 
 <div class="row ">
     <div class="container top-buffer" id='pie-display'>
@@ -101,6 +124,10 @@
         height: 80%;
         border: 2px solid black;
     }
+
+    
+
+    
 
     .svg-container {
         display: inline-block;
@@ -174,6 +201,8 @@
         -animation: spin .7s infinite linear;
         -webkit-animation: spin2 .7s infinite linear;
     }
+
+    
 
     @-webkit-keyframes spin2 {
         from {
@@ -560,6 +589,9 @@
         });
     }
 
+    
+
+    
     function getData(route){
         var info_=document.getElementById('info-display').innerText;
         var temp_string = info_.split(': ')[1];      
@@ -568,10 +600,88 @@
         var cuisine=temp_string.split(',')[1].split('-')[1].trim();
 
         var url = `/api/pie?city=${city}&state=${state}&cuisine=${cuisine}&zipcode=${route}`;
+        var line_url=`/api/line?zipcode=${route}`
         updatePieChart(url);
+        Plotly.d3.json(url,function(error,data) {
+            
+           updatePieChart2(data);
+        });
+        Plotly.d3.json(line_url, function(error, data) {
+                        updateLineChart(data);
+                    });
          
         
     }
+//initial plot line chart 
+    var LINE = document.getElementById('line');
+    var max = Math.max([10,12,14,15,16,19,20]);
+    var trace_1= {x:['2012','2013','2014','2015','2016'],
+                  y:[10,12,14,15,16],
+                  mode: 'lines',
+                  name: 'Current',
+                line: { dash: 'solid',
+                        width: 4},
+                };
+    var trace_2 ={
+        x:['2016','2017','2018'],
+                  y:[16,19,20],
+                  mode: 'lines',
+                  name: 'Predicted',
+                line: { dash: 'dot',
+                        width: 4}
+                };
+    var data =[trace_1,trace_2];
+    var layout = {
+                    title: 'Total Restaurants',  
+                    showlegend: true,
+                    xaxis:{
+                    dtick:1
+                    },
+                    yaxis: {
+                    range: [0, 2*Math.max.apply(Math, trace_1.y)],
+                    // autorange: false
+                    }
+                    };
+    Plotly.plot(LINE,data,layout);
+    // Plotly.d3.json(default_zip,function(error,response){
+    
+    
+    function updateLineChart(newData) {
+        var LINE = document.getElementById('line')
+        var update_trace_1 = {y:[newData.count]};
+        var update_trace_2={y:[newData.forcast_count]};
+        var update_layout = {yaxis:{range: [0, 2*Math.max.apply(Math, newData.count)]}}
+        Plotly.restyle(LINE,update_trace_1,0);
+        Plotly.restyle(LINE,update_trace_2,1);
+        Plotly.relayout(LINE,update_layout);
+    };
+
+// pie chart YY
+// initial pie chart
+    var PIE_2 = document.getElementById('pie2');
+    var data_pie = [ { 
+                        values: [20,10,5,4,2],
+                        labels: ['Price-0','Price-1','Price-2','Price-3','Price-4'],
+                        type: 'pie'
+                    }];
+    var layout_pie={title: "Restaurants of Interest by Price Range"};
+    Plotly.plot(PIE_2, data_pie, layout_pie)
+
+// update pie chart 2
+    function updatePieChart2(data) {
+        var PIE_2 = document.getElementById('pie2');
+        var counts = data.map(function (d) {
+                return d.priceLevel;
+            });
+            var pricelevel=data.map(function (d) {
+                return `Price-${d.key}`;});
+
+            console.log(counts);
+            console.log(pricelevel);
+            Plotly.restyle(PIE_2, 'values', [counts]);
+            Plotly.restyle(PIE_2, 'labels', [pricelevel]);
+
+    };
 //pie chart
     
         

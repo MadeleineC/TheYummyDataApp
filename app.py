@@ -52,6 +52,7 @@ zip_demo=Base.classes.zip_demographics
 restaurant=Base.classes.restaurant_search
 user_input=Base.classes.user_input
 zip_shapes=Base.classes.zip_shapes
+restaurant_count=Base.classes.restaurant_count
 
 ################################################
 # Dash
@@ -729,6 +730,34 @@ def value_counts():
         ]
     print(payload)
     return jsonify(payload)
+@application.route('/api/line')
+def restaurant_counts():
+
+    zipcode = str(request.args.get('zipcode'))
+    print('@@@@@@under restaurant_counts')
+    print('zipcode :{}'.format(zipcode))
+    results = session.query(restaurant_count.Restaurant_Count_2012,
+                            restaurant_count.Restaurant_Count_2013,
+                            restaurant_count.Restaurant_Count_2014,
+                            restaurant_count.Restaurant_Count_2015,
+                            restaurant_count.Restaurant_Count_2016).filter(restaurant_count.zipcode==zipcode).all()
+    
+    print(results)
+    
+    ##need to put machine learning model here
+    predict_2017=results[0][-1]*1.0
+    predict_2018=results[0][-1]*1.5
+    forcasting_year=['2016','2017','2018']
+    forcasting_value=[results[0][-1],predict_2017,predict_2018]
+    countload ={'year':['2012','2013','2014','2015','2016'],
+                'count':[i for i in results[0]],
+                'forcast_year':forcasting_year,
+                'forcast_count':forcasting_value}
+    
+    print(countload)
+
+    return jsonify(countload)
+
 
 if __name__ == '__main__':
     application.run(debug=True)
