@@ -1,312 +1,343 @@
-{% extends "header.html"%}
-
-{% block body %}
-<head><script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-    crossorigin="anonymous"></script></head>
+{% extends "header.html"%} {% block body %}
 
 <div class="row">
-        <!-- <ul class="nav navbar-nav navbar-right"> -->
-            <div class="container">
-                <form method="POST" action="/fetch/" role="form" name="foodstring" class="form-inline">
-                  <div class="form-group mb-2">
-                      <input type="text" class="form-control" id="city" name="city" placeholder="City">
-                  </div>
-                  <div class="form-group mx-sm-3 mb-3">
-                      <input type="text" class="form-control" id="state" name="state" placeholder="State">
-                  </div>
-                  <div class="form-group mx-sm-3 mb-3">
-                      <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Cuisine">
-                  </div>
-                  <input type="submit" value="Search" class="btn btn-default">
-                  <!-- <a href="http://127.0.0.1:5000/"class="btn btn-primary btn-lg" onclick="fetch(this.href); return false;" role="button"id="search" >Search</a> -->
-                  <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="search">Search</a> -->
-                  
-                </form>
+    <ul class="nav navbar-nav navbar-right">
+        <form role="form" name="foodstring" class="form-inline">
+            <div class="form-group mb-2">
+                <input type="text" class="form-control" id="city" name="city" placeholder="City">
             </div>
-        <!-- </ul> -->
+            <div class="form-group mx-sm-3 mb-3">
+                <input type="text" class="form-control" id="state" name="state" placeholder="State">
+            </div>
+            <div class="form-group mx-sm-3 mb-3">
+                <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Cuisine">
+            </div>
+            <input type="submit" value="Search" id="submit" class="btn btn-default">
+
+
+
+        </form>
+    </ul>
 </div>
 
-<div class="row ">
-    <div class="container top-buffer" id='info-display' ></div>
 
+<div class="row ">
+    <div class="container top-buffer" id='info-display'>
+        <div id="celery_progress_main" class='container'></div>
+        <div id="info-display2"></div>
     </div>
-          <!-- 
+</div>
+<div id="celery_progress_main" class='container'></div>
+<!-- 
               
             the below should load the details on when the database was last updated 
             
             we can have this only show up when a city is searched (so if we pre-load austin/taco,
                 this label won't display)
         -->
-          <!-- <div class="row">
+<!-- <div class="row">
               <div class="col-md-3"></div>
               <div class="col-md-3"></div>
               <div class="col-md-3"></div>
               <div class="col-md-3 offset-md-9" id="accessed" style="display:none;">last updated: </div>
             </div> -->
-            <!-- <div id='pie'>{{test}}</div> -->
-        <div class="container top-buffer" id='map' style="height:100%; display:block;"> 
+<!-- <div id='pie'>{{test}}</div> -->
+<div class="container top-buffer" id="map" style="height:100%; display:block;">
+    <div id="progress">Map is loading...
+        <div class="progress" id="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="5" aria-valuemin="0"
+                aria-valuemax="100" style="width: 75%"></div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container top-buffer" id="map2" style="height:100%; display:block;"> 
             <div id="progress">Map is loading...  
                 <div class="progress" id="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                       </div>
                 </div>
-        </div>
-  
+        </div> -->
+
+<!-- yy add dropdown menu for zipcode -->
+<div class="row">
+    <div id='select_box' style="width:50px;height:20px;margin-left:5rem;margin-top:2rem">
+        <select id="selDataset" onchange="getData(this.value)"></select>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="container top-buffer" id='pie-display'>
+        <button class="btn btn-default" id="btnPie">Pie</button>
+        <button class="btn btn-default" id="btnBar">Bar</button>
+        <div class="svg-container" id="pie"></div>
+    </div>
+</div>
+
+
+<!--<button onclick="start_long_task();">Start Long Calculation</button><br><br>-->
+<!-- <button id="start-bg-job">Start Long Calculation</button><br><br> -->
+
+
 
 
 <style>
-/* remove default margin and padding from body */
-body {
-  padding: 0;
-  margin: 0;
-}
+    /* remove default margin and padding from body */
 
-/* set map, body, and html to 100% of the screen size */
-/* #map,
-body,
-html {
-  height: 90%;
-  width: 90%
-} */
+    body {
+        padding: 0;
+        margin: 0;
+    }
 
-.legend {
-  line-height: 18px;
-  color: #555;
-}
+    #info-display,
+    .celery_progress_child {
+        /* padding-top: 10px; */
+        /* padding-right: 30px; */
+        /* padding-bottom: 10px; */
+        padding-left: 50px;
+    }
 
-.legend i {
-  width: 12px;
-  height: 12px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
-}
+    #pie-display {
+        width: 80%;
+        height: 80%;
+        border: 2px solid black;
+    }
 
-.info {
-  padding: 6px 8px;
-  font: 10px/14px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
-}
+    .svg-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        /* aspect ratio */
+        vertical-align: top;
+        overflow: hidden;
+    }
 
-.info h4 {
-  margin: 0 0 5px;
-  color: #777;
-}
+    .svg-content-responsive {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
 
-.top-buffer{
-    margin-top:10px;
-}
+    /* set map, body, and html to 100% of the screen size */
 
-.bottom-buffer{
-    margin-bottom: 10px;
-}
+    #map,
+    body,
+    html {
+        height: 90%;
+        width: 90%;
+    }
+
+    #pie {
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+    }
+
+    .legend {
+        line-height: 18px;
+        color: #555;
+    }
+
+    .legend i {
+        width: 12px;
+        height: 12px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+    }
+
+    .info {
+        padding: 6px 8px;
+        font: 10px/14px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+    }
+
+    .top-buffer {
+        margin-top: 10px;
+    }
+
+    .bottom-buffer {
+        margin-bottom: 10px;
+    }
+
+
+    .glyphicon-refresh-animate {
+        -animation: spin .7s infinite linear;
+        -webkit-animation: spin2 .7s infinite linear;
+    }
+
+    @-webkit-keyframes spin2 {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: scale(1) rotate(0deg);
+        }
+        to {
+            transform: scale(1) rotate(360deg);
+        }
+    }
 </style>
 
 <script type="text/javascript">
 
+
+
+    $(".progress-bar").css("width", 15 + "%")
+    $(function () {
+        $('[data-toggle="popover"]').popover({ html: true })
+    })
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    var city_, state_, cuisine_;
+
+    $('.form-inline').on('submit', function () {
+        // var input = $('.form-inline').serialize();
+        // console.log(input);
+        event.preventDefault();
+        // alert('Form submitted!');
+
+        city_ = document.getElementById("city").value.toUpperCase();
+        state_ = document.getElementById("state").value.toUpperCase();
+        cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+        start_long_task(city_, state_, cuisine_)
+        return false;
+    });
+
+
+    // **********
+    // FAQ Popup
+    // **********
+
+    var faq_name = "Yummy Data FAQ";
+
+    
+    var faq_msg =
+        "1. How do I use this?<br/>" +
+        "type in a city, a state, and a cuisine, press search, and wait.<br/>" +
+        "2. It's taking forever?<br/>" +
+        "deal with it.<br/>" +
+        "3. How does it work?<br/>" +
+        "Leaflet + API calls + JS.msg"
+        ;
+
+    var msg_cust = Msg.factory(
+        {
+            class: "white",
+            overlay_class: "white",
+            window_inner_x_class: "red",
+            enable_titlebar: true,
+            window_width: "65%"
+        })
+
+
+
+    // **********
+    // Variables
+    // **********
+    var demographics = '{{ demographics|tojson }}';
+    // let demographicsObject = JSON.parse(demographics);
+    var demographicsObject = JSON.parse(demographics);
+
+    var yummy_info = '{{ yummy_info|tojson }}';
+    let yummyObject = JSON.parse(yummy_info);
+    var food = yummyObject[0].cuisine;
+    console.log("food = " + food);
+
+    var google_results = '{{ google_results|tojson }}';
+    let googleObject = JSON.parse(google_results);
+    // Currency formatter
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        // the default value for minimumFractionDigits depends on the currency
+        // and is usually already 2
+    });
+
+    var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
+    var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" + `access_token=${api_key}`;
+    var markers;
+    var myMap;
+    var zippopulation;
+    var zipincome;
+    var streetmap;
+    var satellite;
+    var baseMaps;
+    var overlayMaps;
+    var myMap;
+    var pop_legend;
+    var income_legend;
+    var layer_control;
+    var vizIcon;
+    var food;
+
+
+
+    jQuery.each(yummyObject, function (data) {
+        $("#info-display2").append(document.createTextNode("Displaying results for: " +
+            yummyObject[0].city +
+            ", " + yummyObject[0].state +
+            " - " + yummyObject[0].cuisine
+        ));
+    });
+
     
 
-$(".progress-bar").css("width", 15 + "%")
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+    console.log(googleObject);
+    console.log(yummyObject);
+    console.log(yummyObject[0].city);
+    console.log("0000");
+    console.log(demographicsObject);
+    
 
-// **********
-// Convoluted intake of data from javascript to python
-// ********** 
+    console.log(demographicsObject.features[0].geometry.coordinates);
 
-// var url_to_click;
-// var $submitBtn = document.querySelector("#search");
-// $submitBtn.addEventListener("click", handleSubmitClick);
+    $(".progress-bar").css("width", 35 + "%")
 
-// function handleSubmitClick() {
-//   event.preventDefault();
-//   var city_, state_, cuisine_;
-//   city_ = document.getElementById("city").value.toUpperCase();
-//   state_ = document.getElementById("state").value.toUpperCase();
-//   cuisine_ = document.getElementById("cuisine").value.toUpperCase();
+    // function to scale color for population
+    function getColor_Pop(d) {
+        return d > 50000 ? '#800026' :
+            d > 40000 ? '#BD0026' :
+                d > 30000 ? '#E31A1C' :
+                    d > 20000 ? '#FC4E2A' :
+                        d > 15000 ? '#FD8D3C' :
+                            d > 10000 ? '#FEB24C' :
+                                d > 5000 ? '#FED976' :
+                                    '#FFEDA0';
+    };
 
-// console.log(city_);
-// console.log(state_);
-// console.log(cuisine_);
-// };
+    //function to scale color for income
+    function getColor_Income(d) {
+        return d > 60000 ? '#91003f' :
+            d > 45000 ? '#ce1256' :
+                d > 35000 ? '#e7298a' :
+                    d > 25000 ? '#df65b0' :
+                        d > 20000 ? '#c994c7' :
+                            d > 15000 ? '#d4b9da' :
+                                d > 10000 ? '#e7e1ef' :
+                                    '#f7f4f9';
+    };
 
-// function fetch(link){
-//     event.preventDefault();
-//     var city_, state_, cuisine_;
-//     city_ = document.getElementById("city").value.toUpperCase();
-//     state_ = document.getElementById("state").value.toUpperCase();
-//     cuisine_ = document.getElementById("cuisine").value.toUpperCase();
-
-//         console.log(city_);
-//         console.log(state_);
-//         console.log(cuisine_);
-//     url_to_click = `fetch/city=${city_}&state=${state_}&cuisine=${cuisine_}`;
-//     link = link+url_to_click;
-//         console.log(link);
-//         console.log(url_to_click);
-//         console.log(link)
-//     window.location.href = link;
-// };
-
-
-
-// **********
-// FAQ Popup
-// **********
-
-var faq_name = "Yummy Data FAQ";
-
-// var faq_msg = [
-// "1. How do I use this?",
-// "type in a city, a state, and a cuisine, press search, and wait.",
-// "2. It's taking forever?",
-// "deal with it."
-// ]
-// ;
-var faq_msg =
-"1. How do I use this?<br/>" +
-"type in a city, a state, and a cuisine, press search, and wait.<br/>" +
-"2. It's taking forever?<br/>" +
-"deal with it.<br/>" +
-"3. How does it work?<br/>" + 
-"Leaflet + API calls + JS.msg"
-;
-
-var msg_cust = Msg.factory(
-{
-	class:"white",
-	overlay_class:"white",
-	window_inner_x_class:"red",
-	enable_titlebar:true,
-	window_width:"65%"
-})
-
-
-
-// **********
-// Variables
-// **********
-var demographics = '{{ demographics|tojson }}';
-// let demographicsObject = JSON.parse(demographics);
-var demographicsObject=JSON.parse(demographics);
-
-var yummy_info = '{{ yummy_info|tojson }}';
-let yummyObject = JSON.parse(yummy_info);
-var food = yummyObject[0].cuisine;
-console.log("food = " + food);
-
-var google_results = '{{ google_results|tojson }}';
-
-let googleObject = JSON.parse(google_results);
-// Currency formatter
-var formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 2,
-  // the default value for minimumFractionDigits depends on the currency
-  // and is usually already 2
-});
-
-var api_key = 'pk.eyJ1IjoibWFya29kYXRhdml6IiwiYSI6ImNqZWxyOGI2ZDRtNnUyd3FlN3B1Z2xmN2IifQ.0gVFx-w1WG9dfSpK5iyO_Q'
-var mapbox = "https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +`access_token=${api_key}`;
-// var points;
-// var myMap = L.map('map', {
-//   center: [36.7749, -97.4194],
-//   zoom: 5
-// });
-// L.tileLayer(mapbox).addTo(myMap);
-
-
-// var city_ = document.getElementById("city").value.toUpperCase();
-// var state_ = document.getElementById("state").value.toUpperCase();
-// var cuisine_ = document.getElementById("cuisine").value.toUpperCase();
-
-// $.get("/getpythondata/", function(pythondata) {
-//     console.log(pythondata);
-//     console.log(pythondata[0].city);
-//     if (pythondata){
-//         console.log('its here');
-//     }
-// })
-
-// $.get("/getpythondata", function(data) {
-//     console.log(data)
-// })
-
-jQuery.each( yummyObject, function( data ) {
-  $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
-                                                        yummyObject[0].city +
-                                                        ", " + yummyObject[0].state +
-                                                        " - " + yummyObject[0].cuisine
-                                                        )  );
-});
-
-// if ('{{ yummy_info }}'  == 0) {
-//     console.log('empty');
-//     $.get("/getpythondata/", function(pythondata) {
-//     console.log(pythondata);
-//     // console.log(pythondata[0].city);
-//     if (pythondata){
-//         console.log('its here');
-//         // setTimeout("console.log('timeout');", 10000);
-//         yummy_info = pythondata;
-//     }
-//     })
-//     console.log(yummy_info);
-// } else {
-//     console.log('user data');
-//     yummy_info = '{{ yummy_info}}';
-//     console.log(yummy_info);
-// };
-
-console.log(googleObject);
-console.log(yummyObject);
-console.log(yummyObject[0].city);
-console.log("0000");
-console.log(demographicsObject);
-var one_geo=demographicsObject.features[0].geometry.coordinates;
-console.log(typeof one_geo[0][0][1])
-
-console.log(demographicsObject.features[0].geometry.coordinates);
-
-$(".progress-bar").css("width", 35 + "%")
-var zippopulation;
-var zipincome;
-// function to scale color for population
-function getColor_Pop(d) {
-    return d > 50000 ? '#800026' :
-           d > 40000  ? '#BD0026' :
-           d > 30000  ? '#E31A1C' :
-           d > 20000  ? '#FC4E2A' :
-           d > 15000   ? '#FD8D3C' :
-           d > 10000   ? '#FEB24C' :
-           d > 5000   ? '#FED976' :
-                      '#FFEDA0';
-};
-
-//function to scale color for income
-function getColor_Income(d) {
-    return d > 60000 ? '#91003f' :
-           d > 45000  ? '#ce1256' :
-           d > 35000  ? '#e7298a' :
-           d > 25000  ? '#df65b0' :
-           d > 20000   ? '#c994c7' :
-           d > 15000   ? '#d4b9da' :
-           d > 10000   ? '#e7e1ef' :
-                      '#f7f4f9';
-};
-
-// get style for population
-function style_population(feature) {
+    // get style for population
+    function style_population(feature) {
         return {
             fillColor: getColor_Pop(feature.properties.population),
             weight: 2,
@@ -314,285 +345,912 @@ function style_population(feature) {
             color: 'white',
             dashArray: '3',
             fillOpacity: 0.7
-            };
         };
-
-// get style for income
-function style_income(feature) {
-        return {
-                fillColor: getColor_Income(feature.properties.income_per_capita),
-                weight: 2,
-                opacity: 1,
-                color: 'white',
-                dashArray: '3',
-                fillOpacity: 0.7
-                };
-            };
-
-function highlightFeature(e) {
-    var layer = e.target;
-    layer.setStyle({
-        weight: 5,
-        color: '#666',
-        dashArray: '',
-        fillOpacity: 0.7
-    });
-    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
-    }
-};
-
-// un-highlight when mouse leaves
-function resetHighlightPop(e) {
-    zippopulation.resetStyle(e.target);
-};
-function resetHighlightIncome(e) {
-    zipincome.resetStyle(e.target);
-};
-
-// create a marker & popup for each location
-function onEachFeature_Pop(feature, layer) {
-            layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlightPop
-            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
-                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
-                        + "</i></center><br/> " +
-                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
-                        + "</i></center><br/>" +
-                        "<hr>");
-              }
-function onEachFeature_Income(feature, layer) {
-            layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlightIncome
-            }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>"+ 
-                        "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
-                        + "</i></center><br/> " +
-                        "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
-                        + "</i></center><br/>" +
-                        "<hr>");
-              }
-
-var zippopulation=L.geoJSON(demographicsObject,{style:style_population,onEachFeature:onEachFeature_Pop});
-var zipincome=L.geoJSON(demographicsObject,{style:style_income,onEachFeature:onEachFeature_Income});
-
-// **********
-// Create Cluster Layers
-// ********** 
-
-var vizIcon = L.icon({
-    //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
-      iconUrl: pickIcon(food),
-      iconSize: [60,50]
-    });
-
-// customize the icon!    
-// customize the icon!    
-function pickIcon(food){
-    console.log(food);
-    if (food == "pizza"){
-        return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
-    } else if(food == "chinese"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
-    } else if(food == "brewery"|| food == "pub"){
-        return "https://image.flaticon.com/icons/svg/202/202127.svg"
-    } else if(food == "burger" || food == "fastfood"){
-        return "https://image.flaticon.com/icons/svg/579/579048.svg"
-    } else if(food == "japanese"){
-        return "https://image.flaticon.com/icons/svg/805/805342.svg"
-    } else if(food == "sushi"){
-        return "https://image.flaticon.com/icons/svg/805/805342.svg"
-    } else if(food == "taco"){
-        return "https://cdn.emojidex.com/emoji/px128/taco.png"
-    } else if(food == "french"){
-        return "https://image.flaticon.com/icons/svg/768/768157.svg"
-    } else if(food == "italian"){
-        return "https://image.flaticon.com/icons/svg/267/267916.svg"
-    } else if(food == "fish" || food == "seafood"){
-        return "https://image.flaticon.com/icons/svg/372/372978.svg"
-    // } else if(food == "fish" || food == "seafood"){
-    //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
-    } else if(food == "vietnamese"){
-        return "https://image.flaticon.com/icons/svg/791/791584.svg"
-    } else if(food == "mediterranean" || food == "greek" || food == "mediterannean"){
-        return "https://image.flaticon.com/icons/svg/123/123309.svg"
-    } else if(food == "colombian"){
-        return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
-    // } else if(food == "thai" || food == "pad thai"){
-    //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
-    } else if(food == "thai" || food == "pad thai"){
-        return "https://image.flaticon.com/icons/svg/898/898122.svg"
-    } else if(food == "indian"){
-        return "https://image.flaticon.com/icons/svg/342/342857.svg"
-    } else if(food == "steroids"|| food == "gym"){
-        return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
-    } else if(food == "winery" || food == "wine"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
-    } else if(food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
-    } else if(food == "ice cream"){
-        return "https://image.flaticon.com/icons/svg/816/816190.svg"
-    } else if(food == "coffee" || food == "tea"){
-        return "https://image.flaticon.com/icons/svg/924/924514.svg"
-    } else if(food == "bakery"){
-        return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
-    } else if(food == "salad"){
-        return "https://image.flaticon.com/icons/svg/267/267917.svgb"
-    } else if(food == "mexican"){
-        return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
-    } else if(food == "paleo"){
-        return "https://image.flaticon.com/icons/svg/884/884643.svg"
-    } else if(food == "bbq" || food == "ribs" || food == "barbecue"){
-        return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
-    } else if(food == "breakfast"){
-        return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
-    } else if(food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free"){
-        return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
-    } else if(food == "doughnut" || food == "doughnuts"){
-        return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
-    } else {
-        return "https://image.flaticon.com/icons/svg/66/66281.svg"
-    }
     };
 
+    // get style for income
+    function style_income(feature) {
+        return {
+            fillColor: getColor_Income(feature.properties.income_per_capita),
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+        };
+    };
+
+    function highlightFeature(e) {
+        var layer = e.target;
+        layer.setStyle({
+            weight: 5,
+            color: '#666',
+            dashArray: '',
+            fillOpacity: 0.7
+        });
+        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+            layer.bringToFront();
+        }
+    };
+
+    // un-highlight when mouse leaves
+    function resetHighlightPop(e) {
+        zippopulation.resetStyle(e.target);
+    };
+    function resetHighlightIncome(e) {
+        zipincome.resetStyle(e.target);
+    };
+
+    // create a marker & popup for each location
+    function onEachFeature_Pop(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlightPop
+        }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>" +
+            "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
+            + "</i></center><br/> " +
+            "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
+            + "</i></center><br/>" +
+            "<hr>");
+    }
+    function onEachFeature_Income(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlightIncome
+        }).bindPopup("<strong><center><h4>" + feature.properties.zipcode + "</strong></center></h4><br/>" +
+            "<center>Current population: : <i>" + new Intl.NumberFormat('en-IN').format(feature.properties.population)
+            + "</i></center><br/> " +
+            "<center>Average Income: <i>" + formatter.format(feature.properties.income_per_capita)
+            + "</i></center><br/>" +
+            "<hr>");
+    }
+
+    var zippopulation = L.geoJSON(demographicsObject, { style: style_population, onEachFeature: onEachFeature_Pop });
+    var zipincome = L.geoJSON(demographicsObject, { style: style_income, onEachFeature: onEachFeature_Income });
+    // console.log(zipincome);
+
+    // **********
+    // Create Cluster Layers
+    // ********** 
+
+    vizIcon = L.icon({
+        //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+        iconUrl: pickIcon(food),
+        iconSize: [60, 50]
+    });
 
 
 
- // make a cluster marker layer   
-var markers = L.markerClusterGroup();
+    // make a cluster marker layer   
+    var markers = L.markerClusterGroup();
 
 
-// bind each restaurant_data as marker to markers group
- for (var i = 0; i < googleObject.length; i++) {
-    var object = googleObject[i];
-    markers.addLayer(L.marker([object.Latitude,object.Longitude],{icon: vizIcon})
-        .bindPopup("<h4><center>" + object.Name + "</h4><br/>" + 
-        "<center>Price: " + object.Price_Level + "</center><br/> " +
-        "<center>Rating: " + object.Rating + "</center><br/>" +
-        "<hr>"));
-  }
+    // bind each restaurant_data as marker to markers group
+    for (var i = 0; i < googleObject.length; i++) {
+        var object = googleObject[i];
+        markers.addLayer(L.marker([object.Latitude, object.Longitude], { icon: vizIcon })
+            .bindPopup("<h4><center>" + object.Name + "</h4><br/>" +
+                "<center>Price: " + object.Price_Level + "</center><br/> " +
+                "<center>Rating: " + object.Rating + "</center><br/>" +
+                "<hr>"));
+    }
 
-// **********
-// Add Layers to Map
-// ********** 
+    // **********
+    // Add Layers to Map
+    // ********** 
 
 
-var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+    var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
 
-var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
+    var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?" +
         "access_token=pk.eyJ1IjoieWl6aGl5aW4iLCJhIjoiY2plbTJwc2s0NGJnOTJ4bzc5M2Uyb3dmcSJ9.s5k3QArmTecuSneRayd8fg");
 
-var baseMaps = {
-            "Street Map": streetmap,
-            "Satellite Map": satellite
-          };
-        
-var overlayMaps = {
-            "Population": zippopulation,
-            "Income":zipincome,
-            "Restaurants":markers
-          };
+    var baseMaps = {
+        "Street Map": streetmap,
+        "Satellite Map": satellite
+    };
 
-// streetmap.addTo(myMap);
-// zippopulation.addTo(myMap);
+    var overlayMaps = {
+        "Population": zippopulation,
+        "Income": zipincome,
+        "Restaurants": markers
+    };
 
-                           
-var myMap = L.map("map", {
-            center: [googleObject[0].Latitude, googleObject[0].Longitude],
-            zoom: 9,
-            layers: [streetmap, markers]
-          }).invalidateSize();
-     
-           
-L.control.layers(baseMaps,overlayMaps, {
-                  collapsed: false
-                }).addTo(myMap);
+    // streetmap.addTo(myMap);
+    // zippopulation.addTo(myMap);
 
-// **********
-// Create the legend
-// ********** 
 
-var pop_legend=L.control({position: 'bottomright'});
-var income_legend=L.control({position: 'bottomright'});
+    var myMap = L.map("map", {
+        center: [googleObject[0].Latitude, googleObject[0].Longitude],
+        zoom: 9,
+        layers: [streetmap, markers]
+    }).invalidateSize();
 
-pop_legend.onAdd = function(map){
-var div = L.DomUtil.create('div', 'info legend'),
+
+    layer_control = L.control.layers(baseMaps, overlayMaps, {
+        collapsed: false
+    }).addTo(myMap);
+
+    // **********
+    // Create the legend
+    // ********** 
+
+    var pop_legend = L.control({ position: 'bottomright' });
+    var income_legend = L.control({ position: 'bottomright' });
+
+    pop_legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
             grades = [0, 5000, 10000, 15000, 20000, 30000, 40000, 50000],
             labels = [];
-            div.innerHTML+='  Population:<br/>'
-            
-                // loop through our density intervals and generate a label with a colored square for each interval
-            for (var i = 0; i < grades.length; i++) {
-                    div.innerHTML +='<i style="background:' + getColor_Pop(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
-                                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
-                }
-               
-                return div;
-            };
+        div.innerHTML += '  Population:<br/>'
 
-income_legend.onAdd = function (map){
-            var div = L.DomUtil.create('div', 'info legend'),
-                    grades = [0, 10000, 15000, 20000, 25000, 35000, 45000, 60000],
-                    labels = [];
-                    div.innerHTML+='  Income:<br/>'
-            
-                // loop through our density intervals and generate a label with a colored square for each interval
-                for (var i = 0; i < grades.length; i++) {
-                    div.innerHTML +='<i style="background:' + getColor_Income(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
-                                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
-                }
-               
-                return div;
-    
-        };
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML += '<i style="background:' + getColor_Pop(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+        }
 
-$(".progress-bar").css("width", 90 + "%")
+        return div;
+    };
 
-pop_legend.addTo(myMap);
+    income_legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 10000, 15000, 20000, 25000, 35000, 45000, 60000],
+            labels = [];
+        div.innerHTML += '  Income:<br/>'
 
-// switch legend on selection
-myMap.on('overlayadd',function(eventLayer){
-        if(eventLayer.name=='Population'){
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML += '<i style="background:' + getColor_Income(grades[i] + 1) + '">&nbsp&nbsp&nbsp</i> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br/>' : '+');
+        }
+
+        return div;
+
+    };
+
+    $(".progress-bar").css("width", 90 + "%")
+
+    pop_legend.addTo(myMap);
+
+    // switch legend on selection
+    myMap.on('overlayadd', function (eventLayer) {
+        if (eventLayer.name == 'Population') {
             this.removeControl(income_legend);
-            pop_legend.addTo(this);}
-        else if(eventLayer.name=='Income'){this.removeControl(pop_legend);
-            income_legend.addTo(this);}
+            pop_legend.addTo(this);
+        }
+        else if (eventLayer.name == 'Income') {
+            this.removeControl(pop_legend);
+            income_legend.addTo(this);
+        }
         // else if (eventLayer.name=='Restaurants')
         // {this.removeControl(pop_legend)|| this.removeControl(income_legend)}
 
     });
 
-$(window).on("resize", function () { 
-        $("#map").height($(window).height()-150); 
-        myMap.invalidateSize(); 
-        }).trigger("resize");
+
+    $(window).on("resize", function () {
+        $("#map").height($(window).height() - 150);
+        myMap.invalidateSize();
+    }).trigger("resize");
 
 
-$(document).ready(function(){    
-    $("#progress").remove();
-});
+    $(document).ready(function () {
+        $("#progress").remove();
+        console.log(yummyObject[0]);
+        updateZipSelect(yummyObject[0]);
+    });
+
+    function updateZipSelect({ city, state, cuisine}) {
+        // populate the dropdown menu
+        // use Plotly.d3.json to get a list of 
+        var selDataset = document.getElementById("selDataset");
+        var zipurl = `/api/zipcode?city=${city}&state=${state}&cuisine=${cuisine}`;
+        selDataset.innerHTML = ""
+        Plotly.d3.json(zipurl, function (error, response) {
+            // if (error) return console.warn(error);
+            // 
+            for (var i = 0; i < response.length; i++) {
+                var option = document.createElement('option');
+                option.value = response[i];
+                option.text = response[i];
+                selDataset.appendChild(option);
+            }
+        });
+    }
+
+    function getData(route){
+        var info_=document.getElementById('info-display').innerText;
+        var temp_string = info_.split(': ')[1];      
+        var city=temp_string.split(',')[0].trim();
+        var state=temp_string.split(',')[1].split('-')[0].trim();
+        var cuisine=temp_string.split(',')[1].split('-')[1].trim();
+
+        var url = `/api/pie?city=${city}&state=${state}&cuisine=${cuisine}&zipcode=${route}`;
+        updatePieChart(url);
+         
+        
+    }
+//pie chart
+    
+        
+    function updatePieChart(url) 
+        {  var m = [20, 20, 30, 20],
+            w = 960 - m[1] - m[3],
+            h = 450 - m[0] - m[2];
+            var x,
+                y,
+                duration = 2000,
+                delay = 500;
+
+            var color = d3.scale.category10();
+            var PIE = document.getElementById("pie");
+            PIE.innerHTML = '';
+
+            var svg = d3.select("#pie")
+                .append("div")
+                .classed("svg-container", true) //container class to make it responsive
+                .append("svg")
+                //responsive SVG needs these 2 attributes and no width and height attr
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 800 600")
+                //class to make it responsive
+                .classed("svg-content-responsive", true)
+                .append("g")
+
+            x = d3.scale.ordinal();
+
+            y = d3.scale.linear();
+            d3.json(url, function (error, data) {
+
+            if (error) { console.error(error) }
+
+            console.log(data)
+
+            x.domain(data.map(function (d) {
+                return d.key;
+            }))
+                .rangeRoundBands([0, w], .2);
+
+            var pie = d3.layout.pie()
+                .value(function (d) {
+                    return d.priceLevel;
+                });
+
+            var arc = d3.svg.arc();
+
+            y.domain([0, d3.max(data.map(function (d) {
+                return d.priceLevel;
+            }))])
+                .range([h / 4 - 20, 0]);
+
+            var g = svg.selectAll(".symbol")
+                .data(function () {
+                    return pie(data);
+                })
+                .enter()
+                .append("g")
+                .attr("class", "symbol");
+
+            g.append("rect")
+                .style("fill", function (d) {
+                    return color(d.data.key);
+                })
+                .attr("x", function (d) {
+                    return x(d.data.key);
+                })
+                .attr("y", function (d) {
+                    return y(d.data.priceLevel);
+                })
+                .attr("width", x.rangeBand())
+                .attr("height", function (d) {
+                    return h - y(d.data.priceLevel);
+                });
+
+            //draw bar chart first 
+
+            g.append("path")
+                .style("fill", function (d) {
+                    return color(d.data.key);
+                });
+
+            g.append("text")
+                .attr("transform", function (d) {
+                    return "translate(" + (x(d.data.key) + x.rangeBand() / 3) + "," + (h + 20) + ")";
+                })
+                .text(function (d) {
+                    return d.data.key;
+                });
+
+
+            document.getElementById("btnBar").addEventListener("click", toBar)
+            document.getElementById("btnPie").addEventListener("click", toPie)
+            //then use path element of bars do transition;
+            function toPie() {
+                var g = svg.selectAll(".symbol");
+
+                g.selectAll("rect").remove();
+
+                g.selectAll("path")
+                    .transition()
+                    .duration(duration)
+                    .tween("arc", arcTween);
+
+                //The idea here is to first draw an arc like a bar,
+                //then tween the bar-like arc to the donut arc. 
+                //Thus, the key is find the initial bar size and position:
+                //The initial bar height is approximated by the length of 
+                //outside arc: barHeight = init_OuterRadius * init_Angle. 
+                //So we can get the startAngle shown in f;
+                //(Note that: the measure of angle in d3 starts from vertical y:
+                // y    angle
+                // |    /   
+                // |   /        
+                // |  /             
+                // |o/
+                // |/      
+                // )                                       
+                function arcTween(d) {
+                    var path = d3.select(this),
+                        text = d3.select(this.parentNode).select("text"),
+                        x0 = x(d.data.key),
+                        y0 = h - y(d.data.priceLevel); //initial height
+
+                    return function (t) {
+                        var r = h / 2 / Math.min(1, t + 1e-3),
+                            //a is stepping factor, starting from 1 to 0,
+                            //as the timer t goes.
+                            //A simper alternative: a = 1 - t;
+                            a = Math.cos(t * Math.PI / 2),
+                            xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+                            yy = ((a) * h + (1 - a) * h / 2),
+                            f = {
+                                innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+                                //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+                                outerRadius: r,
+                                startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+                                endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+                            };
+
+
+                        path.attr("transform", "translate(" + xx + "," + yy + ")");
+                        path.attr("d", arc(f));
+                        text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+                    };
+                }
+            }
+
+            function toBar() {
+                var g = svg.selectAll(".symbol");
+
+                //g.selectAll("rect").remove();
+
+                g.selectAll("path")
+                    .transition()
+                    .duration(duration)
+                    .tween("arc", arcTween);
+
+                //The idea here is to first draw an arc like a bar,
+                //then tween the bar-like arc to the donut arc. 
+                //Thus, the key is find the initial bar size and position:
+                //The initial bar height is approximated by the length of 
+                //outside arc: barHeight = init_OuterRadius * init_Angle. 
+                //So we can get the startAngle shown in f;
+                //(Note that: the measure of angle in d3 starts from vertical y:
+                // y    angle
+                // |    /   
+                // |   /        
+                // |  /             
+                // |o/
+                // |/      
+                // )                                       
+                function arcTween(d) {
+                    var path = d3.select(this),
+                        text = d3.select(this.parentNode).select("text"),
+                        x0 = x(d.data.key),
+                        y0 = h - y(d.data.priceLevel); //initial height
+
+                    return function (t) {
+                        t = 1 - t;
+                        var r = h / 2 / Math.min(1, t + 1e-3),
+                            //a is stepping factor, starting from 1 to 0,
+                            //as the timer t goes.
+                            //A simper alternative: a = 1 - t;
+                            a = Math.cos(t * Math.PI / 2),
+                            xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+                            yy = ((a) * h + (1 - a) * h / 2),
+                            f = {
+                                innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+                                //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+                                outerRadius: r,
+                                startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+                                endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+                            };
+
+
+                        path.attr("transform", "translate(" + xx + "," + yy + ")");
+                        path.attr("d", arc(f));
+                        text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+                    };
+                }
+            }
+            });
+
+        };
+    
+
+    
 
 
 
+    function start_long_task(city = city_, state = state_, cuisine = cuisine_) {
+        console.log('at start_long_task')
+        console.log(city);
+        console.log(state);
+        console.log(cuisine);
+        console.log('sending');
+        // clear the map
+        markers.clearLayers();
+        zippopulation.clearLayers();
+        zipincome.clearLayers();
+        myMap.removeControl(layer_control);
+        var displaying_results_node = document.getElementById("info-display");
+        displaying_results_node.innerHTML = '<div id="info-display2"></div>';
+        var displaying_results_node_child = document.getElementById("info-display2");
+        var loading_button = $('<button class="btn btn-sm btn-warning" id="spinning_button"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>');
+        $(displaying_results_node_child).append(loading_button);
 
 
 
+        // add task status elements 
+        celery_div = $('<div class="celery_progress_child" id="celery_progress"><div id="celery_map"></div><div></div><div></div><div></div><div>&nbsp;</div></div>');
+        // $('#celery_progress_main').append(celery_div);
 
-// for (i=0; i<demographicsObject.length; i++){
-//     console.log(demographicsObject[i].Zipcode + " : " + 
-//     formatter.format(demographicsObject[i].Wealthy) + " &  " + 
-//     new Intl.NumberFormat('en-IN').format(demographicsObject[i].Population) + " people.");
-//     };
-console.log("1111");
-// // console.log(yummy_info);
-console.log(markers);
+        // create a progress bar
+        var nanobar = new Nanobar({
+            bg: '#44f',
+            target: celery_div[0].childNodes[0]
+        });
+        // send ajax POST request to start background job
+        var celery_data = {
+            'city': city,
+            'state': state,
+            'cuisine': cuisine
+        };
+        console.log(celery_data);
+        $.ajax({
+            type: 'POST',
+            url: '/longtask',
+            data: {
+                'city': city_,
+                'state': state_,
+                'cuisine': cuisine
+            },
+            // data: JSON.stringify(celery_data),
+            // data: $("#form-inline").serialize(),
+            // data: {'city': 'dfgdfgdfggdfg'},
+            success: function (data, status, request) {
+                status_url = request.getResponseHeader('Location');
+                console.log(status_url);
+                // status_url = 'http://127.0.0.1:5000/longtask'
+                update_progress(status_url, nanobar, celery_div[0]);
+            },
+            error: function () {
+                alert('Unexpected error');
+            }
+        });
+    }
+
+    function update_progress(status_url, nanobar, status_div) {
+        // send GET request to status URL
+        $.getJSON(status_url, function (data) {
+            // update UI
+            // percent = parseInt(data['current'] * 100 / data['total']);
+            // console.log(data['current']);
+            // console.log(data['total']);
+            console.log(data['state']);
+            // console.log(data);
+            // nanobar.go(percent);       
+            if (data['state'] != 'SUCCESS') {
+                // var test3 = document.contains('#celery_progress');
+                // var spinner = document.getElementById("spinning_button");
+                // var spinner_exists = document.getElementById("celery_progress").contains(spinner);
+                // console.log(test3);
+                // console.log(test3.firstChild.nodeName);
+                // if (spinner_exists != true) {
+                //     loading_button = $('<button class="btn btn-sm btn-warning" id="spinning_button"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>');
+                //     $(status_div.childNodes[0]).append(loading_button);  
+                //                                 }   
+            }
+            // $(status_div.childNodes[1]).text(percent + '%');
+            // $(status_div.childNodes[2]).text(data['status']);
+            // $(status_div.childNodes[3]).text(data['state']);
+            if (data['state'] != 'PENDING' && data['state'] != 'PROGRESS') {
+                // if (document.getElementById("spinning_button")){
+                //     var elem = document.getElementById("spinning_button");
+                //     elem.parentNode.removeChild(elem);
+                // }
+                if ('result' in data) {
+                    // show result
+                    // $(status_div.childNodes[4]).text('Result: ' + data['result']);
+                    console.log(data['result']);
+                    console.log(data);
+
+                    // var demographics = '{{ demographics|tojson }}';
+                    // let demographicsObject = JSON.parse(demographics);
+                    // var demographicsObject=JSON.parse(demographics);
+                    // console.log(data['demographics']);
+                    console.log(data);
+                    console.log('pppp');
+                    let demographicsObject = data['demographics'];
+                    console.log(demographicsObject);
+                    // var yummy_info = '{{ yummy_info|tojson }}';
+                    // let yummyObject = JSON.parse(yummy_info);
+                    console.log(data['yummy_info']);
+                    let yummyObject = data['yummy_info'];
+                    console.log(yummyObject);
+                    food = (yummyObject[0].cuisine).toLowerCase();
+                    console.log("food celery = " + food);
+
+                    // var google_results = '{{ google_results|tojson }}';
+                    // let googleObject = JSON.parse(google_results);
+                    let googleObject = data['data'];
+                    console.log(googleObject);
+                    
+
+                    var displaying_results_old = document.getElementById("info-display2");
+                    var displaying_results_new = document.createTextNode("Displaying results for: " +
+                        yummyObject[0].city +
+                        ", " + yummyObject[0].state +
+                        " - " + yummyObject[0].cuisine
+                    );
+                    // mySpan.innerHTML = "replaced anchor!";
+                    displaying_results_old.parentNode.replaceChild(displaying_results_new, displaying_results_old);
+                    // 
+                    //                     $( "#info-display" ).append( document.createTextNode( "Displaying results for: " + 
+                    //                                                         yummyObject[0].city +
+                    //                                                         ", " + yummyObject[0].state +
+                    //                                                         " - " + yummyObject[0].cuisine
+                    //                                                         )  );
+
+                    vizIcon = L.icon({
+                        //   iconUrl: 'https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png',
+                        iconUrl: pickIcon(food),
+                        iconSize: [60, 50]
+                    });
+
+                    // bind each restaurant_data as marker to markers group
+                    for (var i = 0; i < googleObject.length; i++) {
+                        var object = googleObject[i];
+                        // console.log('in');
+                        // console.log(object);
+                        markers.addLayer(L.marker([object.Latitude, object.Longitude], { icon: vizIcon })
+                            .bindPopup("<h4><center>" + object.Name + "</h4><br/>" +
+                                "<center>Price: " + object.Price_Level + "</center><br/> " +
+                                "<center>Rating: " + object.Rating + "</center><br/>" +
+                                "<hr>"));
+                    }
+
+                    
+                    
+                    zippopulation = L.geoJSON(demographicsObject, { style: style_population, onEachFeature: onEachFeature_Pop })
+                    
+                    zipincome = L.geoJSON(demographicsObject, { style: style_income, onEachFeature: onEachFeature_Income })
+
+                    overlayMaps = {
+                        "Population": zippopulation,
+                        "Income": zipincome,
+                        "Restaurants": markers
+                    };
+                    layer_control = L.control.layers(baseMaps, overlayMaps, {
+                        collapsed: false
+                    }).addTo(myMap);
+
+                    updateMapPosition();
+                    console.log(googleObject[0].Latitude);
+                    myMap.panTo([googleObject[0].Latitude, googleObject[0].Longitude]);
+                    myMap.setZoom(9);
+                    
+                    // updates zipcode select
+                    updateZipSelect(yummyObject[0]);
+
+                    $(".progress-bar").css("width", 90 + "%")
 
 
 
+                }
+                else {
+                    // something unexpected happened
+                    $(status_div.childNodes[4]).text('Result: ' + data['state']);
+                    console.log(data['state']);
+                }
+            }
+            else {
+                // rerun in 2 seconds
+                setTimeout(function () {
+                    update_progress(status_url, nanobar, status_div);
+                    console.log('updating')
+                }, 2000);
+            }
+        });
+    }
+
+    // $(function() {
+    //         $('#start-bg-job').click(start_long_task);
+    //     });
+    // $(function() {
+    //     $('#submit').click(start_long_task);
+    // });
+
+    // customize the icon!    
+    function pickIcon(food) {
+        console.log(food);
+            if (food == "pizza") {
+            return "https://emojipedia-us.s3.amazonaws.com/thumbs/160/facebook/105/slice-of-pizza_1f355.png"
+        } else if (food == "chinese") {
+            return "https://www.flaticon.com/premium-icon/icons/svg/661/661740.svg"
+        } else if (food == "brewery" || food == "pub") {
+            return "https://image.flaticon.com/icons/svg/202/202127.svg"
+        } else if (food == "burger" || food == "fastfood") {
+            return "https://image.flaticon.com/icons/svg/579/579048.svg"
+        } else if (food == "japanese") {
+            return "https://image.flaticon.com/icons/svg/805/805342.svg"
+        } else if (food == "sushi") {
+            return "https://image.flaticon.com/icons/svg/805/805342.svg"
+        } else if (food == "taco") {
+            return "https://cdn.emojidex.com/emoji/px128/taco.png"
+        } else if (food == "french") {
+            return "https://image.flaticon.com/icons/svg/768/768157.svg"
+        } else if (food == "italian") {
+            return "https://image.flaticon.com/icons/svg/267/267916.svg"
+        } else if (food == "fish" || food == "seafood") {
+            return "https://image.flaticon.com/icons/svg/372/372978.svg"
+            // } else if(food == "fish" || food == "seafood"){
+            //     return "https://image.flaticon.com/icons/svg/541/541687.svg"
+        } else if (food == "vietnamese") {
+            return "https://image.flaticon.com/icons/svg/791/791584.svg"
+        } else if (food == "mediterranean" || food == "greek" || food == "mediterannean") {
+            return "https://image.flaticon.com/icons/svg/123/123309.svg"
+        } else if (food == "colombian") {
+            return "https://cdn3.iconfinder.com/data/icons/latin-breads-and-foods-1/1000/latin_color-arepa-256.png"
+            // } else if(food == "thai" || food == "pad thai"){
+            //     return "https://cdn1.iconfinder.com/data/icons/thai/500/thai-asian-tahiland_16-256.png"
+        } else if (food == "thai" || food == "pad thai") {
+            return "https://image.flaticon.com/icons/svg/898/898122.svg"
+        } else if (food == "indian") {
+            return "https://image.flaticon.com/icons/svg/342/342857.svg"
+        } else if (food == "steroids" || food == "gym") {
+            return "https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/8/84/Character_stewiegriffin_roided_thumbnail%402x.png/revision/latest?cb=20150122122607"
+        } else if (food == "winery" || food == "wine") {
+            return "https://www.flaticon.com/premium-icon/icons/svg/763/763089.svg"
+        } else if (food == "smoothie" || food == "smoothy" || food == "shake" || food == "juice" || food == "juicery") {
+            return "https://www.flaticon.com/premium-icon/icons/svg/525/525879.svg"
+        } else if (food == "ice cream") {
+            return "https://image.flaticon.com/icons/svg/816/816190.svg"
+        } else if (food == "coffee" || food == "tea") {
+            return "https://image.flaticon.com/icons/svg/924/924514.svg"
+        } else if (food == "bakery") {
+            return "https://cdn4.iconfinder.com/data/icons/bakery-28/64/bakery-basket-bread-bake-256.png"
+        } else if (food == "salad") {
+            return "https://image.flaticon.com/icons/svg/267/267917.svgb"
+        } else if (food == "mexican") {
+            return "https://www.flaticon.com/premium-icon/icons/svg/737/737954.svg"
+        } else if (food == "paleo") {
+            return "https://image.flaticon.com/icons/svg/884/884643.svg"
+        } else if (food == "bbq" || food == "ribs" || food == "barbecue") {
+            return "https://cdn3.iconfinder.com/data/icons/food-set-2-1/91/Food_C141-256.png"
+        } else if (food == "breakfast") {
+            return "https://cdn3.iconfinder.com/data/icons/food-1-11/128/food-08-128.png"
+        } else if (food == "gluten free" || food == "gf" || food == "gluten" || food == "gluten-free") {
+            return "https://cdn0.iconfinder.com/data/icons/meal-icons/1536/meal_03-256.png"
+        } else if (food == "doughnut" || food == "doughnuts") {
+            return "https://cdn2.iconfinder.com/data/icons/cute-valentine-s-hand-drawn/512/template_line_set-32-256.png"
+        } else {
+            return "https://image.flaticon.com/icons/svg/66/66281.svg"
+        }
+    };
+
+    function updateMapPosition() {
+        setTimeout(function () {
+            myMap.invalidateSize(true);
+        }
+            , 500)
+
+    }
+
+    function toggleShow(toggled_element_name) {
+        var x = document.getElementById(toggled_element_name);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    
+    // function getData(route) {
+    //                 console.log('@@@@@@@@@@@@ at getData')
+    //                 console.log(route);
+    //                 console.log(`city:${city}`)
+    //                 console.log(`state: ${state}`)
+    //                 console.log(`cuisine:${cuisine}`)
+    //                 d3.json("/api/pie", function (error, data) {
+
+    //                     if (error) { console.error(error) }
+
+    //                     console.log(data)
+
+    //                     x.domain(data.map(function (d) {
+    //                         return d.key;
+    //                     }))
+    //                         .rangeRoundBands([0, w], .2);
+
+    //                     var pie = d3.layout.pie()
+    //                         .value(function (d) {
+    //                             return d.priceLevel;
+    //                         });
+
+    //                     var arc = d3.svg.arc();
+
+    //                     y.domain([0, d3.max(data.map(function (d) {
+    //                         return d.priceLevel;
+    //                     }))])
+    //                         .range([h / 4 - 20, 0]);
+
+    //                     var g = svg.selectAll(".symbol")
+    //                         .data(function () {
+    //                             return pie(data);
+    //                         })
+    //                         .enter()
+    //                         .append("g")
+    //                         .attr("class", "symbol");
+
+    //                     g.append("rect")
+    //                         .style("fill", function (d) {
+    //                             return color(d.data.key);
+    //                         })
+    //                         .attr("x", function (d) {
+    //                             return x(d.data.key);
+    //                         })
+    //                         .attr("y", function (d) {
+    //                             return y(d.data.priceLevel);
+    //                         })
+    //                         .attr("width", x.rangeBand())
+    //                         .attr("height", function (d) {
+    //                             return h - y(d.data.priceLevel);
+    //                         });
+
+    //                     //draw bar chart first 
+
+    //                     g.append("path")
+    //                         .style("fill", function (d) {
+    //                             return color(d.data.key);
+    //                         });
+
+    //                     g.append("text")
+    //                         .attr("transform", function (d) {
+    //                             return "translate(" + (x(d.data.key) + x.rangeBand() / 3) + "," + (h + 20) + ")";
+    //                         })
+    //                         .text(function (d) {
+    //                             return d.data.key;
+    //                         });
 
 
-</script>
+    //                     document.getElementById("btnBar").addEventListener("click", toBar)
+    //                     document.getElementById("btnPie").addEventListener("click", toPie)
+    //                     //then use path element of bars do transition;
+    //                     function toPie() {
+    //                         var g = svg.selectAll(".symbol");
 
-{% endblock %}
+    //                         g.selectAll("rect").remove();
+
+    //                         g.selectAll("path")
+    //                             .transition()
+    //                             .duration(duration)
+    //                             .tween("arc", arcTween);
+
+    //                         //The idea here is to first draw an arc like a bar,
+    //                         //then tween the bar-like arc to the donut arc. 
+    //                         //Thus, the key is find the initial bar size and position:
+    //                         //The initial bar height is approximated by the length of 
+    //                         //outside arc: barHeight = init_OuterRadius * init_Angle. 
+    //                         //So we can get the startAngle shown in f;
+    //                         //(Note that: the measure of angle in d3 starts from vertical y:
+    //                         // y    angle
+    //                         // |    /   
+    //                         // |   /        
+    //                         // |  /             
+    //                         // |o/
+    //                         // |/      
+    //                         // )                                       
+    //                         function arcTween(d) {
+    //                             var path = d3.select(this),
+    //                                 text = d3.select(this.parentNode).select("text"),
+    //                                 x0 = x(d.data.key),
+    //                                 y0 = h - y(d.data.priceLevel); //initial height
+
+    //                             return function (t) {
+    //                                 var r = h / 2 / Math.min(1, t + 1e-3),
+    //                                     //a is stepping factor, starting from 1 to 0,
+    //                                     //as the timer t goes.
+    //                                     //A simper alternative: a = 1 - t;
+    //                                     a = Math.cos(t * Math.PI / 2),
+    //                                     xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+    //                                     yy = ((a) * h + (1 - a) * h / 2),
+    //                                     f = {
+    //                                         innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+    //                                         //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+    //                                         outerRadius: r,
+    //                                         startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+    //                                         endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+    //                                     };
+
+
+    //                                 path.attr("transform", "translate(" + xx + "," + yy + ")");
+    //                                 path.attr("d", arc(f));
+    //                                 text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+    //                             };
+    //                         }
+    //                     }
+
+    //                     function toBar() {
+    //                         var g = svg.selectAll(".symbol");
+
+    //                         //g.selectAll("rect").remove();
+
+    //                         g.selectAll("path")
+    //                             .transition()
+    //                             .duration(duration)
+    //                             .tween("arc", arcTween);
+
+    //                         //The idea here is to first draw an arc like a bar,
+    //                         //then tween the bar-like arc to the donut arc. 
+    //                         //Thus, the key is find the initial bar size and position:
+    //                         //The initial bar height is approximated by the length of 
+    //                         //outside arc: barHeight = init_OuterRadius * init_Angle. 
+    //                         //So we can get the startAngle shown in f;
+    //                         //(Note that: the measure of angle in d3 starts from vertical y:
+    //                         // y    angle
+    //                         // |    /   
+    //                         // |   /        
+    //                         // |  /             
+    //                         // |o/
+    //                         // |/      
+    //                         // )                                       
+    //                         function arcTween(d) {
+    //                             var path = d3.select(this),
+    //                                 text = d3.select(this.parentNode).select("text"),
+    //                                 x0 = x(d.data.key),
+    //                                 y0 = h - y(d.data.priceLevel); //initial height
+
+    //                             return function (t) {
+    //                                 t = 1 - t;
+    //                                 var r = h / 2 / Math.min(1, t + 1e-3),
+    //                                     //a is stepping factor, starting from 1 to 0,
+    //                                     //as the timer t goes.
+    //                                     //A simper alternative: a = 1 - t;
+    //                                     a = Math.cos(t * Math.PI / 2),
+    //                                     xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
+    //                                     yy = ((a) * h + (1 - a) * h / 2),
+    //                                     f = {
+    //                                         innerRadius: (r - x.rangeBand() / (2 - a)) * a,
+    //                                         //pie chart: (r - x.rangeBand() / (2 - a)) * a,
+    //                                         outerRadius: r,
+    //                                         startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
+    //                                         endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
+    //                                     };
+
+
+    //                                 path.attr("transform", "translate(" + xx + "," + yy + ")");
+    //                                 path.attr("d", arc(f));
+    //                                 text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
+    //                             };
+    //                         }
+    //                     }
+    //                     });
+
+                    
+    //             };
+
+</script> {% endblock %}
